@@ -16,6 +16,8 @@ public class GameWorld extends Pane
 	private Player hero;
 	private Group group;
 	private Pane pane;
+	private Pane decorationPaneBottom;
+	private Pane decorationPaneTop;
 	public static GameWorld getWorld()
 	{
 		return world;
@@ -27,6 +29,8 @@ public class GameWorld extends Pane
 		//group.setScaleX(0.5);
 		//group.setScaleY(0.5);
 		pane = new Pane();
+		decorationPaneBottom = new Pane();
+		decorationPaneTop = new Pane();
 		//this.setScaleX(0.5);
 		//this.setScaleY(0.5);
 		//group.getChildren().add(pane);
@@ -36,7 +40,9 @@ public class GameWorld extends Pane
 		this.scaleXProperty().bind(this.widthProperty().divide(TILEWIDTH*TILESWIDE));
 		this.scaleYProperty().bind(this.heightProperty().divide(TILEHEIGHT*TILESHIGH));
 		hero = new Player();
+		pane.getChildren().add(decorationPaneBottom);
 		pane.getChildren().add(hero.getSprite());
+		pane.getChildren().add(decorationPaneTop);
 		pane.layoutXProperty().bind(hero.getSprite().layoutXProperty().multiply(-1).add(new SimpleDoubleProperty(TILEWIDTH*(TILESWIDE-1)/2.0).multiply(this.scaleXProperty())));
 		pane.layoutYProperty().bind(hero.getSprite().layoutYProperty().multiply(-1).add(new SimpleDoubleProperty(TILEHEIGHT*(TILESHIGH-1)/2.0).multiply(this.scaleYProperty())));
 		load("end");
@@ -48,7 +54,7 @@ public class GameWorld extends Pane
 	}
 	public void addDecoration(Decoration decoration)
 	{
-		pane.getChildren().add(decoration.getSprite());
+		(decoration.isTopLayer()?decorationPaneTop:decorationPaneBottom).getChildren().add(decoration.getSprite());
 	}
 	public void load(String file)
 	{
