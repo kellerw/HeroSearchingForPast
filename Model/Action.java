@@ -5,10 +5,14 @@ public class Action
 	public Action(Step s)
 	{
 		this.step = s;
+		this.next = new Action();
 	}
+	private Action()
+	{}
 	public void start()
 	{
-		step.act(next);
+		if(step!=null)
+			step.act(next);
 	}
 	public Action then(Step s)
 	{

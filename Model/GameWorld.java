@@ -2,6 +2,8 @@ import javafx.scene.layout.Pane;
 import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
+import javafx.scene.Group;
+import javafx.beans.property.SimpleDoubleProperty;
 public class GameWorld extends Pane
 {
 	//width and height of each tile
@@ -11,17 +13,42 @@ public class GameWorld extends Pane
 	public static final int TILESWIDE = 25;
 	public static final int TILESHIGH = 19;
 	private static GameWorld world = new GameWorld();
+	private Player hero;
+	private Group group;
+	private Pane pane;
 	public static GameWorld getWorld()
 	{
 		return world;
 	}
 	private GameWorld()
 	{
+		//group = new Group();
+		//this.getChildren().add(group);
+		//group.setScaleX(0.5);
+		//group.setScaleY(0.5);
+		pane = new Pane();
+		//this.setScaleX(0.5);
+		//this.setScaleY(0.5);
+		//group.getChildren().add(pane);
+		this.getChildren().add(pane);
+		//this.scaleXProperty().bind(new SimpleDoubleProperty(TILEWIDTH*TILESWIDE).divide(this.widthProperty()));
+		//this.scaleYProperty().bind(new SimpleDoubleProperty(TILEHEIGHT*TILESHIGH).divide(this.heightProperty()));
+		this.scaleXProperty().bind(this.widthProperty().divide(TILEWIDTH*TILESWIDE));
+		this.scaleYProperty().bind(this.heightProperty().divide(TILEHEIGHT*TILESHIGH));
+		hero = new Player();
+		pane.getChildren().add(hero.getSprite());
+		pane.layoutXProperty().bind(hero.getSprite().layoutXProperty().multiply(-1).add(new SimpleDoubleProperty(TILEWIDTH*(TILESWIDE-1)/2.0).multiply(this.scaleXProperty())));
+		pane.layoutYProperty().bind(hero.getSprite().layoutYProperty().multiply(-1).add(new SimpleDoubleProperty(TILEHEIGHT*(TILESHIGH-1)/2.0).multiply(this.scaleYProperty())));
 		load("end");
+		
+	}
+	public Player getPlayer()
+	{
+		return hero;
 	}
 	public void addDecoration(Decoration decoration)
 	{
-		this.getChildren().add(decoration.getSprite());
+		pane.getChildren().add(decoration.getSprite());
 	}
 	public void load(String file)
 	{
@@ -51,5 +78,9 @@ public class GameWorld extends Pane
 				return res;
 			}
 		throw new IllegalArgumentException("Could not parse type: "+name);
+	}
+	public Tile getTile(double x, double y)
+	{
+		return null;
 	}
 }

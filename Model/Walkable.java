@@ -41,4 +41,24 @@ public abstract class Walkable extends GameObject
 	{
 		onWalk(i);
 	}
+	//called when interactor walks off of this
+	public void onWalkOff(Interactor i)
+	{
+	}
+	public void onWalkOffUp(Interactor i)
+	{
+		onWalkOff(i);
+	}
+	public void onWalkOffDown(Interactor i)
+	{
+		onWalkOff(i);
+	}
+	public void onWalkOffLeft(Interactor i)
+	{
+		onWalkOff(i);
+	}
+	public void onWalkOffRight(Interactor i)
+	{
+		onWalkOff(i);
+	}
 }
