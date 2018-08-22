@@ -1,23 +1,20 @@
+import java.util.LinkedList;
 public class Action
 {
-	private Action next = null;
-	private Step step;
+	private LinkedList<Step> actions = new LinkedList<>();
 	public Action(Step s)
 	{
-		this.step = s;
-		this.next = new Action();
+		actions.add(s);
 	}
-	private Action()
-	{}
 	public void start()
 	{
-		if(step!=null)
-			step.act(next);
+		if(actions.size()>0)
+			actions.remove(0).act(this);
 	}
 	public Action then(Step s)
 	{
-		this.next = new Action(s);
-		return this.next;
+		actions.add(s);
+		return this;
 	}
 	public static interface Step
 	{

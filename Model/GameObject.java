@@ -82,6 +82,6 @@ public abstract class GameObject
 	}
 	public String toString()
 	{
-		return getClassName() + "\t" + getNames()+"\t"+getImageName()+"\t"+getX()+"\t"+getY() + "\t\t";
+		return getClassName() + "\t" + (getNames().equals("")?"-":getNames())+"\t"+getImageName()+"\t"+getX()+"\t"+getY() + "\t\t";
 	}
 }

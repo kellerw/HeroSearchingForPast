@@ -1,6 +1,6 @@
 public abstract class Interactable extends Movable
 {
-	private Tile tile;
+	private Walkable tile;
 	public double getX()
 	{
 		return tile==null?super.getX():tile.getX();
@@ -11,12 +11,12 @@ public abstract class Interactable extends Movable
 	}
 	public void setX(double x)
 	{
-		tile = GameWorld.getWorld().getTile(x, getY());
+		tile = GameWorld.getWorld().getWalkable(x, getY());
 		super.setX(x);
 	}
 	public void setY(double y)
 	{
-		tile = GameWorld.getWorld().getTile(getX(), y);
+		tile = GameWorld.getWorld().getWalkable(getX(), y);
 		super.setY(y);
 	}
 	//called when interactor walks onto this
@@ -38,5 +38,11 @@ public abstract class Interactable extends Movable
 	public void onInteractRight(Interactor i)
 	{
 		onInteract(i);
+	}
+	public Walkable getFloor()
+	{
+		if(tile == null)
+			return super.getFloor();
+		return tile;
 	}
 }

@@ -3,7 +3,7 @@ public abstract class Walkable extends GameObject
 	//called when interactor tries to walk into this
 	public boolean isWalkable(Interactor i)
 	{
-		return false;
+		return true;
 	}
 	public boolean isWalkableUp(Interactor i)
 	{

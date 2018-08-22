@@ -3,6 +3,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.layout.Pane;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.paint.Color;
 public class Main extends Application
 {
 	//Launch application
@@ -14,7 +15,7 @@ public class Main extends Application
 	public void start(Stage stage)
 	{
 		GameWorld world = GameWorld.getWorld();
-		Scene scene = new Scene(world);
+		Scene scene = new Scene(world, Color.BLACK);
 		world.minWidthProperty().bind(scene.widthProperty());
 		world.maxWidthProperty().bind(scene.widthProperty());
 		world.prefWidthProperty().bind(scene.widthProperty());
