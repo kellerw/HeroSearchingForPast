@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import javafx.scene.Group;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.scene.transform.Scale; 
+import javafx.beans.property.SimpleIntegerProperty;
 public class GameWorld extends Pane
 {
 	//width and height of each tile
@@ -21,9 +23,12 @@ public class GameWorld extends Pane
 	private Pane interactablePane;
 	private Pane tilePane;
 	private Pane basePane;
-	private Interactable[][] interactables;
-	private Tile[][] tiles;
-	private Base[][] bases;
+	private Interactable[][] interactables = new Interactable[1][1];
+	private Tile[][] tiles = new Tile[1][1];
+	private Base[][] bases = new Base[1][1];
+	private SimpleIntegerProperty startx = new SimpleIntegerProperty(0);
+	private SimpleIntegerProperty starty = new SimpleIntegerProperty(0);
+	private Scale scale;
 	public static GameWorld getWorld()
 	{
 		return world;
@@ -31,39 +36,136 @@ public class GameWorld extends Pane
 	private GameWorld()
 	{
 		pane = new Pane();
-		decorationPaneBottom = new Pane();
-		decorationPaneTop = new Pane();
-		interactablePane = new Pane();
-		tilePane = new Pane();
-		basePane = new Pane();
+		pane.minWidthProperty().bind(this.widthProperty());
+		pane.maxWidthProperty().bind(this.widthProperty());
+		pane.prefWidthProperty().bind(this.widthProperty());
+		pane.minHeightProperty().bind(this.heightProperty());
+		pane.maxHeightProperty().bind(this.heightProperty());
+		pane.prefHeightProperty().bind(this.heightProperty());
+		decorationPaneBottom = getPane();
+		decorationPaneTop = getPane();
+		interactablePane = getPane();
+		tilePane = getPane();
+		basePane = getPane();
 		this.getChildren().add(pane);
-		this.scaleXProperty().bind(this.widthProperty().divide(TILEWIDTH*TILESWIDE));
-		this.scaleYProperty().bind(this.heightProperty().divide(TILEHEIGHT*TILESHIGH));
-		hero = new Player();
+		if(!GameObject.LIVE)
+		{
+			this.scaleXProperty().bind(this.widthProperty().divide(TILEWIDTH*TILESWIDE));
+			this.scaleYProperty().bind(this.heightProperty().divide(TILEHEIGHT*TILESHIGH));
+			hero = new Player();
+		}
 		pane.getChildren().add(decorationPaneBottom);
 		pane.getChildren().add(basePane);
 		pane.getChildren().add(tilePane);
 		pane.getChildren().add(interactablePane);
-		interactablePane.getChildren().add(hero.getSprite());
+		if(hero != null)
+			interactablePane.getChildren().add(hero.getSprite());
 		pane.getChildren().add(decorationPaneTop);
-		pane.layoutXProperty().bind(hero.getSprite().layoutXProperty().multiply(-1).add(new SimpleDoubleProperty(TILEWIDTH*(TILESWIDE-1)/2.0).multiply(this.scaleXProperty())));
-		pane.layoutYProperty().bind(hero.getSprite().layoutYProperty().multiply(-1).add(new SimpleDoubleProperty(TILEHEIGHT*(TILESHIGH-1)/2.0).multiply(this.scaleYProperty())));
+		if(hero != null)
+		{
+			pane.layoutXProperty().bind(hero.getSprite().layoutXProperty().multiply(-1).add(new SimpleDoubleProperty(TILEWIDTH*(TILESWIDE-1)/2.0).multiply(this.scaleXProperty())));
+			pane.layoutYProperty().bind(hero.getSprite().layoutYProperty().multiply(-1).add(new SimpleDoubleProperty(TILEHEIGHT*(TILESHIGH-1)/2.0).multiply(this.scaleYProperty())));
+		}
+		scale = new Scale();
+		pane.getTransforms().addAll(scale); 
 		load("end");
-		
+	}
+	public void setWidth(int w1, int w2)
+	{
+		int v = Math.max(1, w2 - w1);
+		if(hero == null)
+		{
+			scale.xProperty().bind(this.widthProperty().divide(v*TILEWIDTH));
+			//this.scaleXProperty().bind(this.widthProperty().divide(v*TILEWIDTH));
+			pane.layoutXProperty().bind(new SimpleDoubleProperty(-TILEWIDTH*w1).multiply(scale.xProperty()));//.multiply(this.scaleXProperty()));
+		}
+		Interactable[][] ints = new Interactable[v][interactables[0].length];
+		for(int i = Math.max(startx.getValue(), w1); i < Math.min(w2, startx.getValue() - interactables.length); i++)
+			for(int j = 0; j < ints[i].length; j++)
+				ints[i-w1][j] = interactables[i-startx.getValue()][j];
+		Tile[][] ts = new Tile[v][interactables[0].length];
+		for(int i = Math.max(startx.getValue(), w1); i < Math.min(w2, startx.getValue() - interactables.length); i++)
+			for(int j = 0; j < ints[i].length; j++)
+				ts[i-w1][j] = tiles[i-startx.getValue()][j];
+		Base[][] bs = new Base[v][interactables[0].length];
+		for(int i = Math.max(startx.getValue(), w1); i < Math.min(w2, startx.getValue() - interactables.length); i++)
+			for(int j = 0; j < ints[i].length; j++)
+				bs[i-w1][j] = bases[i-startx.getValue()][j];
+		interactables = ints;
+		tiles = ts;
+		bases = bs;
+		startx.setValue(w1);
+	}
+	public Pane getPane()
+	{
+		Pane p = new Pane();
+		p.minWidthProperty().bind(pane.widthProperty());
+		p.maxWidthProperty().bind(pane.widthProperty());
+		p.prefWidthProperty().bind(pane.widthProperty());
+		p.minHeightProperty().bind(pane.heightProperty());
+		p.maxHeightProperty().bind(pane.heightProperty());
+		p.prefHeightProperty().bind(pane.heightProperty());
+		return p;
+	}
+	public void setHeight(int h1, int h2)
+	{
+		int v = Math.max(1, h2 - h1);
+		if(hero == null)
+		{
+			scale.yProperty().bind(this.heightProperty().divide(v*TILEHEIGHT));
+			//this.scaleYProperty().bind(this.heightProperty().divide(v*TILEHEIGHT));
+			pane.layoutYProperty().bind(new SimpleDoubleProperty(-TILEHEIGHT*h1).multiply(scale.yProperty()));//.multiply(this.scaleYProperty()));
+		}
+		Interactable[][] ints = new Interactable[interactables.length][v];
+		for(int i = 0; i < ints.length; i++)
+			for(int j = Math.max(starty.getValue(), h1); j < Math.min(h2, starty.getValue() - interactables[i].length); j++)
+			{
+// 				System.out.println("ints[i][j-h1] = interactables[i][j-starty.getValue()]");
+// 				System.out.println("ints["+i+"]["+j+"-"+h1+"] = interactables["+i+"]["+j+"-"+starty.getValue()+"]");
+				ints[i][j-h1] = interactables[i][j-starty.getValue()];
+			}
+		Tile[][] ts = new Tile[interactables.length][v];
+		for(int i = 0; i < ints.length; i++)
+			for(int j = Math.max(starty.getValue(), h1); j < Math.min(h2, starty.getValue() - interactables[i].length); j++)
+				ts[i][j-h1] = tiles[i][j-starty.getValue()];
+		Base[][] bs = new Base[interactables.length][v];
+		for(int i = 0; i < ints.length; i++)
+			for(int j = Math.max(starty.getValue(), h1); j < Math.min(h2, starty.getValue() - interactables[i].length); j++)
+				bs[i][j-h1] = bases[i][j-starty.getValue()];
+		interactables = ints;
+		tiles = ts;
+		bases = bs;
+		starty.setValue(h1);
+	}
+	public void expandTop()
+	{
+		setHeight(starty.getValue() - 1, starty.getValue() + tiles[0].length);
+	}
+	public void expandBottom()
+	{
+		setHeight(starty.getValue(), starty.getValue() + tiles[0].length + 1);
+	}
+	public void expandLeft()
+	{
+		setWidth(startx.getValue() - 1, startx.getValue() + tiles.length);
+	}
+	public void expandRight()
+	{
+		setWidth(startx.getValue(), startx.getValue() + tiles.length + 1);
 	}
 	public void addBase(Base b)
 	{
-		bases[(int)b.getX()][(int)b.getY()] = b;
+		bases[(int)b.getX() - startx.getValue()][(int)b.getY() - starty.getValue()] = b;
 		basePane.getChildren().add(b.getSprite());
 	}
 	public void addTile(Tile t)
 	{
-		tiles[(int)t.getX()][(int)t.getY()] = t;
+		tiles[(int)t.getX() - startx.getValue()][(int)t.getY() - starty.getValue()] = t;
 		tilePane.getChildren().add(t.getSprite());
 	}
 	public void addInteractable(Interactable i)
 	{
-		interactables[(int)i.getX()][(int)i.getY()] = i;
+		interactables[(int)i.getX() - startx.getValue()][(int)i.getY() - starty.getValue()] = i;
 		interactablePane.getChildren().add(i.getSprite());
 	}
 	public Player getPlayer()
@@ -83,8 +185,8 @@ public class GameWorld extends Pane
 				scan = new Scanner(new File("Datafiles/"+file+".data"));
 			else
 				scan = new Scanner(getClass().getResource(file+".data").openStream());
-			int w = Integer.parseInt(scan.nextLine());
-			int h = Integer.parseInt(scan.nextLine());
+			setWidth(Integer.parseInt(scan.nextLine()),Integer.parseInt(scan.nextLine()));
+			setHeight(Integer.parseInt(scan.nextLine()),Integer.parseInt(scan.nextLine()));
 			int count = 2;
 			String s = null;
 			try
@@ -95,21 +197,21 @@ public class GameWorld extends Pane
 					addDecoration((Decoration)parseObject(s));
 				}
 				count++;
-				bases = new Base[w][h];
+				bases = new Base[bases.length][bases[0].length];
 				while(!"".equals(s = scan.nextLine()))
 				{
 					count++;
 					addBase((Base)parseObject(s));
 				}
 				count++;
-				tiles = new Tile[w][h];
+				tiles = new Tile[bases.length][bases[0].length];
 				while(!"".equals(s = scan.nextLine()))
 				{
 					count++;
 					addTile((Tile)parseObject(s));
 				}
 				count++;
-				interactables = new Interactable[w][h];
+				interactables = new Interactable[bases.length][bases[0].length];
 				while(!"".equals(s = scan.nextLine()))
 				{
 					count++;
@@ -155,10 +257,10 @@ public class GameWorld extends Pane
 	{
 		return fetch(interactables, x, y);
 	}
-	public static <T> T fetch(T[][] arr, double xv, double yv)
+	public <T> T fetch(T[][] arr, double xv, double yv)
 	{
-		int x = (int) xv;
-		int y = (int) yv;
+		int x = (int) xv - startx.getValue();
+		int y = (int) yv - starty.getValue();
 		if( x < 0 || y < 0 || x >= arr.length || y >= arr[x].length)
 			return null;
 		return arr[x][y];
