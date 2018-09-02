@@ -105,6 +105,22 @@ public abstract class GameObject
 		setY(Double.parseDouble(parts[4]));
 		return saved.substring(index+2);
 	}
+	public boolean isDecoration()
+	{
+		return false;
+	}
+	public boolean isBase()
+	{
+		return false;
+	}
+	public boolean isTile()
+	{
+		return false;
+	}
+	public boolean isInteractable()
+	{
+		return false;
+	}
 	public String toString()
 	{
 		return getClassName() + "\t" + (getNames().equals("")?"-":getNames())+"\t"+getImageName()+"\t"+getX()+"\t"+getY() + "\t\t";

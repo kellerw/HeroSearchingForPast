@@ -3,7 +3,7 @@ public class Player extends Interactor
 {
 	public Player()
 	{
-		setSprite("sample.png");
+		setSprite("hero.png");
 	}
 	public String getClassName()
 	{

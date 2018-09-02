@@ -64,6 +64,7 @@ public class DirectoryWatcher extends Pane
 			buttons.minWidthProperty().bind(this.widthProperty());
 			buttons.maxWidthProperty().bind(this.widthProperty());
 			buttons.prefWidthProperty().bind(this.widthProperty());
+			updateButtons();
 			getChildren().addAll(name, buttons);
 		}
 		catch(Exception e)

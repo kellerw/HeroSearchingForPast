@@ -45,4 +45,8 @@ public abstract class Interactable extends Movable
 			return super.getFloor();
 		return tile;
 	}
+	public boolean isInteractable()
+	{
+		return true;
+	}
 }

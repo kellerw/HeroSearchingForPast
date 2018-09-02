@@ -9,4 +9,8 @@ public abstract class Tile extends Movable
 	{
 		return base.getY();
 	}
+	public boolean isTile()
+	{
+		return true;
+	}
 }

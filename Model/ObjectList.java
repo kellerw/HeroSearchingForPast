@@ -5,5 +5,8 @@ public class ObjectList
 	public static final GameObject[] LIST = {
 		new Decoration("sample.png"),
 		new Base(),
-		new Wall()};
+		new Wall(),
+		new Ice(),
+		new LoadNew()
+	};
 }

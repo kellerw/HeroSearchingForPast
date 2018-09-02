@@ -36,4 +36,8 @@ public class Decoration extends GameObject
 	{
 		return super.toString() + isTopLayer() + "\t\t";
 	}
+	public boolean isDecoration()
+	{
+		return true;
+	}
 }

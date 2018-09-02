@@ -6,6 +6,9 @@ import javafx.scene.Group;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.transform.Scale; 
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.scene.shape.Rectangle;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 public class GameWorld extends Pane
 {
 	//width and height of each tile
@@ -26,6 +29,7 @@ public class GameWorld extends Pane
 	private Interactable[][] interactables = new Interactable[1][1];
 	private Tile[][] tiles = new Tile[1][1];
 	private Base[][] bases = new Base[1][1];
+	private ArrayList<Decoration> decorations = new ArrayList<>();
 	private SimpleIntegerProperty startx = new SimpleIntegerProperty(0);
 	private SimpleIntegerProperty starty = new SimpleIntegerProperty(0);
 	private Scale scale;
@@ -33,15 +37,24 @@ public class GameWorld extends Pane
 	{
 		return world;
 	}
+	public double scaleX()
+	{
+		return scale.getX();
+	}
+	public double scaleY()
+	{
+		return scale.getY();
+	}
 	private GameWorld()
 	{
+		scale = new Scale();
 		pane = new Pane();
-		pane.minWidthProperty().bind(this.widthProperty());
-		pane.maxWidthProperty().bind(this.widthProperty());
-		pane.prefWidthProperty().bind(this.widthProperty());
-		pane.minHeightProperty().bind(this.heightProperty());
-		pane.maxHeightProperty().bind(this.heightProperty());
-		pane.prefHeightProperty().bind(this.heightProperty());
+		pane.minWidthProperty().bind(this.widthProperty().divide(scale.xProperty()));
+		pane.maxWidthProperty().bind(this.widthProperty().divide(scale.xProperty()));
+		pane.prefWidthProperty().bind(this.widthProperty().divide(scale.xProperty()));
+		pane.minHeightProperty().bind(this.heightProperty().divide(scale.yProperty()));
+		pane.maxHeightProperty().bind(this.heightProperty().divide(scale.yProperty()));
+		pane.prefHeightProperty().bind(this.heightProperty().divide(scale.yProperty()));
 		decorationPaneBottom = getPane();
 		decorationPaneTop = getPane();
 		interactablePane = getPane();
@@ -54,8 +67,8 @@ public class GameWorld extends Pane
 			this.scaleYProperty().bind(this.heightProperty().divide(TILEHEIGHT*TILESHIGH));
 			hero = new Player();
 		}
-		pane.getChildren().add(decorationPaneBottom);
 		pane.getChildren().add(basePane);
+		pane.getChildren().add(decorationPaneBottom);
 		pane.getChildren().add(tilePane);
 		pane.getChildren().add(interactablePane);
 		if(hero != null)
@@ -66,7 +79,6 @@ public class GameWorld extends Pane
 			pane.layoutXProperty().bind(hero.getSprite().layoutXProperty().multiply(-1).add(new SimpleDoubleProperty(TILEWIDTH*(TILESWIDE-1)/2.0).multiply(this.scaleXProperty())));
 			pane.layoutYProperty().bind(hero.getSprite().layoutYProperty().multiply(-1).add(new SimpleDoubleProperty(TILEHEIGHT*(TILESHIGH-1)/2.0).multiply(this.scaleYProperty())));
 		}
-		scale = new Scale();
 		pane.getTransforms().addAll(scale); 
 		load("end");
 	}
@@ -96,6 +108,14 @@ public class GameWorld extends Pane
 		bases = bs;
 		startx.setValue(w1);
 	}
+	public double getLeft()
+	{
+		return startx.getValue();
+	}
+	public double getTop()
+	{
+		return starty.getValue();
+	}
 	public Pane getPane()
 	{
 		Pane p = new Pane();
@@ -105,6 +125,13 @@ public class GameWorld extends Pane
 		p.minHeightProperty().bind(pane.heightProperty());
 		p.maxHeightProperty().bind(pane.heightProperty());
 		p.prefHeightProperty().bind(pane.heightProperty());
+		/*Rectangle r = new Rectangle(0, 0, 0, 0);
+		r.layoutXProperty().bind(startx.multiply(TILEWIDTH));
+		r.layoutYProperty().bind(starty.multiply(TILEHEIGHT));
+		r.widthProperty().bind(p.widthProperty().subtract(r.layoutXProperty()));
+		r.heightProperty().bind(p.heightProperty().subtract(r.layoutYProperty()));
+		r.setFill(Color.TRANSPARENT);
+		p.getChildren().add(r);*/
 		return p;
 	}
 	public void setHeight(int h1, int h2)
@@ -174,11 +201,17 @@ public class GameWorld extends Pane
 	}
 	public void addDecoration(Decoration decoration)
 	{
+		decorations.add(decoration);
 		(decoration.isTopLayer()?decorationPaneTop:decorationPaneBottom).getChildren().add(decoration.getSprite());
 	}
 	public void load(String file)
 	{
 		Scanner scan = null;
+		setWidth(0, 1);
+		setHeight(0, 1);
+		bases = new Base[bases.length][bases[0].length];
+		tiles = new Tile[bases.length][bases[0].length];
+		interactables = new Interactable[bases.length][bases[0].length];
 		try
 		{
 			if(GameObject.LIVE)
@@ -225,8 +258,39 @@ public class GameWorld extends Pane
 				System.out.println(s);
 				throw e;
 			}
-		} catch(IOException e){e.printStackTrace();}
+		} catch(IOException e){if(hero != null) e.printStackTrace();}
 		finally {if(scan != null) scan.close();}
+	}
+	public void save(String file)
+	{
+		PrintWriter out = null;
+		try
+		{
+			out = new PrintWriter(new File("Datafiles/"+file+".data"));
+			out.println(getLeft());
+			out.println(getWidth());
+			out.println(getTop());
+			out.println(getHeight());
+			for(Decoration d : decorations)
+				out.println(d);
+			out.println();
+			for(int i = 0; i < bases.length; i++)
+				for(int j = 0; j < bases[i].length; j++)
+					if(bases[i][j] != null)
+						out.println(bases[i][j]);
+			out.println();
+			for(int i = 0; i < bases.length; i++)
+				for(int j = 0; j < bases[i].length; j++)
+					if(tiles[i][j] != null)
+						out.println(tiles[i][j]);
+			out.println();
+			for(int i = 0; i < bases.length; i++)
+				for(int j = 0; j < bases[i].length; j++)
+					if(interactables[i][j] != null)
+						out.println(interactables[i][j]);
+			out.println();
+		} catch(IOException e){e.printStackTrace();}
+		finally {if(out != null) out.close();}
 	}
 	public GameObject parseObject(String object)
 	{
@@ -256,6 +320,15 @@ public class GameWorld extends Pane
 	public Interactable getInteractable(double x, double y)
 	{
 		return fetch(interactables, x, y);
+	}
+	public void setLayer(int layer)
+	{
+		pane.getChildren().clear();
+		pane.getChildren().add(basePane);
+		if(layer > 0) pane.getChildren().add(decorationPaneBottom);
+		if(layer > 1) pane.getChildren().add(tilePane);
+		if(layer > 2) pane.getChildren().add(interactablePane);
+		if(layer > 3) pane.getChildren().add(decorationPaneTop);
 	}
 	public <T> T fetch(T[][] arr, double xv, double yv)
 	{
