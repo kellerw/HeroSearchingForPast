@@ -142,6 +142,39 @@ public class GameWorld extends Pane
 		p.getChildren().add(r);*/
 		return p;
 	}
+	public void remove(GameObject o)
+	{
+		if(o.isBase())
+		{
+			for(int i = 0; i < tiles.length; i++)
+				for(int j = 0; j < tiles[i].length; j++)
+					if(bases[i][j] == o)
+						bases[i][j] = null;
+			basePane.getChildren().remove(o.getSprite());
+		}
+		if(o.isTile())
+		{
+			for(int i = 0; i < tiles.length; i++)
+				for(int j = 0; j < tiles[i].length; j++)
+					if(tiles[i][j] == o)
+						tiles[i][j] = null;
+			tilePane.getChildren().remove(o.getSprite());
+		}
+		if(o.isInteractable())
+		{
+			for(int i = 0; i < tiles.length; i++)
+				for(int j = 0; j < tiles[i].length; j++)
+					if(interactables[i][j] == o)
+						interactables[i][j] = null;
+			interactablePane.getChildren().remove(o.getSprite());
+		}
+		if(o.isDecoration())
+		{
+			decorations.remove(o);
+			decorationPaneTop.getChildren().remove(o.getSprite());
+			decorationPaneBottom.getChildren().remove(o.getSprite());
+		}
+	}
 	public void setHeight(int h1, int h2)
 	{
 		int v = Math.max(1, h2 - h1);
@@ -190,16 +223,22 @@ public class GameWorld extends Pane
 	}
 	public void addBase(Base b)
 	{
+		if(bases[(int)b.getX() - startx.getValue()][(int)b.getY() - starty.getValue()] != null)
+			remove(bases[(int)b.getX() - startx.getValue()][(int)b.getY() - starty.getValue()]);
 		bases[(int)b.getX() - startx.getValue()][(int)b.getY() - starty.getValue()] = b;
 		basePane.getChildren().add(b.getSprite());
 	}
 	public void addTile(Tile t)
 	{
+		if(tiles[(int)t.getX() - startx.getValue()][(int)t.getY() - starty.getValue()] != null)
+			remove(tiles[(int)t.getX() - startx.getValue()][(int)t.getY() - starty.getValue()]);
 		tiles[(int)t.getX() - startx.getValue()][(int)t.getY() - starty.getValue()] = t;
 		tilePane.getChildren().add(t.getSprite());
 	}
 	public void addInteractable(Interactable i)
 	{
+		if(interactables[(int)i.getX() - startx.getValue()][(int)i.getY() - starty.getValue()] != null)
+			remove(interactables[(int)i.getX() - startx.getValue()][(int)i.getY() - starty.getValue()]);
 		interactables[(int)i.getX() - startx.getValue()][(int)i.getY() - starty.getValue()] = i;
 		interactablePane.getChildren().add(i.getSprite());
 	}
@@ -220,6 +259,14 @@ public class GameWorld extends Pane
 		bases = new Base[bases.length][bases[0].length];
 		tiles = new Tile[bases.length][bases[0].length];
 		interactables = new Interactable[bases.length][bases[0].length];
+		decorations.clear();
+		decorationPaneBottom.getChildren().clear();
+		decorationPaneTop.getChildren().clear();
+		tilePane.getChildren().clear();
+		interactablePane.getChildren().clear();
+		basePane.getChildren().clear();
+		if(hero != null)
+			interactablePane.getChildren().add(hero.getSprite());
 		try
 		{
 			if(GameObject.LIVE)

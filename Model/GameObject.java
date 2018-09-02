@@ -1,7 +1,7 @@
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 import java.io.IOException;
-import java.util.function.Consumer;
+import java.util.function.BiConsumer;
 import java.io.File;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
@@ -11,7 +11,7 @@ import javafx.scene.control.Label;
 public abstract class GameObject
 {
 	public static boolean LIVE = false;
-	public static Consumer<GameObject> injectable;
+	public static BiConsumer<GameObject, Boolean> injectable;
 	//Semicolon separated list of names this element has
 	private String names = "";
 	//Image of the object
@@ -29,9 +29,8 @@ public abstract class GameObject
 		//Used for editor
 		if(LIVE)
 		{
-			sprite.setOnMouseClicked((e)->{injectable.accept(this);});
-			sprite.setOnMouseDragged((e)->{injectable.accept(this);});
-			sprite.setOnDragOver((e)->{injectable.accept(this);});
+			sprite.setOnMouseClicked((e)->{injectable.accept(this, e.isShiftDown());});
+			sprite.setOnMouseDragged((e)->{injectable.accept(this, e.isShiftDown());});
 		}
 	}
 	

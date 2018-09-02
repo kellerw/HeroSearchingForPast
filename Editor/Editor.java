@@ -55,7 +55,7 @@ public class Editor extends Application
 		world.prefHeightProperty().bind(editor.heightProperty().subtract(headerBarHeight + 2*addColWidth));
 		world.setLayoutX(addColWidth);
 		world.setLayoutY(headerBarHeight + addColWidth);
-		world.setOnMouseClicked(e->addObject(e.getX() / world.scaleX(), e.getY() / world.scaleY(), world));
+		world.setOnMouseClicked(e->{if(!e.isShiftDown())addObject(e.getX() / world.scaleX(), e.getY() / world.scaleY(), world);});
 		final ToggleGroup group = new ToggleGroup();
 		ToggleButton tb1 = getToggleButton("Edit", ()->{setEdit();}, editor.widthProperty().subtract(rightPaneWidth), new SimpleDoubleProperty(50*rows.length), new SimpleDoubleProperty(rightPaneWidth/3), new SimpleDoubleProperty(50));
 		tb1.setToggleGroup(group);
@@ -95,7 +95,7 @@ public class Editor extends Application
 		last = ()->setEdit();
 		addobject = null;
 		editPane.setContent(null);
-		GameObject.injectable = o->{
+		GameObject.injectable = (o, b)->{
 			Pane ed = o.getEditor();
 			ed.setMinWidth(rightPaneWidth);
 			ed.setMaxWidth(rightPaneWidth);
@@ -126,7 +126,11 @@ public class Editor extends Application
 				fp.getChildren().add(go.getSprite());
 			}
 		}
-		GameObject.injectable = o->{
+		GameObject.injectable = (o, b)->{
+			if(b)
+			{
+				GameWorld.getWorld().remove(o);
+			}
 		};
 		editPane.setContent(fp);
 	}
@@ -134,7 +138,7 @@ public class Editor extends Application
 	{
 		last = ()->setDecorate();
 		addobject = null;
-		GameObject.injectable = o->{
+		GameObject.injectable = (o, b)->{
 			if(sprite != null)
 				o.setSprite(sprite);
 		};
