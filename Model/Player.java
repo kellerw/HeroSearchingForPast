@@ -13,35 +13,48 @@ public class Player extends Interactor
 	{
 		return new Player();
 	}
-	private boolean movementEnabled = true;
+	private int movementEnabled = 0;
 	public boolean movementEnabled()
 	{
-		return movementEnabled;
+		return movementEnabled == 0;
 	}
 	public void disableMovement(Action next)
 	{
-		movementEnabled = false;
+		movementEnabled++;
 		next.start();
 	}
 	public void enableMovement(Action next)
 	{
-		movementEnabled = true;
+		movementEnabled--;
 		next.start();
 	}
 	public void handleKey(KeyCode key)
 	{
 		if(!movementEnabled())
 			return;
-		new Action(o->disableMovement(o)).start();
 		if(key == KeyCode.UP)
-			tryMoveUp(new Action(o->enableMovement(o)));
+			tryMoveUp(new Action());
 		else if(key == KeyCode.DOWN)
-			tryMoveDown(new Action(o->enableMovement(o)));
+			tryMoveDown(new Action());
 		else if(key == KeyCode.LEFT)
-			tryMoveLeft(new Action(o->enableMovement(o)));
+			tryMoveLeft(new Action());
 		else if(key == KeyCode.RIGHT)
-			tryMoveRight(new Action(o->enableMovement(o)));
-		else
-			new Action(o->enableMovement(o)).start();
+			tryMoveRight(new Action());
+	}
+	public void tryMoveUp(Action then)
+	{
+		new Action(o->disableMovement(o)).then(o->super.tryMoveUp(o)).then(o->enableMovement(o)).then(then).start();
+	}
+	public void tryMoveDown(Action then)
+	{
+		new Action(o->disableMovement(o)).then(o->super.tryMoveDown(o)).then(o->enableMovement(o)).then(then).start();
+	}
+	public void tryMoveLeft(Action then)
+	{
+		new Action(o->disableMovement(o)).then(o->super.tryMoveLeft(o)).then(o->enableMovement(o)).then(then).start();
+	}
+	public void tryMoveRight(Action then)
+	{
+		new Action(o->disableMovement(o)).then(o->super.tryMoveRight(o)).then(o->enableMovement(o)).then(then).start();
 	}
 }

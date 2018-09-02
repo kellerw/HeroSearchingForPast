@@ -34,7 +34,7 @@ public abstract class Interactor extends Interactable
 		}
 		Walkable floor = getFloor();
 		if(floor != null) off.act(floor, this);
-		move(x, y, new Action(o->{on.act(getFloor(), this);o.start();}).then(o->{then.start(); o.start();}), target);
+		move(x, y, on.act(target, this).then(then), target);
 	}
 	public static interface DirectionChecker
 	{
@@ -42,6 +42,6 @@ public abstract class Interactor extends Interactable
 	}
 	public static interface DirectionActor
 	{
-		public void act(Walkable w, Interactor i);
+		public Action act(Walkable w, Interactor i);
 	}
 }

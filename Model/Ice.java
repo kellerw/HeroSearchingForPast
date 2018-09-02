@@ -12,20 +12,20 @@ public class Ice extends Base
 	{
 		return "Ice";
 	}
-	public void onWalkUp(Interactor i)
+	public Action onWalkUp(Interactor i)
 	{
-		i.tryMoveUp(new Action(null));
+		return new Action(o->{i.tryMoveUp(new Action()); o.start();});
 	}
-	public void onWalkDown(Interactor i)
+	public Action onWalkDown(Interactor i)
 	{
-		i.tryMoveDown(new Action(null));
+		return new Action(o->{i.tryMoveDown(new Action()); o.start();});
 	}
-	public void onWalkLeft(Interactor i)
+	public Action onWalkLeft(Interactor i)
 	{
-		i.tryMoveLeft(new Action(null));
+		return new Action(o->{i.tryMoveLeft(new Action()); o.start();});
 	}
-	public void onWalkRight(Interactor i)
+	public Action onWalkRight(Interactor i)
 	{
-		i.tryMoveRight(new Action(null));
+		return new Action(o->{i.tryMoveRight(new Action()); o.start();});
 	}
 }

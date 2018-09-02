@@ -80,18 +80,27 @@ public abstract class GameObject
 	}
 	public void setX(double x)
 	{
-		this.x = x;
-		sprite.setLayoutX(x*GameWorld.TILEWIDTH);
+		setX(x, true);
 	}
-	
+	public void setX(double x, boolean set)
+	{
+		this.x = x;
+		if(set)
+			sprite.setLayoutX(x*GameWorld.TILEWIDTH);
+	}
 	public double getY()
 	{
 		return this.y;
 	}
 	public void setY(double y)
 	{
+		setY(y, true);
+	}
+	public void setY(double y, boolean set)
+	{
 		this.y = y;
-		sprite.setLayoutY(y*GameWorld.TILEHEIGHT);
+		if(set)
+			sprite.setLayoutY(y*GameWorld.TILEHEIGHT);
 	}
 	public abstract String getClassName();
 	public String parse(String saved)

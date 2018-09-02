@@ -10,9 +10,9 @@ public class LoadNew extends Base
 	{
 		return "LoadNew";
 	}
-	public void onWalk()
+	public Action onWalk(Interactor i)
 	{
-		GameWorld.getWorld().load(getDestination());
+		return new Action(o->{GameWorld.getWorld().load(getDestination()); o.start();});
 	}
 	public void setDestination(String dest)
 	{

@@ -6,15 +6,6 @@ Decoration	-	pillar.png	2.0	5.0		true
 Decoration	-	pillar.png	8.0	5.0		true		
 Decoration	-	pillar.png	2.0	-2.0		true		
 Decoration	-	pillar.png	8.0	-2.0		true		
-Decoration	-	pillar.png	2.0	5.0		true		
-Decoration	-	pillar.png	8.0	5.0		true		
-Decoration	-	pillar.png	2.0	-2.0		true		
-Decoration	-	pillar.png	8.0	-2.0		true		
-Decoration	-	pillar.png	2.0	5.0		true		
-Decoration	-	pillar.png	8.0	5.0		true		
-Decoration	-	pillar.png	2.0	-2.0		true		
-Decoration	-	pillar.png	8.0	-2.0		true		
-Decoration	-	down.png	5.0	10.0		false		
 
 Base	-	brick.png	0.0	0.0		
 Base	-	brick.png	0.0	1.0		
@@ -60,9 +51,9 @@ Base	-	brick.png	4.0	0.0
 Base	-	brick.png	4.0	1.0		
 Base	-	brick.png	4.0	2.0		
 Base	-	brick.png	4.0	3.0		
-Base	-	brick.png	4.0	4.0		
-Base	-	brick.png	4.0	5.0		
-Base	-	brick.png	4.0	6.0		
+Ice	-	ice.png	4.0	4.0		
+Ice	-	ice.png	4.0	5.0		
+Ice	-	ice.png	4.0	6.0		
 Base	-	brick.png	4.0	7.0		
 Base	-	brick.png	4.0	8.0		
 Base	-	brick.png	4.0	9.0		
@@ -72,18 +63,18 @@ Base	-	brick.png	5.0	2.0
 Base	-	brick.png	5.0	3.0		
 Base	-	brick.png	5.0	4.0		
 Base	-	brick.png	5.0	5.0		
-Base	-	brick.png	5.0	6.0		
+Ice	-	ice.png	5.0	6.0		
 Base	-	brick.png	5.0	7.0		
 Base	-	brick.png	5.0	8.0		
 Base	-	brick.png	5.0	9.0		
-LoadNew	-	brick.png	5.0	10.0		test		
+Base	-	brick.png	5.0	10.0		
 Base	-	brick.png	6.0	0.0		
 Base	-	brick.png	6.0	1.0		
 Base	-	brick.png	6.0	2.0		
 Base	-	brick.png	6.0	3.0		
-Base	-	brick.png	6.0	4.0		
-Base	-	brick.png	6.0	5.0		
-Base	-	brick.png	6.0	6.0		
+Ice	-	ice.png	6.0	4.0		
+Ice	-	ice.png	6.0	5.0		
+Ice	-	ice.png	6.0	6.0		
 Base	-	brick.png	6.0	7.0		
 Base	-	brick.png	6.0	8.0		
 Base	-	brick.png	6.0	9.0		

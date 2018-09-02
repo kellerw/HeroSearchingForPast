@@ -45,6 +45,14 @@ public class GameWorld extends Pane
 	{
 		return scale.getY();
 	}
+	public int getWide()
+	{
+		return tiles.length + (int)getLeft();
+	}
+	public int getHigh()
+	{
+		return tiles[0].length + (int)getTop();
+	}
 	private GameWorld()
 	{
 		scale = new Scale();
@@ -267,10 +275,10 @@ public class GameWorld extends Pane
 		try
 		{
 			out = new PrintWriter(new File("Datafiles/"+file+".data"));
-			out.println(getLeft());
-			out.println(getWidth());
-			out.println(getTop());
-			out.println(getHeight());
+			out.println((int)getLeft());
+			out.println((int)getWide());
+			out.println((int)getTop());
+			out.println((int)getHigh());
 			for(Decoration d : decorations)
 				out.println(d);
 			out.println();

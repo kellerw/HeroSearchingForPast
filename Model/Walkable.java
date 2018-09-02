@@ -22,43 +22,45 @@ public abstract class Walkable extends GameObject
 		return isWalkable(i);
 	}
 	//called when interactor walks onto this
-	public void onWalk(Interactor i)
+	public Action onWalk(Interactor i)
 	{
+		return new Action();
 	}
-	public void onWalkUp(Interactor i)
+	public Action onWalkUp(Interactor i)
 	{
-		onWalk(i);
+		return onWalk(i);
 	}
-	public void onWalkDown(Interactor i)
+	public Action onWalkDown(Interactor i)
 	{
-		onWalk(i);
+		return onWalk(i);
 	}
-	public void onWalkLeft(Interactor i)
+	public Action onWalkLeft(Interactor i)
 	{
-		onWalk(i);
+		return onWalk(i);
 	}
-	public void onWalkRight(Interactor i)
+	public Action onWalkRight(Interactor i)
 	{
-		onWalk(i);
+		return onWalk(i);
 	}
 	//called when interactor walks off of this
-	public void onWalkOff(Interactor i)
+	public Action onWalkOff(Interactor i)
 	{
+		return new Action();
 	}
-	public void onWalkOffUp(Interactor i)
+	public Action onWalkOffUp(Interactor i)
 	{
-		onWalkOff(i);
+		return onWalkOff(i);
 	}
-	public void onWalkOffDown(Interactor i)
+	public Action onWalkOffDown(Interactor i)
 	{
-		onWalkOff(i);
+		return onWalkOff(i);
 	}
-	public void onWalkOffLeft(Interactor i)
+	public Action onWalkOffLeft(Interactor i)
 	{
-		onWalkOff(i);
+		return onWalkOff(i);
 	}
-	public void onWalkOffRight(Interactor i)
+	public Action onWalkOffRight(Interactor i)
 	{
-		onWalkOff(i);
+		return onWalkOff(i);
 	}
 }

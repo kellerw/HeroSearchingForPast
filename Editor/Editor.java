@@ -73,8 +73,8 @@ public class Editor extends Application
 		editor.getChildren().add(getButton("+", ()->{world.expandRight();}, editor.widthProperty().subtract(addColWidth + rightPaneWidth), new SimpleDoubleProperty(headerBarHeight), new SimpleDoubleProperty(addColWidth), editor.heightProperty().subtract(headerBarHeight)));
 		TextField filename = getTextField("end", "filename", new SimpleDoubleProperty(0), new SimpleDoubleProperty(0), world.widthProperty().divide(2), new SimpleDoubleProperty(headerBarHeight/2));
 		editor.getChildren().add(filename);
-		editor.getChildren().add(getButton("Save",()->world.save(filename.getText()),world.widthProperty().divide(2),world.widthProperty().divide(4),world.widthProperty().divide(4),new SimpleDoubleProperty(headerBarHeight/2)));
-		editor.getChildren().add(getButton("Load/New", ()->world.load(filename.getText()), world.widthProperty().multiply(3).divide(4), world.widthProperty().divide(4), world.widthProperty().divide(4), new SimpleDoubleProperty(headerBarHeight/2)));
+		editor.getChildren().add(getButton("Save",()->world.save(filename.getText()),world.widthProperty().divide(2),new SimpleDoubleProperty(0),world.widthProperty().divide(4).add(addColWidth),new SimpleDoubleProperty(headerBarHeight/2)));
+		editor.getChildren().add(getButton("Load/New", ()->world.load(filename.getText()), world.widthProperty().multiply(3).divide(4).add(addColWidth), new SimpleDoubleProperty(0), world.widthProperty().divide(4).add(addColWidth), new SimpleDoubleProperty(headerBarHeight/2)));
 		for(int i = 0; i < rows.length; i++)
 		{
 			int j = i;
