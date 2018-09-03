@@ -393,4 +393,23 @@ public class GameWorld extends Pane
 			return null;
 		return arr[x][y];
 	}
+	public void moveInteractable(Interactable i, int ox, int oy, int nx, int ny)
+	{
+		ox -= startx.getValue();
+		nx -= startx.getValue();
+		oy -= starty.getValue();
+		ny -= starty.getValue();
+		System.out.println(interactables[ox][oy]+"/"+ i);
+		System.out.println(interactables[ox][oy]==i);
+		System.out.println(ox+" "+oy+" "+nx+" "+ny);
+		if(interactables[ox][oy] == i)
+			interactables[ox][oy] = null;
+		interactables[nx][ny] = i;
+		for(int k = 0; k < interactables.length; k++)
+		{
+			for(int j = 0; j < interactables[k].length; j++)
+				System.out.print(interactables[k][j]==null?".":"o");
+			System.out.println();
+		}
+	}
 }

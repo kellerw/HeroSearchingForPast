@@ -7,6 +7,7 @@ public class ObjectList
 		new Base(),
 		new Wall(),
 		new Ice(),
-		new LoadNew()
+		new LoadNew(),
+		new Boulder()
 	};
 }

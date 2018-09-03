@@ -23,6 +23,7 @@ public abstract class Interactor extends Interactable
 		Interactable interactable = GameWorld.getWorld().getInteractable(xc + x, yc + y);
 		if(interactable != null)
 		{
+			check.check(interactable, this);
 			then.start();
 			return;
 		}
