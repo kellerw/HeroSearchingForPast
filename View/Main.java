@@ -15,6 +15,7 @@ public class Main extends Application
 	public void start(Stage stage)
 	{
 		GameWorld world = GameWorld.getWorld();
+		world.load("end");
 		Scene scene = new Scene(world, Color.BLACK);
 		world.minWidthProperty().bind(scene.widthProperty());
 		world.maxWidthProperty().bind(scene.widthProperty());

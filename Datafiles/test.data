@@ -5,6 +5,7 @@
 Decoration	-	bubble.png	2.0	7.0		false		
 Decoration	-	pillar.png	1.0	-1.0		true		
 Decoration	-	pillar.png	0.0	2.0		true		
+Decoration	-	down.png	5.0	10.0		false		
 
 Ice	-	ice.png	0.0	0.0		
 Ice	-	ice.png	0.0	1.0		
@@ -65,8 +66,8 @@ Base	-	brick.png	5.0	5.0
 Ice	-	ice.png	5.0	6.0		
 Ice	-	ice.png	5.0	7.0		
 Ice	-	ice.png	5.0	8.0		
-Ice	-	ice.png	5.0	9.0		
-Base	-	brick.png	5.0	10.0		
+Ice	from-end	ice.png	5.0	9.0		
+LoadNew	-	brick.png	5.0	10.0		end		
 Ice	-	ice.png	6.0	0.0		
 Ice	-	ice.png	6.0	1.0		
 Ice	-	ice.png	6.0	2.0		

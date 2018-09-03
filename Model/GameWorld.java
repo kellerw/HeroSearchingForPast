@@ -20,6 +20,7 @@ public class GameWorld extends Pane
 	private static GameWorld world = new GameWorld();
 	private Player hero;
 	private Group group;
+	String lastlevel = "Start";
 	private Pane pane;
 	private Pane decorationPaneBottom;
 	private Pane decorationPaneTop;
@@ -87,8 +88,7 @@ public class GameWorld extends Pane
 			pane.layoutXProperty().bind(hero.getSprite().layoutXProperty().multiply(-1).add(new SimpleDoubleProperty(TILEWIDTH*(TILESWIDE-1)/2.0).multiply(this.scaleXProperty())));
 			pane.layoutYProperty().bind(hero.getSprite().layoutYProperty().multiply(-1).add(new SimpleDoubleProperty(TILEHEIGHT*(TILESHIGH-1)/2.0).multiply(this.scaleYProperty())));
 		}
-		pane.getTransforms().addAll(scale); 
-		load("end");
+		pane.getTransforms().addAll(scale);
 	}
 	public void setWidth(int w1, int w2)
 	{
@@ -227,6 +227,11 @@ public class GameWorld extends Pane
 			remove(bases[(int)b.getX() - startx.getValue()][(int)b.getY() - starty.getValue()]);
 		bases[(int)b.getX() - startx.getValue()][(int)b.getY() - starty.getValue()] = b;
 		basePane.getChildren().add(b.getSprite());
+		if((";"+b.getNames()+";").toLowerCase().contains((";From-"+lastlevel+";").toLowerCase()))
+		{
+			hero.setX(b.getX());
+			hero.setY(b.getY());
+		}
 	}
 	public void addTile(Tile t)
 	{
@@ -315,6 +320,7 @@ public class GameWorld extends Pane
 			}
 		} catch(IOException e){if(hero != null) e.printStackTrace();}
 		finally {if(scan != null) scan.close();}
+		lastlevel = file;
 	}
 	public void save(String file)
 	{
@@ -399,17 +405,8 @@ public class GameWorld extends Pane
 		nx -= startx.getValue();
 		oy -= starty.getValue();
 		ny -= starty.getValue();
-		System.out.println(interactables[ox][oy]+"/"+ i);
-		System.out.println(interactables[ox][oy]==i);
-		System.out.println(ox+" "+oy+" "+nx+" "+ny);
 		if(interactables[ox][oy] == i)
 			interactables[ox][oy] = null;
 		interactables[nx][ny] = i;
-		for(int k = 0; k < interactables.length; k++)
-		{
-			for(int j = 0; j < interactables[k].length; j++)
-				System.out.print(interactables[k][j]==null?".":"o");
-			System.out.println();
-		}
 	}
 }

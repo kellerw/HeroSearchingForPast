@@ -14,7 +14,6 @@ public class Boulder extends Interactor
 	}
 	public boolean isWalkableUp(Interactor i)
 	{
-		System.out.println(i);
 		tryMoveUp(new Action());
 		return false;
 	}
@@ -32,10 +31,5 @@ public class Boulder extends Interactor
 	{
 		tryMoveRight(new Action());
 		return false;
-	}
-	public void setY(double y, boolean b)
-	{
-		System.out.println(y);
-		super.setY(y, b);
 	}
 }
