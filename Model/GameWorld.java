@@ -34,6 +34,7 @@ public class GameWorld extends Pane
 	private SimpleIntegerProperty startx = new SimpleIntegerProperty(0);
 	private SimpleIntegerProperty starty = new SimpleIntegerProperty(0);
 	private Scale scale;
+	private boolean loading = false;
 	public static GameWorld getWorld()
 	{
 		return world;
@@ -258,6 +259,7 @@ public class GameWorld extends Pane
 	}
 	public void load(String file)
 	{
+		loading = true;
 		Scanner scan = null;
 		setWidth(0, 1);
 		setHeight(0, 1);
@@ -321,6 +323,7 @@ public class GameWorld extends Pane
 		} catch(IOException e){if(hero != null) e.printStackTrace();}
 		finally {if(scan != null) scan.close();}
 		lastlevel = file;
+		loading = false;
 	}
 	public void save(String file)
 	{
@@ -367,19 +370,27 @@ public class GameWorld extends Pane
 	}
 	public Tile getTile(double x, double y)
 	{
+		if(loading)
+			return null;
 		return fetch(tiles, x, y);
 	}
 	public Base getBase(double x, double y)
 	{
+		if(loading)
+			return null;
 		return fetch(bases, x, y);
 	}
 	public Walkable getWalkable(double x, double y)
 	{
+		if(loading)
+			return null;
 		Tile tile = getTile(x, y);
 		return tile==null?getBase(x,y):tile;
 	}
 	public Interactable getInteractable(double x, double y)
 	{
+		if(loading)
+			return null;
 		return fetch(interactables, x, y);
 	}
 	public void setLayer(int layer)
@@ -405,8 +416,9 @@ public class GameWorld extends Pane
 		nx -= startx.getValue();
 		oy -= starty.getValue();
 		ny -= starty.getValue();
-		if(interactables[ox][oy] == i)
+		if(ox < interactables.length && oy < interactables[ox].length && interactables[ox][oy] == i)
 			interactables[ox][oy] = null;
-		interactables[nx][ny] = i;
+		if(nx < interactables.length && ny < interactables[nx].length)
+			interactables[nx][ny] = i;
 	}
 }
