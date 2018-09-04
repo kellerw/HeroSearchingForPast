@@ -12,7 +12,9 @@ public class LoadNew extends Base
 	}
 	public Action onWalk(Interactor i)
 	{
-		return new Action(o->{GameWorld.getWorld().load(getDestination()); o.start();});
+		if("Player".equals(i.getClassName()))
+			return new Action(o->{GameWorld.getWorld().load(getDestination()); o.start();});
+		return new Action(o->{GameWorld.getWorld().remove(i); o.start();});
 	}
 	public void setDestination(String dest)
 	{
