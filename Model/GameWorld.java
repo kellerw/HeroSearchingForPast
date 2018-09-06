@@ -9,6 +9,10 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.shape.Rectangle;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import javafx.scene.media.MediaView;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.Media;
+import javafx.application.Platform;
 public class GameWorld extends Pane
 {
 	//width and height of each tile
@@ -228,7 +232,7 @@ public class GameWorld extends Pane
 			remove(bases[(int)b.getX() - startx.getValue()][(int)b.getY() - starty.getValue()]);
 		bases[(int)b.getX() - startx.getValue()][(int)b.getY() - starty.getValue()] = b;
 		basePane.getChildren().add(b.getSprite());
-		if((";"+b.getNames()+";").toLowerCase().contains((";From-"+lastlevel+";").toLowerCase()))
+		if(hero != null && (";"+b.getNames()+";").toLowerCase().contains((";From-"+lastlevel+";").toLowerCase()))
 		{
 			hero.setX(b.getX());
 			hero.setY(b.getY());
@@ -289,28 +293,44 @@ public class GameWorld extends Pane
 				while(!"".equals(s = scan.nextLine()))
 				{
 					count++;
-					addDecoration((Decoration)parseObject(s));
+					try
+					{
+						addDecoration((Decoration)parseObject(s));
+					}
+					catch(DoNotCreateException dnce){}
 				}
 				count++;
 				bases = new Base[bases.length][bases[0].length];
 				while(!"".equals(s = scan.nextLine()))
 				{
 					count++;
-					addBase((Base)parseObject(s));
+					try
+					{
+						addBase((Base)parseObject(s));
+					}
+					catch(DoNotCreateException dnce){}
 				}
 				count++;
 				tiles = new Tile[bases.length][bases[0].length];
 				while(!"".equals(s = scan.nextLine()))
 				{
 					count++;
-					addTile((Tile)parseObject(s));
+					try
+					{
+						addTile((Tile)parseObject(s));
+					}
+					catch(DoNotCreateException dnce){}
 				}
 				count++;
 				interactables = new Interactable[bases.length][bases[0].length];
 				while(!"".equals(s = scan.nextLine()))
 				{
 					count++;
-					addInteractable((Interactable)parseObject(s));
+					try
+					{
+						addInteractable((Interactable)parseObject(s));
+					}
+					catch(DoNotCreateException dnce){}
 				}
 				count++;
 			}
@@ -324,6 +344,46 @@ public class GameWorld extends Pane
 		finally {if(scan != null) scan.close();}
 		lastlevel = file;
 		loading = false;
+	}
+	public void showCutscene(String filename)
+	{
+		hero.disableMovement(new Action());
+		try
+		{
+			Media media = new Media(getClass().getResource(filename).toURI().toString());
+			MediaPlayer mediaPlayer = new MediaPlayer(media);
+			mediaPlayer.setAutoPlay(true);
+			MediaView mediaView = new MediaView(mediaPlayer);
+			mediaView.layoutXProperty().bind(this.layoutXProperty());
+			mediaView.layoutYProperty().bind(this.layoutYProperty());
+			mediaView.fitWidthProperty().bind(this.widthProperty());
+			mediaView.fitHeightProperty().bind(this.heightProperty());
+			getChildren().add(mediaView);
+			setLayer(-1);
+			mediaPlayer.setOnReady(()->
+			{
+				double l = media.getDuration().toSeconds();
+				new Thread() { public void run() {
+						try {
+							Thread.sleep((int)(1000*l));
+							Platform.runLater(()->
+							{
+								setLayer(5);
+								hero.enableMovement(new Action());
+								getChildren().remove(mediaView);
+							});
+						} catch(InterruptedException v) {
+							System.out.println(v);
+						}
+					}  
+				}.start();
+			});
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			hero.enableMovement(new Action());
+		}
 	}
 	public void save(String file)
 	{
@@ -396,7 +456,7 @@ public class GameWorld extends Pane
 	public void setLayer(int layer)
 	{
 		pane.getChildren().clear();
-		pane.getChildren().add(basePane);
+		if(layer > -1) pane.getChildren().add(basePane);
 		if(layer > 0) pane.getChildren().add(decorationPaneBottom);
 		if(layer > 1) pane.getChildren().add(tilePane);
 		if(layer > 2) pane.getChildren().add(interactablePane);

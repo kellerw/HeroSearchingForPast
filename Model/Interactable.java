@@ -23,7 +23,7 @@ public abstract class Interactable extends Movable
 		super.setY(y, b);
 		GameWorld.getWorld().moveInteractable(this, (int)getX(), oy, (int)getX(), (int)getY());
 	}
-	//called when interactor walks onto this
+	//called when interactor interacts with this
 	public void onInteract(Interactor i)
 	{
 	}

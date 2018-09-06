@@ -40,6 +40,16 @@ public class Player extends Interactor
 			tryMoveLeft(new Action());
 		else if(key == KeyCode.RIGHT)
 			tryMoveRight(new Action());
+		else if(key == KeyCode.W)
+			tryMoveUp(new Action());
+		else if(key == KeyCode.S)
+			tryMoveDown(new Action());
+		else if(key == KeyCode.A)
+			tryMoveLeft(new Action());
+		else if(key == KeyCode.D)
+			tryMoveRight(new Action());
+		else if(key == KeyCode.SPACE)
+			interact();
 	}
 	public void tryMoveUp(Action then)
 	{
