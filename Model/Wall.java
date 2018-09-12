@@ -1,5 +1,9 @@
 public class Wall extends Base
 {
+	public Wall()
+	{
+		setSprite("brickwall.png");
+	}
 	public Wall makeCopy()
 	{
 		return new Wall();

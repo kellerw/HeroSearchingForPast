@@ -2,6 +2,10 @@ import javafx.scene.layout.Pane;
 public class LoadNew extends Base
 {
 	private String destination = "-";
+	public LoadNew()
+	{
+		setSprite("brickportal.png");
+	}
 	public LoadNew makeCopy()
 	{
 		return new LoadNew();
