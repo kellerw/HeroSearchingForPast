@@ -31,7 +31,11 @@ public class Player extends Interactor
 	public void handleKey(KeyCode key)
 	{
 		if(!movementEnabled())
+		{
+			if(key == KeyCode.SPACE)
+				GameWorld.getWorld().executeHandler();
 			return;
+		}
 		if(key == KeyCode.UP)
 			tryMoveUp(new Action());
 		else if(key == KeyCode.DOWN)

@@ -6,16 +6,19 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 public class Main extends Application
 {
+	static String startlevel = "end";
 	//Launch application
 	public static void main(String[] args)
 	{
+		if(args.length > 0)
+			startlevel = args[0];
 		launch(args);
 	}
 	//Create stage
 	public void start(Stage stage)
 	{
 		GameWorld world = GameWorld.getWorld();
-		world.load("end");
+		world.load(startlevel);
 		Scene scene = new Scene(world, Color.BLACK);
 		world.minWidthProperty().bind(scene.widthProperty());
 		world.maxWidthProperty().bind(scene.widthProperty());

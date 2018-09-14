@@ -21,7 +21,7 @@ public class GameWorld extends Pane
 	//number of tiles wide/tall world is
 	public static final int TILESWIDE = 25;
 	public static final int TILESHIGH = 19;
-	private static GameWorld world = new GameWorld();
+	private static GameWorld world;
 	private Player hero;
 	private Group group;
 	String lastlevel = "Start";
@@ -41,6 +41,8 @@ public class GameWorld extends Pane
 	private boolean loading = false;
 	public static GameWorld getWorld()
 	{
+		if(world == null)
+			world = new GameWorld();
 		return world;
 	}
 	public double scaleX()
@@ -363,14 +365,21 @@ public class GameWorld extends Pane
 			mediaPlayer.setOnReady(()->
 			{
 				double l = media.getDuration().toSeconds();
+				Action h = new Action(o->
+				{
+					setLayer(5);
+					hero.enableMovement(new Action());
+					getChildren().remove(mediaView);
+					o.start();
+				});
+				handler = h;
 				new Thread() { public void run() {
 						try {
 							Thread.sleep((int)(1000*l));
 							Platform.runLater(()->
 							{
-								setLayer(5);
-								hero.enableMovement(new Action());
-								getChildren().remove(mediaView);
+								if(handler == h)
+									executeHandler();
 							});
 						} catch(InterruptedException v) {
 							System.out.println(v);
@@ -384,6 +393,11 @@ public class GameWorld extends Pane
 			System.out.println(e);
 			hero.enableMovement(new Action());
 		}
+	}
+	private Action handler = new Action();
+	public void executeHandler()
+	{
+		handler.start();
 	}
 	public void save(String file)
 	{
