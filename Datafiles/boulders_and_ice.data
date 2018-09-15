@@ -34,7 +34,7 @@ Ice	-	ice.png	-7.0	6.0
 Ice	-	ice.png	-6.0	-6.0		
 Ice	-	ice.png	-6.0	-5.0		
 Ice	-	ice.png	-6.0	-4.0		
-Base	-	brick.png	-6.0	-3.0		
+Base	-	IceStone2.png	-6.0	-3.0		
 Ice	-	ice.png	-6.0	-2.0		
 Ice	-	ice.png	-6.0	-1.0		
 Ice	-	ice.png	-6.0	0.0		
@@ -115,13 +115,13 @@ Ice	-	ice.png	0.0	-4.0
 Ice	-	ice.png	0.0	-3.0		
 Ice	-	ice.png	0.0	-2.0		
 Ice	-	ice.png	0.0	-1.0		
-LoadNew	From-test	brick.png	0.0	0.0		test		
+LoadNew	From-test	IceStone2.png	0.0	0.0		test		
 Ice	-	ice.png	0.0	1.0		
 Ice	-	ice.png	0.0	2.0		
 Ice	-	ice.png	0.0	3.0		
 Ice	-	ice.png	0.0	4.0		
 Ice	-	ice.png	0.0	5.0		
-Base	-	brick.png	0.0	6.0		
+Base	-	IceStone2.png	0.0	6.0		
 Ice	-	ice.png	1.0	-6.0		
 Ice	-	ice.png	1.0	-5.0		
 Ice	-	ice.png	1.0	-4.0		
