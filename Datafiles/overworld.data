@@ -5,6 +5,7 @@
 Decoration	-	overworld.png	0.0	0.0		false		
 Decoration	-	end_icon.png	2.0	0.0		true		
 Decoration	-	ice_icon.png	4.0	0.0		true		
+Decoration	-	volcano.png	8.0	3.0		true		
 
 Wall	-	brickwall.png	0.0	0.0		
 Wall	-	brickwall.png	0.0	1.0		
@@ -73,7 +74,7 @@ Wall	-	brickwall.png	7.0	7.0
 Wall	-	brickwall.png	8.0	0.0		
 Wall	-	brickwall.png	8.0	1.0		
 Wall	-	brickwall.png	8.0	2.0		
-Base	-	brick.png	8.0	3.0		
+LoadNew	-	brickportal.png	8.0	3.0		volcano		
 Base	-	brick.png	8.0	4.0		
 Wall	-	brickwall.png	8.0	5.0		
 Wall	-	brickwall.png	8.0	6.0		

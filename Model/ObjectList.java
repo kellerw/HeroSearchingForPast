@@ -9,6 +9,8 @@ public class ObjectList
 		new Ice(),
 		new LoadNew(),
 		new Boulder(),
-		new Memory()
+		new Memory(),
+		new Platform(),
+		new Lava()
 	};
 }
