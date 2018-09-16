@@ -75,7 +75,7 @@ Wall	-	brickwall.png	8.0	0.0
 Wall	-	brickwall.png	8.0	1.0		
 Wall	-	brickwall.png	8.0	2.0		
 LoadNew	-	brickportal.png	8.0	3.0		volcano		
-Base	-	brick.png	8.0	4.0		
+Base	from-volcano	brick.png	8.0	4.0		
 Wall	-	brickwall.png	8.0	5.0		
 Wall	-	brickwall.png	8.0	6.0		
 Wall	-	brickwall.png	8.0	7.0		
