@@ -303,7 +303,8 @@ public class GameWorld extends Pane
 		}
 		else
 		{
-			music.stop();
+			if(music != null)
+				music.stop();
 			music = null;
 		}
 		last = sound;
