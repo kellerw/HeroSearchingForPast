@@ -263,6 +263,55 @@ public class GameWorld extends Pane
 		decorations.add(decoration);
 		(decoration.isTopLayer()?decorationPaneTop:decorationPaneBottom).getChildren().add(decoration.getSprite());
 	}
+	public void playSound(String sound, Action then)
+	{
+		MediaPlayer a =new MediaPlayer(new Media(getClass().getResource(sound).toString()));
+			a.setOnEndOfMedia(()->
+			{
+				then.start();
+			}
+		);
+		a.play();
+	}
+	private MediaPlayer music = null;
+	private String last = "";
+	public void setMusic(String sound)
+	{
+		if("null".equals(sound) || "".equals(sound))
+			sound = null;
+		if(hero == null)
+		{
+			last = sound;
+			return;
+		}
+		if(sound != null)
+		{
+			if(sound.equals(last))
+				return;
+			if(music != null)
+				music.stop();
+			if(hero != null)
+				music = new MediaPlayer(new Media(getClass().getResource(sound).toString()));
+			if(music != null)
+				music.setOnEndOfMedia(()->
+				{
+					music.seek(javafx.util.Duration.ZERO);
+				}
+			);
+			if(hero != null)
+				music.play();
+		}
+		else
+		{
+			music.stop();
+			music = null;
+		}
+		last = sound;
+	}
+	public String getSong()
+	{
+		return last;
+	}
 	public void load(String file)
 	{
 		loading = true;
@@ -288,6 +337,7 @@ public class GameWorld extends Pane
 				scan = new Scanner(getClass().getResource(file+".data").openStream());
 			setWidth(Integer.parseInt(scan.nextLine()),Integer.parseInt(scan.nextLine()));
 			setHeight(Integer.parseInt(scan.nextLine()),Integer.parseInt(scan.nextLine()));
+			setMusic(scan.nextLine());
 			int count = 2;
 			String s = null;
 			try
@@ -409,6 +459,7 @@ public class GameWorld extends Pane
 			out.println((int)getWide());
 			out.println((int)getTop());
 			out.println((int)getHigh());
+			out.println(last);
 			for(Decoration d : decorations)
 				out.println(d);
 			out.println();

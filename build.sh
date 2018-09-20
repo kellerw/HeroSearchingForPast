@@ -4,6 +4,7 @@ echo "Building Game..."
 javac Model/**.java View/**.java -d Build &&
 cp Datafiles/** Build &&
 cp Images/** Build &&
+cp Audio/** Build &&
 cd Build && 
 jar cvfe Hero.jar Main * &&
 chmod +x Hero.jar &&
