@@ -49,7 +49,7 @@ public class LogLeft extends Log
 	}
 	public boolean isWalkableDown(Interactor i)
 	{
-		if(canPushDownL(i))
+		if(canPushDownR(i))
 		{
 			((Log)(GameWorld.getWorld().getInteractable(getX()+1, getY()))).isWalkableDownR(i);
 			tryMoveDown(new Action());
