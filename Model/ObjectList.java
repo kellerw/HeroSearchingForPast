@@ -11,6 +11,12 @@ public class ObjectList
 		new Boulder(),
 		new Memory(),
 		new Platform(),
-		new Lava()
+		new Lava(),
+		new LogV(),
+		new LogH(),
+		new LogTop(),
+		new LogBottom(),
+		new LogLeft(),
+		new LogRight()
 	};
 }
