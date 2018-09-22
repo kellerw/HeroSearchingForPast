@@ -17,6 +17,7 @@ public class ObjectList
 		new LogTop(),
 		new LogBottom(),
 		new LogLeft(),
-		new LogRight()
+		new LogRight(),
+		new LogLighter()
 	};
 }

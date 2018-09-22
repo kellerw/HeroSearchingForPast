@@ -122,6 +122,7 @@ Log-Top	-	logtop.png	4.0	1.0
 Log-Vertical	-	logv.png	4.0	2.0		
 Log-Vertical	-	logv.png	4.0	3.0		
 Log-Bottom	-	logbottom.png	4.0	4.0		
+Log-Lighter	-	loglighter.png	4.0	5.0		
 Log-Left	-	logleft.png	5.0	1.0		
 Log-Left	-	logleft.png	5.0	4.0		
 Log-Horizontal	-	logh.png	6.0	1.0		

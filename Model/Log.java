@@ -1,5 +1,7 @@
+import javafx.application.Platform;
 public abstract class Log extends Interactor
 {
+	private boolean onFire = false;
 	public boolean canPushUpL(Interactor i)
 	{
 		return check(0, -1) && ((Log)(GameWorld.getWorld().getInteractable(getX()-1, getY()))).canPushUpL(i);
@@ -129,6 +131,38 @@ public abstract class Log extends Interactor
 	
 	boolean check(int dx, int dy)
 	{
+		if(onFire)
+			return false;
 		return GameWorld.getWorld().getInteractable(getX()+dx, getY()+dy) == null && GameWorld.getWorld().getWalkable(getX()+dx, getY()+dy) != null;
+	}
+	public void setOnFire()
+	{
+		if(onFire)
+			return;
+		Decoration d = new Decoration("fire.png");
+		d.setX(getX());
+		d.setY(getY());
+		d.setIsTopLayer(true);
+		GameWorld.getWorld().addDecoration(d);
+		onFire = true;
+		new Thread() { public void run() {
+				try {
+					Thread.sleep((int)(600));
+					Platform.runLater(()->
+					{
+						for(int i = -1; i <= 1; i++)
+							for(int j = -1; j <= 1; j++)
+								if(Math.abs(i+j)== 1)
+								{
+									Interactable o = GameWorld.getWorld().getInteractable(getX()+i, getY()+j);
+									if(o != null && o.getClassName().startsWith("Log-"))
+										((Log)o).setOnFire();
+								}
+					});
+				} catch(InterruptedException v) {
+					System.out.println(v);
+				}
+			}  
+		}.start();
 	}
 }
