@@ -18,8 +18,9 @@ public class LoadNew extends Base
 	{
 		if("Player".equals(i.getClassName()))
 			return new Action(o->{GameWorld.getWorld().load(getDestination()); o.start();});
-		return new Action(o->{GameWorld.getWorld().remove(i); o.start();});
-	}
+		else if(i.getClassName().startsWith("Log-"))
+			return new Action();
+		return new Action(o->{GameWorld.getWorld().remove(i); o.start();});	}
 	public void setDestination(String dest)
 	{
 		this.destination = dest.equals("")?"-":dest;

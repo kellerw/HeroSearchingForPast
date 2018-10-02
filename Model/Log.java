@@ -133,7 +133,7 @@ public abstract class Log extends Interactor
 	{
 		if(onFire)
 			return false;
-		return GameWorld.getWorld().getInteractable(getX()+dx, getY()+dy) == null && GameWorld.getWorld().getWalkable(getX()+dx, getY()+dy) != null;
+		return GameWorld.getWorld().getInteractable(getX()+dx, getY()+dy) == null && GameWorld.getWorld().getWalkable(getX()+dx, getY()+dy) != null && GameWorld.getWorld().getWalkable(getX()+dx, getY()+dy).isWalkable(this);
 	}
 	public void setOnFire()
 	{
@@ -143,6 +143,7 @@ public abstract class Log extends Interactor
 		d.setX(getX());
 		d.setY(getY());
 		d.setIsTopLayer(true);
+		Log l = this;
 		GameWorld.getWorld().addDecoration(d);
 		onFire = true;
 		new Thread() { public void run() {
@@ -150,14 +151,15 @@ public abstract class Log extends Interactor
 					Thread.sleep((int)(600));
 					Platform.runLater(()->
 					{
-						for(int i = -1; i <= 1; i++)
-							for(int j = -1; j <= 1; j++)
-								if(Math.abs(i+j)== 1)
-								{
-									Interactable o = GameWorld.getWorld().getInteractable(getX()+i, getY()+j);
-									if(o != null && o.getClassName().startsWith("Log-"))
-										((Log)o).setOnFire();
-								}
+						if(GameWorld.getWorld().getInteractable(getX(),getY())==l)
+							for(int i = -1; i <= 1; i++)
+								for(int j = -1; j <= 1; j++)
+									if(Math.abs(i+j)== 1)
+									{
+										Interactable o = GameWorld.getWorld().getInteractable(getX()+i, getY()+j);
+										if(o != null && o.getClassName().startsWith("Log-"))
+											((Log)o).setOnFire();
+									}
 					});
 				} catch(InterruptedException v) {
 					System.out.println(v);

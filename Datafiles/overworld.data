@@ -2,11 +2,12 @@
 11
 0
 9
-
+null
 Decoration	-	overworld.png	0.0	0.0		false		
 Decoration	-	end_icon.png	2.0	0.0		true		
 Decoration	-	ice_icon.png	4.0	0.0		true		
 Decoration	-	volcano.png	8.0	3.0		true		
+Decoration	-	forest_icon.png	3.0	4.0		true		
 
 Wall	-	brickwall.png	0.0	0.0		
 Wall	-	brickwall.png	0.0	1.0		
@@ -35,8 +36,8 @@ Wall	-	brickwall.png	2.0	7.0
 Wall	-	brickwall.png	3.0	0.0		
 Base	-	brick.png	3.0	1.0		
 Base	-	brick.png	3.0	2.0		
-Base	-	brick.png	3.0	3.0		
-Base	-	brick.png	3.0	4.0		
+Base	from-forest-entrance	brick.png	3.0	3.0		
+LoadNew	-	brickportal.png	3.0	4.0		forest-entrance		
 Wall	-	brickwall.png	3.0	5.0		
 Base	-	brick.png	3.0	6.0		
 Wall	-	brickwall.png	3.0	7.0		
