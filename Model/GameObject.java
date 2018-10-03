@@ -17,9 +17,9 @@ public abstract class GameObject
 	//Image of the object
 	private ImageView sprite;
 	//x coordinate in tiles to display on screen
-	private double x = 0;
+	private double x = -5000;
 	//y coordinate in tiles to display on screen
-	private double y = 0;
+	private double y = -5000;
 	//name of image
 	private String imagename;
 	

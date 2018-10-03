@@ -137,14 +137,23 @@ public abstract class Log extends Interactor
 	}
 	public void setOnFire()
 	{
+		setOnFire(new Action());
+	}
+	private Decoration flame = null;
+	public Decoration getFlame()
+	{
+		return flame;
+	}
+	public void setOnFire(Action a)
+	{
 		if(onFire)
 			return;
-		Decoration d = new Decoration("fire.png");
-		d.setX(getX());
-		d.setY(getY());
-		d.setIsTopLayer(true);
+		flame = new Decoration("fire.png");
+		flame.setX(getX());
+		flame.setY(getY());
+		flame.setIsTopLayer(true);
 		Log l = this;
-		GameWorld.getWorld().addDecoration(d);
+		GameWorld.getWorld().addDecoration(flame);
 		onFire = true;
 		new Thread() { public void run() {
 				try {
@@ -152,6 +161,7 @@ public abstract class Log extends Interactor
 					Platform.runLater(()->
 					{
 						if(GameWorld.getWorld().getInteractable(getX(),getY())==l)
+						{
 							for(int i = -1; i <= 1; i++)
 								for(int j = -1; j <= 1; j++)
 									if(Math.abs(i+j)== 1)
@@ -159,7 +169,10 @@ public abstract class Log extends Interactor
 										Interactable o = GameWorld.getWorld().getInteractable(getX()+i, getY()+j);
 										if(o != null && o.getClassName().startsWith("Log-"))
 											((Log)o).setOnFire();
+										
 									}
+							a.start();
+						}
 					});
 				} catch(InterruptedException v) {
 					System.out.println(v);

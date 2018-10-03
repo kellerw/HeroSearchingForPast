@@ -542,9 +542,9 @@ public class GameWorld extends Pane
 		nx -= startx.getValue();
 		oy -= starty.getValue();
 		ny -= starty.getValue();
-		if(ox < interactables.length && oy < interactables[ox].length && interactables[ox][oy] == i)
+		if(ox > 0 && ox < interactables.length && oy > 0 && oy < interactables[ox].length && interactables[ox][oy] == i)
 			interactables[ox][oy] = null;
-		if(nx < interactables.length && ny < interactables[nx].length)
+		if(nx > 0 && nx < interactables.length && ny > 0 && ny < interactables[nx].length)
 			interactables[nx][ny] = i;
 	}
 }

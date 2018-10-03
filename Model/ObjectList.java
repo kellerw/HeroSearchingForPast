@@ -18,6 +18,7 @@ public class ObjectList
 		new LogBottom(),
 		new LogLeft(),
 		new LogRight(),
-		new LogLighter()
+		new LogLighter(),
+		new Stump()
 	};
 }
