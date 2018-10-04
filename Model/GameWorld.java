@@ -9,6 +9,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.shape.Rectangle;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import javafx.scene.media.MediaView;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.Media;
@@ -39,6 +40,7 @@ public class GameWorld extends Pane
 	private SimpleIntegerProperty starty = new SimpleIntegerProperty(0);
 	private Scale scale;
 	private boolean loading = false;
+	private HashMap<String, Base> basemap = new HashMap<>();
 	public static GameWorld getWorld()
 	{
 		if(world == null)
@@ -234,6 +236,8 @@ public class GameWorld extends Pane
 			remove(bases[(int)b.getX() - startx.getValue()][(int)b.getY() - starty.getValue()]);
 		bases[(int)b.getX() - startx.getValue()][(int)b.getY() - starty.getValue()] = b;
 		basePane.getChildren().add(b.getSprite());
+		for(String s: b.getNames().split(";"))
+			basemap.put(s, b);
 		if(hero != null && (";"+b.getNames()+";").toLowerCase().contains((";From-"+lastlevel+";").toLowerCase()))
 		{
 			hero.setX(b.getX());
@@ -322,6 +326,7 @@ public class GameWorld extends Pane
 		bases = new Base[bases.length][bases[0].length];
 		tiles = new Tile[bases.length][bases[0].length];
 		interactables = new Interactable[bases.length][bases[0].length];
+		basemap = new HashMap<>();
 		decorations.clear();
 		decorationPaneBottom.getChildren().clear();
 		decorationPaneTop.getChildren().clear();
@@ -499,6 +504,12 @@ public class GameWorld extends Pane
 		if(loading)
 			return null;
 		return fetch(tiles, x, y);
+	}
+	public Base getBase(String n)
+	{
+		if(basemap.containsKey(n))
+			return basemap.get(n);
+		return null;
 	}
 	public Base getBase(double x, double y)
 	{

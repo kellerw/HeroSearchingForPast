@@ -19,6 +19,8 @@ public class ObjectList
 		new LogLeft(),
 		new LogRight(),
 		new LogLighter(),
-		new Stump()
+		new Stump(),
+		new MovePad(),
+		new TeleportPad()
 	};
 }
