@@ -23,6 +23,7 @@ public class ObjectList
 		new MovePad(),
 		new TeleportPad(),
 		new CastleStone(),
-		new CastleGate()
+		new CastleGate(),
+		new PanelRotater()
 	};
 }

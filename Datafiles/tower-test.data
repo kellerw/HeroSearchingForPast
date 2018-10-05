@@ -59,7 +59,7 @@ Base	-	brick.png	4.0	9.0
 Base	-	brick.png	5.0	0.0		
 Base	-	brick.png	5.0	1.0		
 Base	-	brick.png	5.0	2.0		
-Base	-	brick.png	5.0	3.0		
+MovePad	panel	movepadup.png	5.0	3.0		0	-1		
 Base	-	brick.png	5.0	4.0		
 Base	-	brick.png	5.0	5.0		
 Base	-	brick.png	5.0	6.0		
@@ -120,4 +120,5 @@ Base	-	brick.png	10.0	9.0
 
 
 Boulder	-	boulder.png	2.0	7.0		
+PanelRotater	Rotate-panel	rotatebutton.png	5.0	1.0		
 

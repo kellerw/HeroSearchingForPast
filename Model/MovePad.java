@@ -79,4 +79,10 @@ public class MovePad extends Base
 		addTextField("dy", ""+getDy(), p, t->{try{setDy(Integer.parseInt(t));} catch(Exception e){}});
 		return p;
 	}
+	public void rotate()
+	{
+		int t = getDx();
+		setDx(-1 *getDy());
+		setDy(t);
+	}
 }
