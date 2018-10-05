@@ -25,7 +25,7 @@ Base	-	grass.png	1.0	0.0
 Base	-	grass.png	1.0	1.0		
 Base	-	grass.png	1.0	2.0		
 Base	-	grass.png	1.0	3.0		
-LoadNew	From-todo	grass.png	1.0	4.0		todo		
+LoadNew	From-forest-tk-1	grass.png	1.0	4.0		forest-tk-1		
 Base	-	grass.png	1.0	5.0		
 Base	-	grass.png	1.0	6.0		
 Base	-	grass.png	1.0	7.0		
@@ -77,7 +77,7 @@ Base	-	grass.png	5.0	0.0
 Base	-	grass.png	5.0	1.0		
 Base	-	grass.png	5.0	2.0		
 Base	-	grass.png	5.0	3.0		
-Base	From-Start;From-todo	grass.png	5.0	4.0		
+LoadNew	from-Start;from-forest-entrance	grass.png	5.0	4.0		forest-entrance		
 Base	-	grass.png	5.0	5.0		
 Base	-	grass.png	5.0	6.0		
 Base	-	grass.png	5.0	7.0		
@@ -153,6 +153,7 @@ Base	-	grass.png	10.0	10.0
 
 Log-Stump	-	stump.png	0.0	-2.0		
 Log-Stump	-	stump.png	0.0	2.0		
+Log-Lighter	-	loglighter.png	0.0	3.0		
 Log-Stump	-	stump.png	0.0	6.0		
 Log-Stump	-	stump.png	1.0	-2.0		
 Log-Stump	-	stump.png	1.0	2.0		
