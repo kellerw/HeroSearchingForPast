@@ -60,13 +60,13 @@ public abstract class Interactor extends Interactable
 			return;
 		}
 		Walkable target = GameWorld.getWorld().getWalkable(xc + x, yc + y);
+		Walkable floor = getFloor();
 		if(target == null || !check.check(target, this))
 		{
 			then.start();
 			return;
 		}
-		Walkable floor = getFloor();
-		if(floor != null) off.act(floor, this);
+		if(floor != null) off.act(floor, this).start();
 		move(x, y, on.act(target, this).then(then), target);
 	}
 	public static interface DirectionChecker

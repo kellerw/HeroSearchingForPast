@@ -558,4 +558,10 @@ public class GameWorld extends Pane
 		if(nx >= 0 && nx < interactables.length && ny >= 0 && ny < interactables[nx].length)
 			interactables[nx][ny] = i;
 	}
+	public void restartLevel()
+	{
+		String t = lastlevel;
+		lastlevel = "Start";
+		load(t);
+	}
 }

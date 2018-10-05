@@ -9,6 +9,7 @@ Decoration	-	ice_icon.png	4.0	0.0		true
 Decoration	-	volcano.png	8.0	3.0		true		
 Decoration	-	forest_icon.png	3.0	4.0		true		
 Decoration	-	tower.png	2.0	5.0		true		
+Decoration	-	castle_icon.png	5.0	4.0		true		
 
 Wall	-	brickwall.png	0.0	0.0		
 Wall	-	brickwall.png	0.0	1.0		
@@ -54,8 +55,8 @@ Base	-	brick.png	5.0	0.0
 Base	-	brick.png	5.0	1.0		
 Wall	-	brickwall.png	5.0	2.0		
 Wall	-	brickwall.png	5.0	3.0		
-Base	-	brick.png	5.0	4.0		
-Base	-	brick.png	5.0	5.0		
+LoadNew	-	brickportal.png	5.0	4.0		CastleTest		
+Base	From-CastleTest	brick.png	5.0	5.0		
 Wall	-	brickwall.png	5.0	6.0		
 Wall	-	brickwall.png	5.0	7.0		
 Wall	-	brickwall.png	6.0	0.0		

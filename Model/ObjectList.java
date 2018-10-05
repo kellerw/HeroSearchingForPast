@@ -21,6 +21,8 @@ public class ObjectList
 		new LogLighter(),
 		new Stump(),
 		new MovePad(),
-		new TeleportPad()
+		new TeleportPad(),
+		new CastleStone(),
+		new CastleGate()
 	};
 }
