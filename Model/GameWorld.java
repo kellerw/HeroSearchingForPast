@@ -256,7 +256,7 @@ public class GameWorld extends Pane
 		if(interactables[(int)i.getX() - startx.getValue()][(int)i.getY() - starty.getValue()] != null)
 			remove(interactables[(int)i.getX() - startx.getValue()][(int)i.getY() - starty.getValue()]);
 		interactables[(int)i.getX() - startx.getValue()][(int)i.getY() - starty.getValue()] = i;
-		interactablePane.getChildren().add(i.getSprite());
+		interactablePane.getChildren().add(interactablePane.getChildren().size()-1, i.getSprite());
 	}
 	public Player getPlayer()
 	{

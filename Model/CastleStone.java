@@ -25,7 +25,9 @@ public class CastleStone extends Base
 	public Action onWalkOff(Interactor i)
 	{
 		return new Action((o)-> {
-		new Thread() { public void run() {
+		Base b = GameWorld.getWorld().getBase(getX(), getY()-1);
+		setSprite("Button-Press-"+((b == null || !b.getClassName().equals("Base"))?"1":"2")+".gif");
+		/*new Thread() { public void run() {
 						try {
 							Thread.sleep((int)(200));
 							Platform.runLater(()->
@@ -37,6 +39,7 @@ public class CastleStone extends Base
 							System.out.println(v);
 						} 
 					}
-		}.start();});
+		}.start();*/
+		});
 	}
 }

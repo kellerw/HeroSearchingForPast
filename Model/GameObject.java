@@ -99,7 +99,7 @@ public abstract class GameObject
 	{
 		this.y = y;
 		if(set)
-			sprite.setLayoutY(y*GameWorld.TILEHEIGHT);
+			sprite.setLayoutY((1+y)*GameWorld.TILEHEIGHT-sprite.getImage().getHeight());
 	}
 	public abstract String getClassName();
 	public String parse(String saved)
