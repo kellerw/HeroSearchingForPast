@@ -24,6 +24,7 @@ public class ObjectList
 		new TeleportPad(),
 		new CastleStone(),
 		new CastleGate(),
-		new PanelRotater()
+		new PanelRotater(),
+		new Charact()
 	};
 }

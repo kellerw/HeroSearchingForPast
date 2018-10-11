@@ -32,7 +32,23 @@ public class Player extends Interactor
 	{
 		if(!movementEnabled())
 		{
-			if(key == KeyCode.SPACE)
+			if(key == KeyCode.UP)
+				GameWorld.getWorld().executeUp();
+			else if(key == KeyCode.DOWN)
+				GameWorld.getWorld().executeDown();
+			else if(key == KeyCode.LEFT)
+				GameWorld.getWorld().executeLeft();
+			else if(key == KeyCode.RIGHT)
+				GameWorld.getWorld().executeRight();
+			else if(key == KeyCode.W)
+				GameWorld.getWorld().executeUp();
+			else if(key == KeyCode.S)
+				GameWorld.getWorld().executeDown();
+			else if(key == KeyCode.A)
+				GameWorld.getWorld().executeLeft();
+			else if(key == KeyCode.D)
+				GameWorld.getWorld().executeRight();
+			else if(key == KeyCode.SPACE)
 				GameWorld.getWorld().executeHandler();
 			return;
 		}
@@ -52,6 +68,8 @@ public class Player extends Interactor
 			tryMoveLeft(new Action());
 		else if(key == KeyCode.D)
 			tryMoveRight(new Action());
+		else if(key == KeyCode.BACK_SPACE)
+			GameWorld.getWorld().showMenu();
 		else if(key == KeyCode.SPACE)
 			interact();
 	}

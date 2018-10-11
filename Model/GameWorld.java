@@ -14,6 +14,12 @@ import javafx.scene.media.MediaView;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.Media;
 import javafx.application.Platform;
+import javafx.scene.image.Image;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.TextAlignment;
+import javafx.scene.text.Text;
+import javafx.scene.control.TextArea;
 public class GameWorld extends Pane
 {
 	//width and height of each tile
@@ -41,6 +47,7 @@ public class GameWorld extends Pane
 	private Scale scale;
 	private boolean loading = false;
 	private HashMap<String, Base> basemap = new HashMap<>();
+	private ImageView menu;
 	public static GameWorld getWorld()
 	{
 		if(world == null)
@@ -67,6 +74,11 @@ public class GameWorld extends Pane
 	{
 		scale = new Scale();
 		pane = new Pane();
+		menu = new ImageView();
+		menu.layoutXProperty().bind(this.layoutXProperty());
+		menu.layoutYProperty().bind(this.layoutYProperty());
+		menu.fitWidthProperty().bind(this.widthProperty());
+		menu.fitHeightProperty().bind(this.heightProperty());
 		pane.minWidthProperty().bind(this.widthProperty().divide(scale.xProperty()));
 		pane.maxWidthProperty().bind(this.widthProperty().divide(scale.xProperty()));
 		pane.prefWidthProperty().bind(this.widthProperty().divide(scale.xProperty()));
@@ -256,7 +268,7 @@ public class GameWorld extends Pane
 		if(interactables[(int)i.getX() - startx.getValue()][(int)i.getY() - starty.getValue()] != null)
 			remove(interactables[(int)i.getX() - startx.getValue()][(int)i.getY() - starty.getValue()]);
 		interactables[(int)i.getX() - startx.getValue()][(int)i.getY() - starty.getValue()] = i;
-		interactablePane.getChildren().add(interactablePane.getChildren().size()-1, i.getSprite());
+		interactablePane.getChildren().add(interactablePane.getChildren().size()-(hero==null?0:1), i.getSprite());
 	}
 	public Player getPlayer()
 	{
@@ -450,10 +462,124 @@ public class GameWorld extends Pane
 			hero.enableMovement(new Action());
 		}
 	}
+	private interface Handle
+	{
+		public void handle();
+	}
+	private Handle up = ()->{};
+	private Handle down = ()->{};
+	private Handle left = ()->{};
+	private Handle right = ()->{};
 	private Action handler = new Action();
 	public void executeHandler()
 	{
 		handler.start();
+	}
+	public void executeUp()
+	{
+		up.handle();
+	}
+	public void executeRight()
+	{
+		right.handle();
+	}
+	public void executeLeft()
+	{
+		left.handle();
+	}
+	public void executeDown()
+	{
+		down.handle();
+	}
+	private int menuitem = 0;
+	public void showMenu()
+	{
+		setLayer(-1);
+		menuitem = -1;
+		hero.disableMovement(new Action());
+		down = ()->{menuitem = (menuitem+1)%5;try{menu.setImage(new Image(getClass().getResource("menu_"+menuitem+".png").openStream()));}catch(Exception e){}};
+		up = ()->{menuitem = (menuitem+4)%5;try{menu.setImage(new Image(getClass().getResource("menu_"+menuitem+".png").openStream()));}catch(Exception e){}};
+		this.getChildren().add(menu);
+		executeDown();
+		handler = new Action(o->{
+			if(menuitem>=3)
+			{
+				this.getChildren().remove(menu);
+				hero.enableMovement(new Action());
+				showMenu();
+				//setLayer(5);
+				//showDialog("sample.png", "???", "Test?", new Action());
+			}
+			else
+			{
+				this.getChildren().remove(menu);
+				setLayer(5);
+				hero.enableMovement(new Action());
+				if(menuitem == 1)
+				{
+					restartLevel();
+				}
+				else if(menuitem == 2)
+				{
+					lastlevel = "end";
+					load("overworld");
+				}
+			}
+		});
+	}
+	public void showDialog(String speaker, String name, String text, Action then)
+	{
+		hero.disableMovement(new Action());
+		Pane t = new Pane();
+		int H = 200;
+		int SIZE = 100;
+		t.layoutYProperty().bind(this.heightProperty().subtract(H));
+		t.minWidthProperty().bind(this.widthProperty().divide(scale.xProperty()));
+		t.maxWidthProperty().bind(this.widthProperty().divide(scale.xProperty()));
+		t.prefWidthProperty().bind(this.widthProperty().divide(scale.xProperty()));
+		t.setMinHeight(H);
+		t.setMaxHeight(H);
+		t.setPrefHeight(H); 
+		Rectangle r = new Rectangle();
+		r.widthProperty().bind(this.widthProperty());
+		r.setLayoutY(-SIZE/2);
+		r.setHeight(H+SIZE);
+		r.setArcWidth(20);
+		r.setArcHeight(20);
+		r.setFill(javafx.scene.paint.Color.web("0xCCCCCC"));
+		t.getChildren().add(r);
+		ImageView img = new ImageView();
+		img.setLayoutX(0);
+		img.setLayoutY(-SIZE);
+		img.setFitWidth(SIZE);
+		img.setFitHeight(SIZE);
+		try{img.setImage(new Image(getClass().getResource(speaker).openStream()));}catch(Exception e){}
+		t.getChildren().add(img);
+		r = new Rectangle();
+		r.widthProperty().bind(t.widthProperty().divide(2).subtract(SIZE));
+		r.setLayoutY(-SIZE/2);
+		r.setLayoutX(SIZE);
+		r.setHeight(SIZE/2);
+		r.setArcWidth(20);
+		r.setArcHeight(20);
+		r.setFill(javafx.scene.paint.Color.web("0x999999"));
+		t.getChildren().add(r);
+		Text l = new Text(name);
+		l.setTextAlignment(TextAlignment.JUSTIFY);
+		l.wrappingWidthProperty().bind(t.widthProperty().divide(2).subtract(SIZE + 20));
+		l.setLayoutY(-SIZE/2 + 35);
+		l.setLayoutX(SIZE + 10);
+		l.setStyle("-fx-font: 30 arial;");
+		t.getChildren().add(l);
+		l = new Text(text);
+		l.setTextAlignment(TextAlignment.JUSTIFY);
+		l.wrappingWidthProperty().bind(this.widthProperty().subtract(20));
+		l.setLayoutX(10);
+		l.setLayoutY(60);
+		l.setStyle("-fx-font: 30 arial;");
+		t.getChildren().add(l);
+		this.getChildren().add(t);
+		handler = new Action(o->{hero.enableMovement(new Action()); this.getChildren().remove(t); setLayer(5); then.start(); o.start();});
 	}
 	public void save(String file)
 	{

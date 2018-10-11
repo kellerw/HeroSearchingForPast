@@ -156,9 +156,9 @@ public abstract class GameObject
 		field.setPromptText(prompt);
 		field.focusedProperty().addListener((obs, oldVal, newVal) -> set.set(field.getText()));
 		field.setOnAction(e->{set.set(field.getText());});
-		field.minWidthProperty().bind(pane.widthProperty());
-		field.maxWidthProperty().bind(pane.widthProperty());
-		field.prefWidthProperty().bind(pane.widthProperty());
+		field.minWidthProperty().bind(pane.widthProperty().subtract(100));
+		field.maxWidthProperty().bind(pane.widthProperty().subtract(100));
+		field.prefWidthProperty().bind(pane.widthProperty().subtract(100));
 		addRow(pane, prompt).getChildren().add(field);
 	}
 	public static Pane addRow(Pane pane, String description)
