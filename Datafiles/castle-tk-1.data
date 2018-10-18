@@ -38,7 +38,7 @@ Base	-	Castle_bricks.png	4.0	-2.0
 Base	-	Castle_bricks.png	4.0	-1.0		
 CastleStone	-	IceStoneButton.png	4.0	8.0		
 CastleStone	-	IceStoneButton.png	4.0	9.0		
-Base	-	Castle_bricks.png	5.0	-2.0		
+LoadNew	from-castle-tk-2	Castle_bricks.png	5.0	-2.0		castle-tk-2		
 Base	-	Castle_bricks.png	5.0	-1.0		
 CastleGate	-	Gate.png	5.0	0.0		
 Base	-	Castle_bricks.png	5.0	1.0		
@@ -49,7 +49,7 @@ CastleStone	-	IceStoneButton.png	5.0	6.0
 CastleStone	-	IceStoneButton.png	5.0	7.0		
 Base	-	Castle_bricks.png	5.0	8.0		
 Base	-	Castle_bricks.png	5.0	9.0		
-LoadNew	From-Start;From-overworld	Castle_bricks.png	5.0	10.0		overworld		
+LoadNew	From-Start;From-CastleTest	Castle_bricks.png	5.0	10.0		CastleTest		
 Base	-	Castle_bricks.png	6.0	-2.0		
 Base	-	Castle_bricks.png	6.0	-1.0		
 CastleStone	-	IceStoneButton.png	6.0	1.0		
