@@ -4,7 +4,7 @@
 11
 null
 Decoration	-	down.png	5.0	10.0		false		
-Decoration	-	stairs.png	0.0	0.0		false		
+Decoration	-	stairs_down_tower.png	0.0	0.0		false		
 
 LoadNew	From-tower-tk-1	brick.png	0.0	0.0		tower-tk-1		
 Base	-	brick.png	0.0	1.0		

@@ -4,8 +4,8 @@
 11
 null
 Decoration	-	down.png	5.0	10.0		false		
-Decoration	-	forest_stairs.png	0.0	0.0		false		
-Decoration	-	forest_stairs.png	0.0	1.0		false		
+Decoration	-	forest_stairs_down.png	0.0	0.0		false		
+Decoration	-	forest_stairs_down.png	0.0	1.0		false		
 
 LoadNew	from-forest-stf-1	grass.png	0.0	0.0		forest-stf-1		
 LoadNew	From-forest-tk-3	grass.png	0.0	1.0		forest-tk-3		

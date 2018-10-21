@@ -4,7 +4,7 @@
 7
 null
 Decoration	-	down.png	1.0	6.0		false		
-Decoration	-	stairs.png	1.0	0.0		false		
+Decoration	-	lava_stairs.png	1.0	0.0		false		
 
 Base	-	lava_rock.png	0.0	0.0		
 Base	-	lava_rock.png	0.0	1.0		
@@ -34,6 +34,6 @@ Base	-	lava_rock.png	3.0	5.0
 
 
 Boulder	-	boulder.png	0.0	3.0		
-Character	-	down-character.png	1.0	3.0		Hello! This is a volcano!;If you push the boulders into the lava, you can walk on them!; ...I could use some new art....	  Strange Man		
+Character	-	down-character.png	1.0	3.0		Hello! This is a volcano!;If you push the boulders into the lava, you can walk on them!; ...I could use some new art....	   Strange Man		
 Boulder	-	boulder.png	3.0	1.0		
 

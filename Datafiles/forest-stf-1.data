@@ -3,8 +3,8 @@
 -2
 11
 null
-Decoration	-	forest_stairs.png	5.0	4.0		false		
-Decoration	-	forest_stairs.png	1.0	4.0		false		
+Decoration	-	forest_stairs_down.png	5.0	4.0		false		
+Decoration	-	forest_stairs_down.png	1.0	4.0		false		
 
 Base	-	grass.png	0.0	-2.0		
 Base	-	grass.png	0.0	-1.0		

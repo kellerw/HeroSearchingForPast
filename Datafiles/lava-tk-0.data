@@ -4,7 +4,7 @@
 11
 null
 Decoration	-	down.png	5.0	10.0		false		
-Decoration	-	stairs.png	5.0	-2.0		false		
+Decoration	-	lava_stairs.png	5.0	-2.0		false		
 
 Base	-	lava_rock.png	-1.0	-2.0		
 Base	-	lava_rock.png	-1.0	-1.0		
