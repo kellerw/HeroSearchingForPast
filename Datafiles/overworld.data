@@ -43,7 +43,7 @@ LoadNew	-	brickportal.png	3.0	4.0		forest-entrance
 Wall	-	brickwall.png	3.0	5.0		
 Base	-	brick.png	3.0	6.0		
 Wall	-	brickwall.png	3.0	7.0		
-LoadNew	-	brickportal.png	4.0	0.0		test		
+LoadNew	-	brickportal.png	4.0	0.0		ice-entrance		
 Base	from-test	brick.png	4.0	1.0		
 Base	-	brick.png	4.0	2.0		
 Wall	-	brickwall.png	4.0	3.0		

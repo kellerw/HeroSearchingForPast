@@ -30,6 +30,8 @@ public class Player extends Interactor
 	}
 	public void handleKey(KeyCode key)
 	{
+		if(key == KeyCode.BACK_SPACE)
+			GameWorld.getWorld().showMenu();
 		if(!movementEnabled())
 		{
 			if(key == KeyCode.UP)
@@ -68,8 +70,6 @@ public class Player extends Interactor
 			tryMoveLeft(new Action());
 		else if(key == KeyCode.D)
 			tryMoveRight(new Action());
-		else if(key == KeyCode.BACK_SPACE)
-			GameWorld.getWorld().showMenu();
 		else if(key == KeyCode.SPACE)
 			interact();
 	}
