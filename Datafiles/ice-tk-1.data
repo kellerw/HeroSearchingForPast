@@ -5,6 +5,7 @@
 null
 Decoration	-	down.png	0.0	6.0		false		
 Decoration	-	icicle.png	-4.0	-2.0		true		
+Decoration	-	icicle.png	-6.0	-2.0		true		
 
 Ice	-	ice.png	-8.0	-6.0		
 Ice	-	ice.png	-8.0	-5.0		
@@ -34,7 +35,7 @@ Ice	-	ice.png	-6.0	-6.0
 Ice	-	ice.png	-6.0	-5.0		
 Ice	-	ice.png	-6.0	-4.0		
 Ice	-	ice.png	-6.0	-3.0		
-Ice	-	ice.png	-6.0	-2.0		
+Wall	-	ice.png	-6.0	-2.0		
 Ice	-	ice.png	-6.0	-1.0		
 Ice	-	ice.png	-6.0	0.0		
 Ice	-	ice.png	-6.0	1.0		
