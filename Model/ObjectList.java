@@ -25,7 +25,6 @@ public class ObjectList
 		new CastleStone(),
 		new CastleGate(),
 		new PanelRotater(),
-		new Charact(),
-		new MoveLava()
+		new Charact()
 	};
 }
