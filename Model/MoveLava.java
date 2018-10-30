@@ -1,23 +1,31 @@
 import javafx.scene.layout.Pane;
-public class MovePad extends Base
+public class MoveLava extends Base
 {
 	private int dx = 0;
 	private int dy = 0;
-	public MovePad()
+	public MoveLava()
 	{
-		setSprite("movepadicon.png");
+		setSprite("lava.png");
 	}
-	public MovePad makeCopy()
+	public MoveLava makeCopy()
 	{
-		return new MovePad();
+		return new MoveLava();
 	}
 	public String getClassName()
 	{
-		return "MovePad";
+		return "MoveLava";
 	}
-	public Action onWalk(Interactor i)
+	public Action onWalk(Interactor i2)
 	{
-		Action a = new Action();
+		Platform i = new Platform();
+		Action a = new Action(o->
+		{
+			i.setSprite(i2.getImageName());
+			i.setX(i2.getX());
+			i.setY(i2.getY());
+			GameWorld.getWorld().addTile(i);
+			GameWorld.getWorld().remove(i2);
+		});
 		for(int j = 0; j < dx; j++)
 			a.then((o)->{if(GameWorld.getWorld().getInteractable(i.getX(),i.getY())==i)i.tryMoveRight(o);}).then(o->{i.setX(i.getX());i.setY(i.getY());o.start();});
 		for(int j = 0; j > dx; j--)
@@ -62,15 +70,15 @@ public class MovePad extends Base
 	public void updateImage()
 	{
 		if(getDx() > 0)
-			setSprite("movepadright.png");
+			setSprite("lavaright.png");
 		else if(getDx() < 0)
-			setSprite("movepadleft.png");
+			setSprite("lavaleft.png");
 		else if(getDy() > 0)
-			setSprite("movepaddown.png");
+			setSprite("lavadown.png");
 		else if(getDy() < 0)
-			setSprite("movepadup.png");
+			setSprite("lavaup.png");
 		else
-			setSprite("movepadicon.png");
+			setSprite("lava.png");
 	}
 	public Pane getEditor()
 	{
@@ -85,4 +93,9 @@ public class MovePad extends Base
 		setDx(-1 *getDy());
 		setDy(t);
 	}
+	public boolean isWalkable(Interactor i)
+	{
+		return !i.getClassName().equals("Player");
+	}
 }
+ 

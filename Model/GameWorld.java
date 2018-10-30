@@ -675,6 +675,8 @@ public class GameWorld extends Pane
 	}
 	public void moveInteractable(Interactable i, int ox, int oy, int nx, int ny)
 	{
+		if(!interactablePane.getChildren().contains(i.getSprite()))
+			return; //hopefully fixes a bug where invisible things from before we restarted the level are still floating around
 		ox -= startx.getValue();
 		nx -= startx.getValue();
 		oy -= starty.getValue();
