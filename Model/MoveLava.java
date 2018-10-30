@@ -27,13 +27,13 @@ public class MoveLava extends Base
 			GameWorld.getWorld().remove(i2);
 		});
 		for(int j = 0; j < dx; j++)
-			a.then((o)->{if(GameWorld.getWorld().getInteractable(i.getX(),i.getY())==i)i.tryMoveRight(o);}).then(o->{i.setX(i.getX());i.setY(i.getY());o.start();});
+			a.then((o)->{if(GameWorld.getWorld().getTile(i.getX(),i.getY())==i)i.move(1, 0, o, GameWorld.getWorld().getBase(i.getX(),i.getY()));}).then(o->{i.setX(i.getX());i.setY(i.getY());o.start();});
 		for(int j = 0; j > dx; j--)
-			a.then((o)->{if(GameWorld.getWorld().getInteractable(i.getX(),i.getY())==i)i.tryMoveLeft(o);}).then(o->{i.setX(i.getX());i.setY(i.getY());o.start();});
+			a.then((o)->{if(GameWorld.getWorld().getTile(i.getX(),i.getY())==i)i.move(-1, 0, o, GameWorld.getWorld().getBase(i.getX(),i.getY()));i.setY(i.getY());o.start();});
 		for(int j = 0; j < dy; j++)
-			a.then((o)->{if(GameWorld.getWorld().getInteractable(i.getX(),i.getY())==i)i.tryMoveDown(o);}).then(o->{i.setX(i.getX());i.setY(i.getY());o.start();});
+			a.then((o)->{if(GameWorld.getWorld().getTile(i.getX(),i.getY())==i)i.move(0, 1, o, GameWorld.getWorld().getBase(i.getX(),i.getY()));}).then(o->{i.setX(i.getX());i.setY(i.getY());o.start();});
 		for(int j = 0; j > dy; j--)
-			a.then((o)->{if(GameWorld.getWorld().getInteractable(i.getX(),i.getY())==i)i.tryMoveUp(o);}).then(o->{i.setX(i.getX());i.setY(i.getY());o.start();});
+			a.then((o)->{if(GameWorld.getWorld().getTile(i.getX(),i.getY())==i)i.move(0, -1, o, GameWorld.getWorld().getBase(i.getX(),i.getY()));}).then(o->{i.setX(i.getX());i.setY(i.getY());o.start();});
 		return a;
 	}
 	public String parse(String saved)
