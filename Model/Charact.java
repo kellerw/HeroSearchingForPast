@@ -33,12 +33,13 @@ public class Charact extends Interactor
 	}
 	public void onInteract(Interactor t)
 	{
-		Action a = new Action();
+		Action a = new Action((o)->{GameWorld.getWorld().getPlayer().disableMenu();o.start();});
 		String i = getImageName().replaceFirst("[^-]*-","icon-");
 		String n = getName();
 		String[] s = getText().split(";");
 		for(String s2 : s)
 			a.then(o->{GameWorld.getWorld().showDialog(i, n, s2, o);});
+		a.then(((o)->{GameWorld.getWorld().getPlayer().enableMenu();o.start();}));
 		a.start();
 	}
 	public String getName()

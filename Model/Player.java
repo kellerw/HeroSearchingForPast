@@ -1,6 +1,8 @@
 import javafx.scene.input.KeyCode;
-public class Player extends Interactor
+import javafx.application.Platform;
+public class Player extends Boulder
 {
+	private boolean openmenu = true;
 	public Player()
 	{
 		setSprite("hero.png");
@@ -28,50 +30,103 @@ public class Player extends Interactor
 		movementEnabled--;
 		next.start();
 	}
+	public void enableMenu()
+	{
+		openmenu = true;
+	}
+	public void disableMenu()
+	{
+		openmenu = false;
+	}
+	private boolean goNorth;
+	private boolean goSouth;
+	private boolean goEast;
+	private boolean goWest;
+	
+	public void checkUpdate(Action then)
+	{
+		Platform.runLater(()->
+		{
+			if(!movementEnabled())
+			{
+				if(goNorth)
+					GameWorld.getWorld().executeUp();
+				else if(goSouth)
+					GameWorld.getWorld().executeDown();
+				else if(goWest)
+					GameWorld.getWorld().executeLeft();
+				else if(goEast)
+					GameWorld.getWorld().executeRight();
+				return;
+			}
+			else
+			{
+				if(goNorth)
+					tryMoveUp(new Action(o->checkUpdate(o)));
+				else if(goSouth)
+					tryMoveDown(new Action(o->checkUpdate(o)));
+				else if(goWest)
+					tryMoveLeft(new Action(o->checkUpdate(o)));
+				else if(goEast)
+					tryMoveRight(new Action(o->checkUpdate(o)));
+			}
+			then.start();
+		});
+	}
 	public void handleKey(KeyCode key)
 	{
-		if(key == KeyCode.BACK_SPACE)
+		if(openmenu && key == KeyCode.BACK_SPACE)
 			GameWorld.getWorld().showMenu();
+		if(key == KeyCode.UP)
+			goNorth = true;
+		else if(key == KeyCode.DOWN)
+			goSouth = true;
+		else if(key == KeyCode.LEFT)
+			goWest = true;
+		else if(key == KeyCode.RIGHT)
+			goEast = true;
+		else if(key == KeyCode.W)
+			goNorth = true;
+		else if(key == KeyCode.S)
+			goSouth = true;
+		else if(key == KeyCode.A)
+			goWest = true;
+		else if(key == KeyCode.D)
+			goEast = true;
 		if(!movementEnabled())
 		{
-			if(key == KeyCode.UP)
-				GameWorld.getWorld().executeUp();
-			else if(key == KeyCode.DOWN)
-				GameWorld.getWorld().executeDown();
-			else if(key == KeyCode.LEFT)
-				GameWorld.getWorld().executeLeft();
-			else if(key == KeyCode.RIGHT)
-				GameWorld.getWorld().executeRight();
-			else if(key == KeyCode.W)
-				GameWorld.getWorld().executeUp();
-			else if(key == KeyCode.S)
-				GameWorld.getWorld().executeDown();
-			else if(key == KeyCode.A)
-				GameWorld.getWorld().executeLeft();
-			else if(key == KeyCode.D)
-				GameWorld.getWorld().executeRight();
-			else if(key == KeyCode.SPACE)
+			if(key == KeyCode.SPACE)
 				GameWorld.getWorld().executeHandler();
-			return;
+			else if(key == KeyCode.ENTER)
+				GameWorld.getWorld().executeHandler();
 		}
+		else
+		{
+			if(key == KeyCode.SPACE)
+				interact();
+			else if(key == KeyCode.ENTER)
+				interact();
+		}
+		checkUpdate(new Action());
+	}
+	public void handleKeyRelease(KeyCode key)
+	{
 		if(key == KeyCode.UP)
-			tryMoveUp(new Action());
+			goNorth = false;
 		else if(key == KeyCode.DOWN)
-			tryMoveDown(new Action());
+			goSouth = false;
 		else if(key == KeyCode.LEFT)
-			tryMoveLeft(new Action());
+			goWest = false;
 		else if(key == KeyCode.RIGHT)
-			tryMoveRight(new Action());
+			goEast = false;
 		else if(key == KeyCode.W)
-			tryMoveUp(new Action());
+			goNorth = false;
 		else if(key == KeyCode.S)
-			tryMoveDown(new Action());
+			goSouth = false;
 		else if(key == KeyCode.A)
-			tryMoveLeft(new Action());
+			goWest = false;
 		else if(key == KeyCode.D)
-			tryMoveRight(new Action());
-		else if(key == KeyCode.SPACE)
-			interact();
+			goEast = false;
 	}
 	public void tryMoveUp(Action then)
 	{

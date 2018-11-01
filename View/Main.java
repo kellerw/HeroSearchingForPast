@@ -29,6 +29,9 @@ public class Main extends Application
 		scene.addEventHandler(KeyEvent.KEY_PRESSED, (key) -> {
 			world.getPlayer().handleKey(key.getCode());
 		});
+		scene.addEventHandler(KeyEvent.KEY_RELEASED, (key) -> {
+			world.getPlayer().handleKeyRelease(key.getCode());
+		});
 		stage.setScene(scene);
 		stage.setTitle("A Hero Searching for a Past");
 		stage.setMaximized(true);

@@ -61,16 +61,17 @@ public class MovePad extends Base
 	}
 	public void updateImage()
 	{
+		String name = getImageName().replaceAll("down\\.png","").replaceAll("up\\.png","").replaceAll("left\\.png","").replaceAll("right\\.png","").replaceAll("icon\\.png","");
 		if(getDx() > 0)
-			setSprite("movepadright.png");
+			setSprite(name+"right.png");
 		else if(getDx() < 0)
-			setSprite("movepadleft.png");
+			setSprite(name+"left.png");
 		else if(getDy() > 0)
-			setSprite("movepaddown.png");
+			setSprite(name+"down.png");
 		else if(getDy() < 0)
-			setSprite("movepadup.png");
+			setSprite(name+"up.png");
 		else
-			setSprite("movepadicon.png");
+			setSprite(name+"icon.png");
 	}
 	public Pane getEditor()
 	{
