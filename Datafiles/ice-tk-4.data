@@ -1,0 +1,98 @@
+-8
+8
+-8
+7
+null
+Decoration	-	down.png	0.0	6.0		false		
+
+Base	-	IceStone.png	-6.0	-3.0		
+Base	-	IceStone.png	-6.0	-2.0		
+Base	-	IceStone.png	-5.0	-3.0		
+Base	-	IceStone.png	-5.0	-2.0		
+Ice	-	ice.png	-4.0	-2.0		
+Base	-	IceStone.png	-4.0	-1.0		
+Ice	-	ice.png	-4.0	0.0		
+Base	-	IceStone.png	-4.0	1.0		
+Ice	-	ice.png	-4.0	2.0		
+Base	-	IceStone.png	-4.0	3.0		
+Ice	-	ice.png	-4.0	4.0		
+Base	-	IceStone.png	-4.0	5.0		
+Ice	-	ice.png	-3.0	-1.0		
+Base	-	IceStone.png	-3.0	0.0		
+Ice	-	ice.png	-3.0	1.0		
+Base	-	IceStone.png	-3.0	2.0		
+Ice	-	ice.png	-3.0	3.0		
+Base	-	IceStone.png	-3.0	4.0		
+Ice	-	ice.png	-3.0	5.0		
+Base	-	IceStone.png	-2.0	-1.0		
+Ice	-	ice.png	-2.0	0.0		
+Base	-	IceStone.png	-2.0	1.0		
+Ice	-	ice.png	-2.0	2.0		
+Base	-	IceStone.png	-2.0	3.0		
+Ice	-	ice.png	-2.0	4.0		
+Base	-	IceStone.png	-2.0	5.0		
+Ice	-	ice.png	-1.0	-1.0		
+Base	-	IceStone.png	-1.0	0.0		
+Ice	-	ice.png	-1.0	1.0		
+Base	-	IceStone.png	-1.0	2.0		
+Ice	-	ice.png	-1.0	3.0		
+Base	-	IceStone.png	-1.0	4.0		
+Ice	-	ice.png	-1.0	5.0		
+Base	-	IceStone.png	0.0	-1.0		
+Ice	-	ice.png	0.0	0.0		
+Base	-	IceStone.png	0.0	1.0		
+Ice	-	ice.png	0.0	2.0		
+Base	-	IceStone.png	0.0	3.0		
+Ice	-	ice.png	0.0	4.0		
+Base	-	IceStone3.png	0.0	5.0		
+LoadNew	From-Start;From-ice-entrance;From-ice-tk-3	IceStone.png	0.0	6.0		ice-entrance		
+Ice	-	ice.png	1.0	-1.0		
+Base	-	IceStone.png	1.0	0.0		
+Ice	-	ice.png	1.0	1.0		
+Base	-	IceStone.png	1.0	2.0		
+Ice	-	ice.png	1.0	3.0		
+Base	-	IceStone.png	1.0	4.0		
+Ice	-	ice.png	1.0	5.0		
+Base	-	IceStone.png	2.0	-1.0		
+Ice	-	ice.png	2.0	0.0		
+Base	-	IceStone.png	2.0	1.0		
+Ice	-	ice.png	2.0	2.0		
+Base	-	IceStone.png	2.0	3.0		
+Ice	-	ice.png	2.0	4.0		
+Base	-	IceStone.png	2.0	5.0		
+Ice	-	ice.png	3.0	-1.0		
+Base	-	IceStone.png	3.0	0.0		
+Ice	-	ice.png	3.0	1.0		
+Base	-	IceStone.png	3.0	2.0		
+Ice	-	ice.png	3.0	3.0		
+Base	-	IceStone.png	3.0	4.0		
+Ice	-	ice.png	3.0	5.0		
+
+
+Boulder	-	boulder.png	-4.0	1.0		
+Boulder	-	boulder.png	-4.0	3.0		
+Boulder	-	boulder.png	-4.0	5.0		
+Boulder	-	boulder.png	-3.0	0.0		
+Boulder	-	boulder.png	-3.0	2.0		
+Boulder	-	boulder.png	-3.0	4.0		
+Boulder	-	boulder.png	-2.0	-1.0		
+Boulder	-	boulder.png	-2.0	1.0		
+Boulder	-	boulder.png	-2.0	3.0		
+Boulder	-	boulder.png	-2.0	5.0		
+Boulder	-	boulder.png	-1.0	0.0		
+Boulder	-	boulder.png	-1.0	2.0		
+Boulder	-	boulder.png	-1.0	4.0		
+Boulder	-	boulder.png	0.0	-1.0		
+Boulder	-	boulder.png	0.0	1.0		
+Boulder	-	boulder.png	0.0	3.0		
+Boulder	-	boulder.png	1.0	0.0		
+Boulder	-	boulder.png	1.0	2.0		
+Boulder	-	boulder.png	1.0	4.0		
+Boulder	-	boulder.png	2.0	-1.0		
+Boulder	-	boulder.png	2.0	1.0		
+Boulder	-	boulder.png	2.0	3.0		
+Boulder	-	boulder.png	2.0	5.0		
+Boulder	-	boulder.png	3.0	0.0		
+Boulder	-	boulder.png	3.0	2.0		
+Boulder	-	boulder.png	3.0	4.0		
+
