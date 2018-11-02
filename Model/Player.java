@@ -42,9 +42,13 @@ public class Player extends Boulder
 	private boolean goSouth;
 	private boolean goEast;
 	private boolean goWest;
+	private long lasttime;
 	
 	public void checkUpdate(Action then)
 	{
+		if(System.currentTimeMillis() - lasttime < 100)
+			return;
+		lasttime = System.currentTimeMillis();
 		Platform.runLater(()->
 		{
 			if(!movementEnabled())
@@ -61,6 +65,8 @@ public class Player extends Boulder
 			}
 			else
 			{
+				setX(getX());
+				setY(getY());
 				if(goNorth)
 					tryMoveUp(new Action(o->checkUpdate(o)));
 				else if(goSouth)
