@@ -1,6 +1,6 @@
 import javafx.scene.input.KeyCode;
 import javafx.application.Platform;
-public class Player extends Boulder
+public class Player extends Interactor
 {
 	private boolean openmenu = true;
 	public Player()

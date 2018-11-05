@@ -2,6 +2,11 @@ import javafx.application.Platform;
 public abstract class Log extends Interactor
 {
 	private boolean onFire = false;
+	public void move(int dx, int dy, Action a, Walkable w)
+	{
+		super.move(dx, dy, a, w);
+		GameWorld.getWorld().playSound("push.mp3", new Action());
+	}
 	public boolean canPushUpL(Interactor i)
 	{
 		return check(0, -1) && ((Log)(GameWorld.getWorld().getInteractable(getX()-1, getY()))).canPushUpL(i);
@@ -155,6 +160,7 @@ public abstract class Log extends Interactor
 		Log l = this;
 		GameWorld.getWorld().addDecoration(flame);
 		onFire = true;
+		GameWorld.getWorld().playSound("flame.mp3", new Action());
 		new Thread() { public void run() {
 				try {
 					Thread.sleep((int)(600));

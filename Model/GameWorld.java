@@ -279,14 +279,31 @@ public class GameWorld extends Pane
 		decorations.add(decoration);
 		(decoration.isTopLayer()?decorationPaneTop:decorationPaneBottom).getChildren().add(decoration.getSprite());
 	}
+	private static HashMap<String, MediaPlayer> mediamap = new HashMap<>();
+	private MediaPlayer getMedia(String s)
+	{
+		if(mediamap.containsKey(s))
+		{
+			MediaPlayer m = mediamap.get(s);
+			m.seek(javafx.util.Duration.ZERO);
+			return m;
+		}
+		MediaPlayer m = new MediaPlayer(new Media(getClass().getResource(s).toString()));
+		mediamap.put(s, m);
+		return m;
+	}
 	public void playSound(String sound, Action then)
 	{
-		MediaPlayer a =new MediaPlayer(new Media(getClass().getResource(sound).toString()));
+		MediaPlayer a =getMedia(sound);
 			a.setOnEndOfMedia(()->
 			{
 				then.start();
 			}
 		);
+		a.setOnError(()->
+		{
+			System.out.println(a.getError());
+		});
 		a.play();
 	}
 	private MediaPlayer music = null;
@@ -307,7 +324,7 @@ public class GameWorld extends Pane
 			if(music != null)
 				music.stop();
 			if(hero != null)
-				music = new MediaPlayer(new Media(getClass().getResource(sound).toString()));
+				music = getMedia(sound);
 			if(music != null)
 				music.setOnEndOfMedia(()->
 				{

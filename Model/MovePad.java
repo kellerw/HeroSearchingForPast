@@ -26,6 +26,7 @@ public class MovePad extends Base
 			a.then((o)->{if(GameWorld.getWorld().getInteractable(i.getX(),i.getY())==i)i.tryMoveDown(o);}).then(o->{i.setX(i.getX());i.setY(i.getY());o.start();});
 		for(int j = 0; j > dy; j--)
 			a.then((o)->{if(GameWorld.getWorld().getInteractable(i.getX(),i.getY())==i)i.tryMoveUp(o);}).then(o->{i.setX(i.getX());i.setY(i.getY());o.start();});
+		GameWorld.getWorld().playSound("slide.mp3", new Action());
 		return a;
 	}
 	public String parse(String saved)
