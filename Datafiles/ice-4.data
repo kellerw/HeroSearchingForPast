@@ -3,9 +3,9 @@
 -8
 7
 null
-Decoration	-	down.png	0.0	6.0		false		
+Decoration	-	stairs_up_ice.png	0.0	6.0		false		
 
-Base	-	IceStone.png	-6.0	-3.0		
+LoadNew	From-ice-5	stairs_down_ice.png	-6.0	-3.0		ice-5		
 Base	-	IceStone.png	-6.0	-2.0		
 Base	-	IceStone.png	-6.0	-1.0		
 Base	-	IceStone.png	-6.0	0.0		
@@ -47,7 +47,7 @@ Ice	-	ice.png	0.0	2.0
 Base	-	IceStone.png	0.0	3.0		
 Ice	-	ice.png	0.0	4.0		
 Base	-	IceStone3.png	0.0	5.0		
-LoadNew	From-Start;From-ice-entrance;From-ice-tk-3	IceStone.png	0.0	6.0		ice-entrance		
+LoadNew	From-Start;From-ice-3	IceStone.png	0.0	6.0		ice-3		
 Ice	-	ice.png	1.0	-1.0		
 Base	-	IceStone.png	1.0	0.0		
 Ice	-	ice.png	1.0	1.0		

@@ -1,11 +1,21 @@
--8
+-12
 8
 -8
 7
-null
-Decoration	-	down.png	0.0	6.0		false		
+Winter_Dungeon_Bells.mp3
+Decoration	-	stairs_up_ice.png	0.0	6.0		false		
 
-LoadNew	-	icepit.png	-8.0	-8.0		ice-tk-3		
+LoadNew	From-ice-exit	stairs_down.png	-12.0	-4.0		ice-exit		
+Base	-	IceStone.png	-12.0	-3.0		
+Base	-	IceStone.png	-12.0	-2.0		
+Base	-	IceStone.png	-11.0	-4.0		
+Base	-	IceStone.png	-11.0	-3.0		
+Base	-	IceStone.png	-11.0	-2.0		
+Base	-	IceStone.png	-10.0	-4.0		
+Base	-	IceStone.png	-10.0	-3.0		
+Base	-	IceStone.png	-10.0	-2.0		
+Base	-	IceStone.png	-9.0	-2.0		
+LoadNew	-	icepit.png	-8.0	-8.0		ice-6		
 Ice	-	ice.png	-8.0	-7.0		
 Ice	-	ice.png	-8.0	-6.0		
 Ice	-	ice.png	-8.0	-5.0		
@@ -18,7 +28,7 @@ Ice	-	ice.png	-8.0	1.0
 Ice	-	ice.png	-8.0	2.0		
 Ice	-	ice.png	-8.0	3.0		
 Ice	-	ice.png	-8.0	4.0		
-LoadNew	-	icepit.png	-8.0	5.0		ice-tk-3		
+LoadNew	-	icepit.png	-8.0	5.0		ice-6		
 Ice	-	ice.png	-7.0	-8.0		
 Ice	-	ice.png	-7.0	-7.0		
 Ice	-	ice.png	-7.0	-6.0		
@@ -53,7 +63,7 @@ Ice	-	ice.png	-5.0	-6.0
 Ice	-	ice.png	-5.0	-5.0		
 Ice	-	ice.png	-5.0	-4.0		
 Ice	-	ice.png	-5.0	-3.0		
-LoadNew	From-ice-tk-2	stairs_down_ice.png	-5.0	-2.0		ice-tk-2		
+Base	-	IceStone.png	-5.0	-2.0		
 Ice	-	ice.png	-5.0	-1.0		
 Ice	-	ice.png	-5.0	0.0		
 Ice	-	ice.png	-5.0	1.0		
@@ -131,7 +141,7 @@ Ice	-	ice.png	0.0	2.0
 Ice	-	ice.png	0.0	3.0		
 Ice	-	ice.png	0.0	4.0		
 Base	-	IceStone3.png	0.0	5.0		
-LoadNew	From-Start;From-ice-entrance;From-ice-tk-3	IceStone.png	0.0	6.0		ice-entrance		
+LoadNew	From-Start;From-ice-5	IceStone.png	0.0	6.0		ice-5		
 Ice	-	ice.png	1.0	-8.0		
 Ice	-	ice.png	1.0	-7.0		
 Ice	-	ice.png	1.0	-6.0		
@@ -216,22 +226,23 @@ Ice	-	ice.png	6.0	2.0
 Ice	-	ice.png	6.0	3.0		
 Ice	-	ice.png	6.0	4.0		
 Ice	-	ice.png	6.0	5.0		
-LoadNew	-	icepit.png	7.0	-8.0		ice-tk-3		
+LoadNew	-	icepit.png	7.0	-8.0		ice-6		
 Ice	-	ice.png	7.0	-7.0		
 Ice	-	ice.png	7.0	-6.0		
 Ice	-	ice.png	7.0	-5.0		
 Ice	-	ice.png	7.0	-4.0		
-Ice	-	ice.png	7.0	-3.0		
+LoadNew	-	icepit.png	7.0	-3.0		-		
 Ice	-	ice.png	7.0	-2.0		
 Ice	-	ice.png	7.0	-1.0		
 Ice	-	ice.png	7.0	0.0		
-LoadNew	-	icepit.png	7.0	1.0		ice-tk-3		
+LoadNew	-	icepit.png	7.0	1.0		ice-6		
 Ice	-	ice.png	7.0	2.0		
 Ice	-	ice.png	7.0	3.0		
 Ice	-	ice.png	7.0	4.0		
-LoadNew	-	icepit.png	7.0	5.0		ice-tk-3		
+LoadNew	-	icepit.png	7.0	5.0		ice-6		
 
 
+Memory	-	Memory.gif	-11.0	-3.0		
 Boulder	-	boulder.png	-6.0	-6.0		
 Boulder	-	boulder.png	-6.0	0.0		
 Boulder	-	boulder.png	-4.0	1.0		

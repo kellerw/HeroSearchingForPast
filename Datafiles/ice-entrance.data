@@ -8,7 +8,7 @@ Decoration	-	icicle.png	-3.0	5.0		true
 Decoration	-	icicle.png	-3.0	4.0		true		
 Decoration	-	icicle.png	-3.0	3.0		true		
 
-LoadNew	From-ice-tk-1	stairs_down_ice.png	-5.0	-2.0		ice-tk-1		
+LoadNew	From-ice-1	stairs_down_ice.png	-5.0	-2.0		ice-1		
 Ice	-	ice.png	-5.0	-1.0		
 Ice	-	ice.png	-5.0	0.0		
 Ice	-	ice.png	-5.0	1.0		
@@ -56,7 +56,7 @@ Ice	-	ice.png	0.0	2.0
 Ice	-	ice.png	0.0	3.0		
 Ice	-	ice.png	0.0	4.0		
 Base	-	IceStone3.png	0.0	5.0		
-LoadNew	From-Start;From-overworld	IceStone.png	0.0	6.0		-		
+LoadNew	From-Start;From-overworld	IceStone.png	0.0	6.0		overworld		
 Ice	-	ice.png	1.0	-2.0		
 Ice	-	ice.png	1.0	-1.0		
 Ice	-	ice.png	1.0	0.0		

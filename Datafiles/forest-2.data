@@ -3,10 +3,9 @@
 -2
 11
 null
-Decoration	-	down.png	5.0	10.0		false		
+Decoration	-	forest_stairs_up.png	5.0	10.0		false		
 Decoration	-	forest_stairs_down.png	5.0	2.0		false		
 
-Base	-	grass.png	0.0	-1.0		
 Base	-	grass.png	0.0	0.0		
 Base	-	grass.png	0.0	1.0		
 Base	-	grass.png	0.0	2.0		
@@ -17,7 +16,6 @@ Base	-	grass.png	0.0	6.0
 Base	-	grass.png	0.0	7.0		
 Base	-	grass.png	0.0	8.0		
 Base	-	grass.png	0.0	9.0		
-Base	-	grass.png	1.0	-1.0		
 Base	-	grass.png	1.0	0.0		
 Base	-	grass.png	1.0	1.0		
 Base	-	grass.png	1.0	2.0		
@@ -28,7 +26,6 @@ Base	-	grass.png	1.0	6.0
 Base	-	grass.png	1.0	7.0		
 Base	-	grass.png	1.0	8.0		
 Base	-	grass.png	1.0	9.0		
-Base	-	grass.png	2.0	-1.0		
 Base	-	grass.png	2.0	0.0		
 Base	-	grass.png	2.0	1.0		
 Base	-	grass.png	2.0	2.0		
@@ -39,7 +36,6 @@ Base	-	grass.png	2.0	6.0
 Base	-	grass.png	2.0	7.0		
 Base	-	grass.png	2.0	8.0		
 Base	-	grass.png	2.0	9.0		
-Base	-	grass.png	3.0	-1.0		
 Base	-	grass.png	3.0	0.0		
 Base	-	grass.png	3.0	1.0		
 Base	-	grass.png	3.0	2.0		
@@ -50,7 +46,6 @@ Base	-	grass.png	3.0	6.0
 Base	-	grass.png	3.0	7.0		
 Base	-	grass.png	3.0	8.0		
 Base	-	grass.png	3.0	9.0		
-Base	-	grass.png	4.0	-1.0		
 Base	-	grass.png	4.0	0.0		
 Base	-	grass.png	4.0	1.0		
 Base	-	grass.png	4.0	2.0		
@@ -61,10 +56,9 @@ Base	-	grass.png	4.0	6.0
 Base	-	grass.png	4.0	7.0		
 Base	-	grass.png	4.0	8.0		
 Base	-	grass.png	4.0	9.0		
-Base	-	grass.png	5.0	-1.0		
 Base	-	grass.png	5.0	0.0		
 Base	-	grass.png	5.0	1.0		
-LoadNew	from-forest-tk-2	grass.png	5.0	2.0		forest-tk-2		
+LoadNew	from-forest-3	grass.png	5.0	2.0		forest-3		
 Base	-	grass.png	5.0	3.0		
 Base	-	grass.png	5.0	4.0		
 Base	-	grass.png	5.0	5.0		
@@ -72,8 +66,7 @@ Base	-	grass.png	5.0	6.0
 Base	-	grass.png	5.0	7.0		
 Base	-	grass.png	5.0	8.0		
 Base	from-start	grass.png	5.0	9.0		
-LoadNew	from-forest-entrance	grass.png	5.0	10.0		forest-entrance		
-Base	-	grass.png	6.0	-1.0		
+LoadNew	From-Start;from-forest-1	grass.png	5.0	10.0		forest-1		
 Base	-	grass.png	6.0	0.0		
 Base	-	grass.png	6.0	1.0		
 Base	-	grass.png	6.0	2.0		
@@ -84,7 +77,6 @@ Base	-	grass.png	6.0	6.0
 Base	-	grass.png	6.0	7.0		
 Base	-	grass.png	6.0	8.0		
 Base	-	grass.png	6.0	9.0		
-Base	-	grass.png	7.0	-1.0		
 Base	-	grass.png	7.0	0.0		
 Base	-	grass.png	7.0	1.0		
 Base	-	grass.png	7.0	2.0		
@@ -95,7 +87,6 @@ Base	-	grass.png	7.0	6.0
 Base	-	grass.png	7.0	7.0		
 Base	-	grass.png	7.0	8.0		
 Base	-	grass.png	7.0	9.0		
-Base	-	grass.png	8.0	-1.0		
 Base	-	grass.png	8.0	0.0		
 Base	-	grass.png	8.0	1.0		
 Base	-	grass.png	8.0	2.0		
@@ -106,7 +97,6 @@ Base	-	grass.png	8.0	6.0
 Base	-	grass.png	8.0	7.0		
 Base	-	grass.png	8.0	8.0		
 Base	-	grass.png	8.0	9.0		
-Base	-	grass.png	9.0	-1.0		
 Base	-	grass.png	9.0	0.0		
 Base	-	grass.png	9.0	1.0		
 Base	-	grass.png	9.0	2.0		
@@ -117,7 +107,6 @@ Base	-	grass.png	9.0	6.0
 Base	-	grass.png	9.0	7.0		
 Base	-	grass.png	9.0	8.0		
 Base	-	grass.png	9.0	9.0		
-Base	-	grass.png	10.0	-1.0		
 Base	-	grass.png	10.0	0.0		
 Base	-	grass.png	10.0	1.0		
 Base	-	grass.png	10.0	2.0		
@@ -130,71 +119,34 @@ Base	-	grass.png	10.0	8.0
 Base	-	grass.png	10.0	9.0		
 
 
-Log-Top	-	logtop.png	0.0	-1.0		
-Log-Vertical	-	logv.png	0.0	0.0		
-Log-Vertical	-	logv.png	0.0	1.0		
-Log-Vertical	-	logv.png	0.0	2.0		
-Log-Vertical	-	logv.png	0.0	3.0		
-Log-Vertical	-	logv.png	0.0	4.0		
-Log-Vertical	-	logv.png	0.0	5.0		
-Log-Vertical	-	logv.png	0.0	6.0		
-Log-Vertical	-	logv.png	0.0	7.0		
-Log-Bottom	-	logbottom.png	0.0	8.0		
-Log-Left	-	logleft.png	0.0	9.0		
-Log-Left	-	logleft.png	1.0	-1.0		
-Boulder	-	boulder.png	1.0	2.0		
-Log-Horizontal	-	logh.png	1.0	9.0		
-Log-Horizontal	-	logh.png	2.0	-1.0		
-Log-Top	-	logtop.png	2.0	2.0		
-Log-Vertical	-	logv.png	2.0	3.0		
-Log-Vertical	-	logv.png	2.0	4.0		
-Log-Vertical	-	logv.png	2.0	5.0		
-Log-Vertical	-	logv.png	2.0	6.0		
+Log-Left	-	logleft.png	1.0	3.0		
+Log-Top	-	logtop.png	1.0	4.0		
+Log-Bottom	-	logbottom.png	1.0	5.0		
+Log-Horizontal	-	logh.png	2.0	3.0		
+Log-Top	-	logtop.png	2.0	6.0		
 Log-Bottom	-	logbottom.png	2.0	7.0		
-Log-Horizontal	-	logh.png	2.0	9.0		
-Log-Horizontal	-	logh.png	3.0	-1.0		
-Log-Left	-	logleft.png	3.0	6.0		
-Log-Right	-	logright.png	3.0	9.0		
-Log-Horizontal	-	logh.png	4.0	-1.0		
-Boulder	-	boulder.png	4.0	0.0		
+Log-Horizontal	-	logh.png	3.0	3.0		
+Log-Top	-	logtop.png	3.0	4.0		
+Log-Bottom	-	logbottom.png	3.0	5.0		
+Log-Left	-	logleft.png	3.0	9.0		
+Log-Left	-	logleft.png	4.0	0.0		
 Log-Top	-	logtop.png	4.0	1.0		
-Log-Vertical	-	logv.png	4.0	2.0		
-Log-Bottom	-	logbottom.png	4.0	3.0		
-Log-Left	-	logleft.png	4.0	4.0		
-Log-Horizontal	-	logh.png	4.0	6.0		
-Log-Top	-	logtop.png	4.0	8.0		
-Log-Bottom	-	logbottom.png	4.0	9.0		
-Log-Horizontal	-	logh.png	5.0	-1.0		
-Boulder	-	boulder.png	5.0	0.0		
-Log-Left	-	logleft.png	5.0	2.0		
-Log-Horizontal	-	logh.png	5.0	4.0		
-Log-Right	-	logright.png	5.0	6.0		
-Log-Stump	-	stump.png	5.0	8.0		
-Log-Horizontal	-	logh.png	6.0	-1.0		
-Boulder	-	boulder.png	6.0	0.0		
-Log-Right	-	logright.png	6.0	2.0		
-Log-Horizontal	-	logh.png	6.0	4.0		
-Log-Top	-	logtop.png	6.0	6.0		
-Log-Vertical	-	logv.png	6.0	7.0		
-Log-Bottom	-	logbottom.png	6.0	8.0		
-Log-Lighter	-	loglighter.png	6.0	9.0		
-Log-Right	-	logright.png	7.0	-1.0		
-Log-Top	-	logtop.png	7.0	0.0		
-Log-Bottom	-	logbottom.png	7.0	1.0		
-Log-Horizontal	-	logh.png	7.0	4.0		
-Log-Top	-	logtop.png	7.0	8.0		
-Log-Bottom	-	logbottom.png	7.0	9.0		
-Log-Stump	-	stump.png	8.0	1.0		
-Log-Right	-	logright.png	8.0	4.0		
-Log-Top	-	logtop.png	8.0	5.0		
-Log-Bottom	-	logbottom.png	8.0	6.0		
-Log-Top	-	logtop.png	9.0	1.0		
-Log-Vertical	-	logv.png	9.0	2.0		
-Log-Vertical	-	logv.png	9.0	3.0		
-Log-Vertical	-	logv.png	9.0	4.0		
-Log-Vertical	-	logv.png	9.0	5.0		
-Log-Vertical	-	logv.png	9.0	6.0		
-Log-Vertical	-	logv.png	9.0	7.0		
-Log-Bottom	-	logbottom.png	9.0	8.0		
-Boulder	-	boulder.png	10.0	1.0		
+Log-Bottom	-	logbottom.png	4.0	2.0		
+Log-Horizontal	-	logh.png	4.0	3.0		
+Log-Left	-	logleft.png	4.0	5.0		
+Log-Top	-	logtop.png	4.0	6.0		
+Log-Bottom	-	logbottom.png	4.0	7.0		
+Log-Right	-	logright.png	4.0	9.0		
+Log-Horizontal	-	logh.png	5.0	0.0		
+Log-Horizontal	-	logh.png	5.0	3.0		
+Log-Horizontal	-	logh.png	5.0	5.0		
+Log-Right	-	logright.png	6.0	0.0		
+Log-Top	-	logtop.png	6.0	1.0		
+Log-Bottom	-	logbottom.png	6.0	2.0		
+Log-Right	-	logright.png	6.0	3.0		
+Log-Right	-	logright.png	6.0	5.0		
+Log-Left	-	logleft.png	7.0	6.0		
+Log-Left	-	logleft.png	7.0	7.0		
+Log-Right	-	logright.png	8.0	6.0		
+Log-Right	-	logright.png	8.0	7.0		
 

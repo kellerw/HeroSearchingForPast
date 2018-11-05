@@ -3,9 +3,7 @@
 -8
 7
 null
-Decoration	-	down.png	0.0	6.0		false		
-Decoration	-	icicle.png	-4.0	-2.0		true		
-Decoration	-	icicle.png	-6.0	-2.0		true		
+Decoration	-	stairs_up_ice.png	0.0	6.0		false		
 
 Ice	-	ice.png	-8.0	-6.0		
 Ice	-	ice.png	-8.0	-5.0		
@@ -21,11 +19,11 @@ Ice	-	ice.png	-8.0	4.0
 Ice	-	ice.png	-8.0	5.0		
 Ice	-	ice.png	-7.0	-6.0		
 Ice	-	ice.png	-7.0	-5.0		
-Ice	-	ice.png	-7.0	-4.0		
+Base	-	IceStone2.png	-7.0	-4.0		
 Ice	-	ice.png	-7.0	-3.0		
 Ice	-	ice.png	-7.0	-2.0		
 Ice	-	ice.png	-7.0	-1.0		
-Ice	-	ice.png	-7.0	0.0		
+Base	-	IceStone2.png	-7.0	0.0		
 Ice	-	ice.png	-7.0	1.0		
 Ice	-	ice.png	-7.0	2.0		
 Ice	-	ice.png	-7.0	3.0		
@@ -35,19 +33,19 @@ Ice	-	ice.png	-6.0	-6.0
 Ice	-	ice.png	-6.0	-5.0		
 Ice	-	ice.png	-6.0	-4.0		
 Ice	-	ice.png	-6.0	-3.0		
-Wall	-	ice.png	-6.0	-2.0		
+Base	-	IceStone2.png	-6.0	-2.0		
 Ice	-	ice.png	-6.0	-1.0		
 Ice	-	ice.png	-6.0	0.0		
 Ice	-	ice.png	-6.0	1.0		
 Ice	-	ice.png	-6.0	2.0		
-Ice	-	ice.png	-6.0	3.0		
+Base	-	IceStone2.png	-6.0	3.0		
 Ice	-	ice.png	-6.0	4.0		
 Ice	-	ice.png	-6.0	5.0		
 Ice	-	ice.png	-5.0	-6.0		
 Ice	-	ice.png	-5.0	-5.0		
 Ice	-	ice.png	-5.0	-4.0		
 Ice	-	ice.png	-5.0	-3.0		
-LoadNew	From-ice-tk-2	stairs_down_ice.png	-5.0	-2.0		ice-tk-2		
+LoadNew	From-ice-4	stairs_down_ice.png	-5.0	-2.0		ice-4		
 Ice	-	ice.png	-5.0	-1.0		
 Ice	-	ice.png	-5.0	0.0		
 Ice	-	ice.png	-5.0	1.0		
@@ -56,13 +54,13 @@ Ice	-	ice.png	-5.0	3.0
 Ice	-	ice.png	-5.0	4.0		
 Ice	-	ice.png	-5.0	5.0		
 Ice	-	ice.png	-4.0	-6.0		
-Base	-	IceStone2.png	-4.0	-5.0		
-Ice	-	ice.png	-4.0	-4.0		
-Base	-	IceStone2.png	-4.0	-3.0		
-Wall	-	ice.png	-4.0	-2.0		
+Ice	-	ice.png	-4.0	-5.0		
+Base	-	IceStone2.png	-4.0	-4.0		
+Ice	-	ice.png	-4.0	-3.0		
+Ice	-	ice.png	-4.0	-2.0		
 Ice	-	ice.png	-4.0	-1.0		
 Ice	-	ice.png	-4.0	0.0		
-Ice	-	ice.png	-4.0	1.0		
+Base	-	IceStone2.png	-4.0	1.0		
 Ice	-	ice.png	-4.0	2.0		
 Ice	-	ice.png	-4.0	3.0		
 Ice	-	ice.png	-4.0	4.0		
@@ -73,16 +71,16 @@ Ice	-	ice.png	-3.0	-4.0
 Ice	-	ice.png	-3.0	-3.0		
 Ice	-	ice.png	-3.0	-2.0		
 Ice	-	ice.png	-3.0	-1.0		
-Base	-	IceStone3.png	-3.0	0.0		
-Base	-	IceStone.png	-3.0	1.0		
-Ice	-	ice.png	-3.0	2.0		
+Base	-	IceStone2.png	-3.0	0.0		
+Ice	-	ice.png	-3.0	1.0		
+Base	-	IceStone2.png	-3.0	2.0		
 Ice	-	ice.png	-3.0	3.0		
 Ice	-	ice.png	-3.0	4.0		
 Ice	-	ice.png	-3.0	5.0		
-Base	-	IceStone3.png	-2.0	-6.0		
-Base	-	IceStone3.png	-2.0	-5.0		
-Base	-	IceStone3.png	-2.0	-4.0		
-Base	-	IceStone2.png	-2.0	-3.0		
+Ice	-	ice.png	-2.0	-6.0		
+Ice	-	ice.png	-2.0	-5.0		
+Base	-	IceStone2.png	-2.0	-4.0		
+Ice	-	ice.png	-2.0	-3.0		
 Ice	-	ice.png	-2.0	-2.0		
 Ice	-	ice.png	-2.0	-1.0		
 Ice	-	ice.png	-2.0	0.0		
@@ -91,42 +89,42 @@ Ice	-	ice.png	-2.0	2.0
 Ice	-	ice.png	-2.0	3.0		
 Ice	-	ice.png	-2.0	4.0		
 Ice	-	ice.png	-2.0	5.0		
-Base	-	IceStone.png	-1.0	-6.0		
-Base	-	IceStone.png	-1.0	-5.0		
-Base	-	IceStone.png	-1.0	-4.0		
-Base	-	IceStone4.png	-1.0	-3.0		
+Ice	-	ice.png	-1.0	-6.0		
+Ice	-	ice.png	-1.0	-5.0		
+Ice	-	ice.png	-1.0	-4.0		
+Base	-	IceStone2.png	-1.0	-3.0		
 Ice	-	ice.png	-1.0	-2.0		
-Base	-	IceStone3.png	-1.0	-1.0		
-Base	-	IceStone2.png	-1.0	0.0		
+Ice	-	ice.png	-1.0	-1.0		
+Ice	-	ice.png	-1.0	0.0		
 Ice	-	ice.png	-1.0	1.0		
 Ice	-	ice.png	-1.0	2.0		
 Ice	-	ice.png	-1.0	3.0		
-Ice	-	ice.png	-1.0	4.0		
+Base	-	IceStone2.png	-1.0	4.0		
 Ice	-	ice.png	-1.0	5.0		
-Ice	-	ice.png	0.0	-6.0		
+Base	-	IceStone2.png	0.0	-6.0		
 Ice	-	ice.png	0.0	-5.0		
 Ice	-	ice.png	0.0	-4.0		
 Ice	-	ice.png	0.0	-3.0		
 Ice	-	ice.png	0.0	-2.0		
-Base	-	IceStone.png	0.0	-1.0		
-Base	-	IceStone4.png	0.0	0.0		
+Ice	-	ice.png	0.0	-1.0		
+Ice	-	ice.png	0.0	0.0		
 Ice	-	ice.png	0.0	1.0		
 Ice	-	ice.png	0.0	2.0		
 Ice	-	ice.png	0.0	3.0		
 Ice	-	ice.png	0.0	4.0		
 Base	-	IceStone3.png	0.0	5.0		
-LoadNew	From-Start;From-ice-entrance	IceStone.png	0.0	6.0		ice-entrance		
+LoadNew	From-Start;From-ice-2	IceStone.png	0.0	6.0		ice-2		
 Ice	-	ice.png	1.0	-6.0		
-Ice	-	ice.png	1.0	-5.0		
+Base	-	IceStone2.png	1.0	-5.0		
 Ice	-	ice.png	1.0	-4.0		
-Base	-	IceStone2.png	1.0	-3.0		
+Ice	-	ice.png	1.0	-3.0		
 Ice	-	ice.png	1.0	-2.0		
-Base	-	IceStone.png	1.0	-1.0		
-Base	-	IceStone4.png	1.0	0.0		
+Base	-	IceStone2.png	1.0	-1.0		
+Ice	-	ice.png	1.0	0.0		
 Ice	-	ice.png	1.0	1.0		
-Base	-	IceStone3.png	1.0	2.0		
-Base	-	IceStone3.png	1.0	3.0		
-Base	-	IceStone2.png	1.0	4.0		
+Base	-	IceStone2.png	1.0	2.0		
+Ice	-	ice.png	1.0	3.0		
+Ice	-	ice.png	1.0	4.0		
 Ice	-	ice.png	1.0	5.0		
 Ice	-	ice.png	2.0	-6.0		
 Ice	-	ice.png	2.0	-5.0		
@@ -136,13 +134,13 @@ Ice	-	ice.png	2.0	-2.0
 Ice	-	ice.png	2.0	-1.0		
 Ice	-	ice.png	2.0	0.0		
 Ice	-	ice.png	2.0	1.0		
-Base	-	IceStone.png	2.0	2.0		
-Base	-	IceStone.png	2.0	3.0		
-Base	-	IceStone4.png	2.0	4.0		
+Ice	-	ice.png	2.0	2.0		
+Ice	-	ice.png	2.0	3.0		
+Ice	-	ice.png	2.0	4.0		
 Ice	-	ice.png	2.0	5.0		
 Ice	-	ice.png	3.0	-6.0		
 Ice	-	ice.png	3.0	-5.0		
-Base	-	IceStone2.png	3.0	-4.0		
+Ice	-	ice.png	3.0	-4.0		
 Ice	-	ice.png	3.0	-3.0		
 Ice	-	ice.png	3.0	-2.0		
 Ice	-	ice.png	3.0	-1.0		
@@ -154,39 +152,39 @@ Ice	-	ice.png	3.0	4.0
 Ice	-	ice.png	3.0	5.0		
 Ice	-	ice.png	4.0	-6.0		
 Ice	-	ice.png	4.0	-5.0		
-Ice	-	ice.png	4.0	-4.0		
+Base	-	IceStone3.png	4.0	-4.0		
 Ice	-	ice.png	4.0	-3.0		
 Ice	-	ice.png	4.0	-2.0		
-Base	-	IceStone3.png	4.0	-1.0		
+Ice	-	ice.png	4.0	-1.0		
 Ice	-	ice.png	4.0	0.0		
-Base	-	IceStone3.png	4.0	1.0		
-Ice	-	ice.png	4.0	2.0		
+Ice	-	ice.png	4.0	1.0		
+Base	-	IceStone2.png	4.0	2.0		
 Ice	-	ice.png	4.0	3.0		
 Ice	-	ice.png	4.0	4.0		
-Ice	-	ice.png	4.0	5.0		
+Base	-	IceStone2.png	4.0	5.0		
 Ice	-	ice.png	5.0	-6.0		
 Ice	-	ice.png	5.0	-5.0		
-Ice	-	ice.png	5.0	-4.0		
+Base	-	IceStone.png	5.0	-4.0		
 Ice	-	ice.png	5.0	-3.0		
 Ice	-	ice.png	5.0	-2.0		
 Ice	-	ice.png	5.0	-1.0		
 Ice	-	ice.png	5.0	0.0		
-Base	-	IceStone.png	5.0	1.0		
+Ice	-	ice.png	5.0	1.0		
 Ice	-	ice.png	5.0	2.0		
 Ice	-	ice.png	5.0	3.0		
-Ice	-	ice.png	5.0	4.0		
+Base	-	IceStone2.png	5.0	4.0		
 Ice	-	ice.png	5.0	5.0		
 Ice	-	ice.png	6.0	-6.0		
 Ice	-	ice.png	6.0	-5.0		
 Ice	-	ice.png	6.0	-4.0		
-Ice	-	ice.png	6.0	-3.0		
+Base	-	IceStone3.png	6.0	-3.0		
 Ice	-	ice.png	6.0	-2.0		
 Ice	-	ice.png	6.0	-1.0		
-Ice	-	ice.png	6.0	0.0		
+Base	-	IceStone2.png	6.0	0.0		
 Ice	-	ice.png	6.0	1.0		
 Ice	-	ice.png	6.0	2.0		
-Base	-	IceStone.png	6.0	3.0		
-Base	-	IceStone4.png	6.0	4.0		
+Base	-	IceStone2.png	6.0	3.0		
+Ice	-	ice.png	6.0	4.0		
 Ice	-	ice.png	6.0	5.0		
 Ice	-	ice.png	7.0	-6.0		
 Ice	-	ice.png	7.0	-5.0		
@@ -202,7 +200,4 @@ Ice	-	ice.png	7.0	4.0
 Ice	-	ice.png	7.0	5.0		
 
 
-Boulder	-	boulder.png	-3.0	-5.0		
-Boulder	-	boulder.png	-3.0	-3.0		
-Boulder	-	boulder.png	0.0	-1.0		
 

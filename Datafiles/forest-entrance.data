@@ -5,10 +5,10 @@
 null
 Decoration	-	down.png	5.0	10.0		false		
 Decoration	-	forest_stairs_down.png	0.0	0.0		false		
-Decoration	-	forest_stairs_down.png	0.0	1.0		false		
+Decoration	-	grass.png	0.0	1.0		false		
 
-LoadNew	from-forest-stf-1	grass.png	0.0	0.0		forest-stf-1		
-LoadNew	From-forest-tk-3	grass.png	0.0	1.0		forest-tk-3		
+LoadNew	from-forest-1	grass.png	0.0	0.0		forest-1		
+Base	-	grass.png	0.0	1.0		
 Base	-	grass.png	0.0	2.0		
 Base	-	grass.png	0.0	3.0		
 Base	-	grass.png	0.0	4.0		
@@ -67,7 +67,7 @@ Base	-	grass.png	5.0	6.0
 Base	-	grass.png	5.0	7.0		
 Base	-	grass.png	5.0	8.0		
 Base	From-overworld	grass.png	5.0	9.0		
-LoadNew	-	grass.png	5.0	10.0		overworld		
+LoadNew	From-overworld;From-Start	grass.png	5.0	10.0		overworld		
 Base	-	grass.png	6.0	0.0		
 Base	-	grass.png	6.0	1.0		
 Base	-	grass.png	6.0	2.0		

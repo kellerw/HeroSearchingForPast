@@ -32,7 +32,7 @@ Base	from-end;from-start	brick.png	2.0	1.0
 Base	-	brick.png	2.0	2.0		
 Base	-	brick.png	2.0	3.0		
 Base	-	brick.png	2.0	4.0		
-LoadNew	-	brickportal.png	2.0	5.0		tower-test		
+LoadNew	-	brickportal.png	2.0	5.0		tower-entrance		
 Base	From-tower-test	brick.png	2.0	6.0		
 Base	-	brick.png	2.0	7.0		
 Base	-	brick.png	3.0	0.0		
@@ -55,7 +55,7 @@ Base	-	brick.png	5.0	0.0
 Base	-	brick.png	5.0	1.0		
 Base	-	brick.png	5.0	2.0		
 Base	-	brick.png	5.0	3.0		
-LoadNew	-	brickportal.png	5.0	4.0		CastleTest		
+LoadNew	-	brickportal.png	5.0	4.0		castle-entrance		
 Base	From-CastleTest	brick.png	5.0	5.0		
 Base	-	brick.png	5.0	6.0		
 Base	-	brick.png	5.0	7.0		
@@ -78,7 +78,7 @@ Base	-	brick.png	7.0	7.0
 Base	-	brick.png	8.0	0.0		
 Base	-	brick.png	8.0	1.0		
 Base	-	brick.png	8.0	2.0		
-LoadNew	-	brickportal.png	8.0	3.0		volcano		
+LoadNew	-	brickportal.png	8.0	3.0		lava-entrance		
 Base	from-volcano	brick.png	8.0	4.0		
 Base	-	brick.png	8.0	5.0		
 Base	-	brick.png	8.0	6.0		

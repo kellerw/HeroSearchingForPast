@@ -3,13 +3,11 @@
 -4
 11
 null
-Decoration	-	Castle_bricks.png	5.0	-2.0		false		
-Decoration	-	down.png	5.0	10.0		false		
+Decoration	-	stairs_up_castle.png	5.0	10.0		false		
 Decoration	-	stairs_down_castle.png	5.0	-4.0		false		
 
-LoadNew	-	Castle_bricks.png	5.0	-4.0		-		
-CastleGate	-	Gate.png	5.0	-3.0		
-Base	-	Castle_bricks.png	5.0	-2.0		
+LoadNew	From-castle-exit	Castle_bricks.png	5.0	-4.0		castle-exit		
+Base	-	Castle_bricks.png	5.0	-3.0		
 Base	-	Castle_bricks.png	5.0	-1.0		
 CastleStone	-	IceStoneButton.png	5.0	0.0		
 CastleStone	-	IceStoneButton.png	5.0	1.0		
@@ -21,11 +19,16 @@ CastleStone	-	IceStoneButton.png	5.0	6.0
 CastleStone	-	IceStoneButton.png	5.0	7.0		
 Base	-	Castle_bricks.png	5.0	8.0		
 Base	-	Castle_bricks.png	5.0	9.0		
-LoadNew	From-Start;From-castle-tk-1	Castle_bricks.png	5.0	10.0		castle-tk-1		
+LoadNew	From-Start;From-castle-5	Castle_bricks.png	5.0	10.0		castle-5		
+Base	-	Castle_bricks.png	6.0	-4.0		
+Base	-	Castle_bricks.png	6.0	-3.0		
 Base	-	Castle_bricks.png	6.0	-1.0		
 Base	-	Castle_bricks.png	6.0	3.0		
 Base	-	Castle_bricks.png	6.0	4.0		
 Base	-	Castle_bricks.png	6.0	8.0		
+Base	-	Castle_bricks.png	7.0	-4.0		
+Base	-	Castle_bricks.png	7.0	-3.0		
+CastleGate	-	Gate.png	7.0	-2.0		
 Base	-	Castle_bricks.png	7.0	-1.0		
 CastleStone	-	IceStoneButton.png	7.0	0.0		
 CastleStone	-	IceStoneButton.png	7.0	1.0		
@@ -58,4 +61,5 @@ CastleStone	-	IceStoneButton.png	11.0	7.0
 Base	-	Castle_bricks.png	11.0	8.0		
 
 
+Memory	-	Memory.gif	6.0	-4.0		
 

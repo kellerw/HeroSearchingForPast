@@ -4,7 +4,7 @@
 11
 null
 Decoration	-	Castle_bricks.png	5.0	-2.0		false		
-Decoration	-	down.png	5.0	10.0		false		
+Decoration	-	stairs_up_castle.png	5.0	10.0		false		
 Decoration	-	stairs_down_castle.png	5.0	-4.0		false		
 
 CastleStone	-	IceStoneButton.png	0.0	2.0		
@@ -31,7 +31,7 @@ CastleStone	-	IceStoneButton.png	4.0	2.0
 CastleStone	-	IceStoneButton.png	4.0	4.0		
 CastleStone	-	IceStoneButton.png	4.0	5.0		
 CastleStone	-	IceStoneButton.png	4.0	7.0		
-LoadNew	-	Castle_bricks.png	5.0	-4.0		-		
+LoadNew	From-castle-6	Castle_bricks.png	5.0	-4.0		castle-6		
 CastleGate	-	Gate.png	5.0	-3.0		
 Base	-	Castle_bricks.png	5.0	-2.0		
 CastleStone	-	IceStoneButton.png	5.0	-1.0		
@@ -45,7 +45,7 @@ CastleStone	-	IceStoneButton.png	5.0	6.0
 CastleStone	-	IceStoneButton.png	5.0	7.0		
 CastleStone	-	IceStoneButton.png	5.0	8.0		
 Base	-	Castle_bricks.png	5.0	9.0		
-LoadNew	From-Start;From-castle-tk-1	Castle_bricks.png	5.0	10.0		castle-tk-1		
+LoadNew	From-Start;From-castle-4	Castle_bricks.png	5.0	10.0		castle-4		
 CastleStone	-	IceStoneButton.png	6.0	1.0		
 CastleStone	-	IceStoneButton.png	6.0	2.0		
 CastleStone	-	IceStoneButton.png	6.0	3.0		
