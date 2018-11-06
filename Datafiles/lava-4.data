@@ -5,26 +5,26 @@
 null
 Decoration	-	stairs_up_castle.png	5.0	10.0		false		
 
-Lava	-	lava.png	-1.0	-2.0		
-Lava	-	lava.png	-1.0	-1.0		
-Lava	-	lava.png	-1.0	0.0		
-Lava	-	lava.png	-1.0	1.0		
-Lava	-	lava.png	-1.0	2.0		
-Lava	-	lava.png	-1.0	3.0		
-Lava	-	lava.png	-1.0	4.0		
-Lava	-	lava.png	-1.0	5.0		
-Lava	-	LavaB.png	-1.0	6.0		
+Base	-	lava_rock.png	-1.0	-2.0		
+Base	-	lava_rock.png	-1.0	-1.0		
+Base	-	lava_rock.png	-1.0	0.0		
+Base	-	lava_rock.png	-1.0	1.0		
+Base	-	lava_rock.png	-1.0	2.0		
+Base	-	lava_rock.png	-1.0	3.0		
+Base	-	lava_rock.png	-1.0	4.0		
+Base	-	lava_rock.png	-1.0	5.0		
+Lava	-	LavaTB.png	-1.0	6.0		
 Base	-	lava_rock.png	-1.0	7.0		
 Base	-	lava_rock.png	-1.0	8.0		
 Base	-	lava_rock.png	-1.0	9.0		
-Lava	-	LavaR.png	0.0	-2.0		
-Lava	-	LavaR.png	0.0	-1.0		
-Lava	-	lava.png	0.0	0.0		
-Lava	-	lava.png	0.0	1.0		
-Lava	-	lava.png	0.0	2.0		
-Lava	-	LavaR.png	0.0	3.0		
-Lava	-	LavaR.png	0.0	4.0		
-Lava	-	LavaR.png	0.0	5.0		
+Base	-	lava_rock.png	0.0	-2.0		
+Lava	-	LavaTRL.png	0.0	-1.0		
+Lava	-	lavaL.png	0.0	0.0		
+Lava	-	lavaL.png	0.0	1.0		
+Lava	-	lavaL.png	0.0	2.0		
+Lava	-	LavaRL.png	0.0	3.0		
+Lava	-	LavaRL.png	0.0	4.0		
+Lava	-	LavaRL.png	0.0	5.0		
 Lava	-	LavaB.png	0.0	6.0		
 Base	-	lava_rock.png	0.0	7.0		
 Base	-	lava_rock.png	0.0	8.0		
@@ -152,6 +152,7 @@ Base	-	lava_rock.png	10.0	8.0
 Lava	-	LavaT.png	10.0	9.0		
 
 
+Boulder	-	boulder.png	-1.0	-1.0		
 Boulder	-	boulder.png	0.0	7.0		
 Boulder	-	boulder.png	0.0	8.0		
 Boulder	-	boulder.png	2.0	3.0		

@@ -348,6 +348,13 @@ public class GameWorld extends Pane
 	}
 	public void load(String file)
 	{
+		
+		if(hero != null)
+		{
+			hero = new Player();
+			pane.layoutXProperty().bind(hero.getSprite().layoutXProperty().multiply(-1).add(new SimpleDoubleProperty(TILEWIDTH*(TILESWIDE-1)/2.0).multiply(this.scaleXProperty())));
+			pane.layoutYProperty().bind(hero.getSprite().layoutYProperty().multiply(-1).add(new SimpleDoubleProperty(TILEHEIGHT*(TILESHIGH-1)/2.0).multiply(this.scaleYProperty())));
+		}
 		loading = true;
 		Scanner scan = null;
 		setWidth(0, 1);
@@ -511,6 +518,7 @@ public class GameWorld extends Pane
 	private int menuitem = 0;
 	public void showMenu()
 	{
+		hero.disableMenu();
 		setLayer(-1);
 		menuitem = -1;
 		hero.disableMovement(new Action());
@@ -529,6 +537,7 @@ public class GameWorld extends Pane
 			}
 			else
 			{
+				hero.enableMenu();
 				this.getChildren().remove(menu);
 				setLayer(5);
 				hero.enableMovement(new Action());

@@ -141,7 +141,7 @@ Ice	-	ice.png	0.0	2.0
 Ice	-	ice.png	0.0	3.0		
 Ice	-	ice.png	0.0	4.0		
 Base	-	IceStone3.png	0.0	5.0		
-LoadNew	From-Start;From-ice-5	IceStone.png	0.0	6.0		ice-5		
+LoadNew	From-Start;From-ice-5;From-ice-6	IceStone.png	0.0	6.0		ice-5		
 Ice	-	ice.png	1.0	-8.0		
 Ice	-	ice.png	1.0	-7.0		
 Ice	-	ice.png	1.0	-6.0		
@@ -231,7 +231,7 @@ Ice	-	ice.png	7.0	-7.0
 Ice	-	ice.png	7.0	-6.0		
 Ice	-	ice.png	7.0	-5.0		
 Ice	-	ice.png	7.0	-4.0		
-LoadNew	-	icepit.png	7.0	-3.0		-		
+LoadNew	-	icepit.png	7.0	-3.0		ice-6		
 Ice	-	ice.png	7.0	-2.0		
 Ice	-	ice.png	7.0	-1.0		
 Ice	-	ice.png	7.0	0.0		

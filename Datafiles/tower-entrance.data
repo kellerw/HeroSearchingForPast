@@ -27,7 +27,7 @@ TeleportPad	teleport_A	teleportpad.png	1.0	7.0
 Base	-	brick.png	1.0	8.0		
 Base	-	brick.png	1.0	9.0		
 Base	-	brick.png	2.0	0.0		
-Wall	-	brick.png	2.0	1.0		
+Base	-	brick.png	2.0	1.0		
 Base	-	brick.png	2.0	2.0		
 Base	-	brick.png	2.0	3.0		
 Base	-	brick.png	2.0	4.0		
@@ -88,7 +88,7 @@ Base	-	brick.png	7.0	7.0
 Base	-	brick.png	7.0	8.0		
 MovePad	-	movepadleft.png	7.0	9.0		-2	0		
 Base	-	brick.png	8.0	0.0		
-Wall	-	brick.png	8.0	1.0		
+Base	-	brick.png	8.0	1.0		
 Base	-	brick.png	8.0	2.0		
 Base	-	brick.png	8.0	3.0		
 Base	-	brick.png	8.0	4.0		

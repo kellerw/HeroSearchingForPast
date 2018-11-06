@@ -72,7 +72,7 @@ Base	-	brick.png	5.0	6.0
 Base	-	brick.png	5.0	7.0		
 Base	-	brick.png	5.0	8.0		
 Base	From-overworld	brick.png	5.0	9.0		
-LoadNew	From-tower-1;from-Start	brick.png	5.0	10.0		tower-tk-1		
+LoadNew	From-tower-1;from-Start	brick.png	5.0	10.0		tower-1		
 Base	-	brick.png	6.0	-1.0		
 Base	-	brick.png	6.0	0.0		
 Base	-	brick.png	6.0	1.0		
