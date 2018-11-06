@@ -153,7 +153,7 @@ public abstract class Log extends Interactor
 	{
 		if(onFire)
 			return;
-		flame = new Decoration("fire.png");
+		flame = new Decoration("Fire.gif");
 		flame.setX(getX());
 		flame.setY(getY());
 		flame.setIsTopLayer(true);

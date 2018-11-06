@@ -6,10 +6,11 @@ null
 Decoration	-	down.png	5.0	10.0		false		
 Decoration	-	forest_stairs_down.png	0.0	0.0		false		
 Decoration	-	grass.png	0.0	1.0		false		
+Decoration	-	forest_stairs_down.png	0.0	2.0		false		
 
 LoadNew	from-forest-1	grass.png	0.0	0.0		forest-1		
 Base	-	grass.png	0.0	1.0		
-Base	-	grass.png	0.0	2.0		
+LoadNew	From-forest-exit	grass.png	0.0	2.0		forest-exit		
 Base	-	grass.png	0.0	3.0		
 Base	-	grass.png	0.0	4.0		
 Base	-	grass.png	0.0	5.0		
