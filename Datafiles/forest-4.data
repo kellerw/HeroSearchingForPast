@@ -143,7 +143,7 @@ Log-Vertical	-	logv.png	0.0	7.0
 Log-Bottom	-	logbottom.png	0.0	8.0		
 Log-Left	-	logleft.png	0.0	9.0		
 Log-Left	-	logleft.png	1.0	-1.0		
-Boulder	-	boulder.png	1.0	2.0		
+Boulder	-	boulder-br.png	1.0	2.0		
 Log-Horizontal	-	logh.png	1.0	9.0		
 Log-Horizontal	-	logh.png	2.0	-1.0		
 Log-Top	-	logtop.png	2.0	2.0		
@@ -157,7 +157,7 @@ Log-Horizontal	-	logh.png	3.0	-1.0
 Log-Left	-	logleft.png	3.0	6.0		
 Log-Right	-	logright.png	3.0	9.0		
 Log-Horizontal	-	logh.png	4.0	-1.0		
-Boulder	-	boulder.png	4.0	0.0		
+Boulder	-	boulder-br.png	4.0	0.0		
 Log-Top	-	logtop.png	4.0	1.0		
 Log-Vertical	-	logv.png	4.0	2.0		
 Log-Bottom	-	logbottom.png	4.0	3.0		
@@ -166,13 +166,13 @@ Log-Horizontal	-	logh.png	4.0	6.0
 Log-Top	-	logtop.png	4.0	8.0		
 Log-Bottom	-	logbottom.png	4.0	9.0		
 Log-Horizontal	-	logh.png	5.0	-1.0		
-Boulder	-	boulder.png	5.0	0.0		
+Boulder	-	boulder-br.png	5.0	0.0		
 Log-Left	-	logleft.png	5.0	2.0		
 Log-Horizontal	-	logh.png	5.0	4.0		
 Log-Right	-	logright.png	5.0	6.0		
 Log-Stump	-	stump.png	5.0	8.0		
 Log-Horizontal	-	logh.png	6.0	-1.0		
-Boulder	-	boulder.png	6.0	0.0		
+Boulder	-	boulder-br.png	6.0	0.0		
 Log-Right	-	logright.png	6.0	2.0		
 Log-Horizontal	-	logh.png	6.0	4.0		
 Log-Top	-	logtop.png	6.0	6.0		
@@ -197,5 +197,5 @@ Log-Vertical	-	logv.png	9.0	5.0
 Log-Vertical	-	logv.png	9.0	6.0		
 Log-Vertical	-	logv.png	9.0	7.0		
 Log-Bottom	-	logbottom.png	9.0	8.0		
-Boulder	-	boulder.png	10.0	1.0		
+Boulder	-	boulder-br.png	10.0	1.0		
 

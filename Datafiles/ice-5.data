@@ -215,10 +215,10 @@ Ice	-	ice.png	7.0	5.0
 Ice	-	ice.png	7.0	6.0		
 
 
-Boulder	-	boulder.png	-3.0	-6.0		
-Boulder	-	boulder.png	-2.0	-3.0		
-Boulder	-	boulder.png	-2.0	4.0		
-Boulder	-	boulder.png	5.0	-5.0		
-Boulder	-	boulder.png	5.0	3.0		
-Boulder	-	boulder.png	6.0	4.0		
+Boulder	-	boulder-ice.png	-3.0	-6.0		
+Boulder	-	boulder-ice.png	-2.0	-3.0		
+Boulder	-	boulder-ice.png	-2.0	4.0		
+Boulder	-	boulder-ice.png	5.0	-5.0		
+Boulder	-	boulder-ice.png	5.0	3.0		
+Boulder	-	boulder-ice.png	6.0	4.0		
 

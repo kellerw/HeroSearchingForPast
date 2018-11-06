@@ -243,14 +243,14 @@ LoadNew	-	icepit.png	7.0	5.0		ice-6
 
 
 Memory	-	Memory.gif	-11.0	-3.0		
-Boulder	-	boulder.png	-6.0	-6.0		
-Boulder	-	boulder.png	-6.0	0.0		
-Boulder	-	boulder.png	-4.0	1.0		
-Boulder	-	boulder.png	-3.0	-5.0		
-Boulder	-	boulder.png	-1.0	-2.0		
-Boulder	-	boulder.png	0.0	-5.0		
-Boulder	-	boulder.png	0.0	0.0		
-Boulder	-	boulder.png	3.0	-6.0		
-Boulder	-	boulder.png	4.0	1.0		
-Boulder	-	boulder.png	5.0	-3.0		
+Boulder	-	boulder-ice.png	-6.0	-6.0		
+Boulder	-	boulder-ice.png	-6.0	0.0		
+Boulder	-	boulder-ice.png	-4.0	1.0		
+Boulder	-	boulder-ice.png	-3.0	-5.0		
+Boulder	-	boulder-ice.png	-1.0	-2.0		
+Boulder	-	boulder-ice.png	0.0	-5.0		
+Boulder	-	boulder-ice.png	0.0	0.0		
+Boulder	-	boulder-ice.png	3.0	-6.0		
+Boulder	-	boulder-ice.png	4.0	1.0		
+Boulder	-	boulder-ice.png	5.0	-3.0		
 
