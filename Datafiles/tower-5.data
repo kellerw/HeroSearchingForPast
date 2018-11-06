@@ -3,7 +3,7 @@
 -2
 11
 null
-Decoration	-	down.png	5.0	10.0		false		
+Decoration	-	stairs_down_tower.png	5.0	10.0		false		
 Decoration	-	stairs_up_tower.png	0.0	9.0		false		
 
 TeleportPad	A_A	teleportpad.png	0.0	-1.0		
@@ -16,7 +16,7 @@ TeleportPad	B_B	teleportpad.png	0.0	5.0
 Base	-	brick.png	0.0	6.0		
 Wall	-	Bookcase.png	0.0	7.0		
 Base	-	brick.png	0.0	8.0		
-Base	-	brick.png	0.0	9.0		
+LoadNew	From-tower-6	brick.png	0.0	9.0		tower-6		
 Base	-	brick.png	1.0	-1.0		
 Base	-	brick.png	1.0	0.0		
 TeleportPad	B_A	teleportpad.png	1.0	1.0		
@@ -72,7 +72,7 @@ Wall	-	Bookcase.png	5.0	6.0
 TeleportPad	H_A	teleportpad.png	5.0	7.0		
 Base	-	brick.png	5.0	8.0		
 Base	From-overworld	brick.png	5.0	9.0		
-LoadNew	From-tower-test;From-Start	brick.png	5.0	10.0		tower-test		
+LoadNew	From-tower-4;From-Start	brick.png	5.0	10.0		tower-4		
 Base	-	brick.png	6.0	-1.0		
 Base	-	brick.png	6.0	0.0		
 Base	-	brick.png	6.0	1.0		

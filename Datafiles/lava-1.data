@@ -3,7 +3,7 @@
 -2
 11
 null
-Decoration	-	down.png	5.0	10.0		false		
+Decoration	-	stairs_up_castle.png	5.0	10.0		false		
 Decoration	-	lava_stairs.png	5.0	-2.0		false		
 
 Base	-	lava_rock.png	-1.0	-2.0		
@@ -78,7 +78,7 @@ Base	-	lava_rock.png	4.0	6.0
 Base	-	lava_rock.png	4.0	7.0		
 Base	-	lava_rock.png	4.0	8.0		
 Base	-	lava_rock.png	4.0	9.0		
-LoadNew	from-lava-tk-1	lava_rock.png	5.0	-2.0		lava-tk-1		
+LoadNew	from-lava-2	lava_rock.png	5.0	-2.0		lava-2		
 Lava	-	LavaT.png	5.0	-1.0		
 Lava	-	LavaB.png	5.0	0.0		
 Base	-	lava_rock.png	5.0	1.0		
@@ -90,7 +90,7 @@ Base	-	lava_rock.png	5.0	6.0
 Base	-	lava_rock.png	5.0	7.0		
 Base	-	lava_rock.png	5.0	8.0		
 Base	-	lava_rock.png	5.0	9.0		
-LoadNew	from-volcano;from-start	lava_rock.png	5.0	10.0		volcano		
+LoadNew	from-lava-entrance;from-start	lava_rock.png	5.0	10.0		lava-entrance		
 Lava	-	lavaL.png	6.0	-2.0		
 Lava	-	lava.png	6.0	-1.0		
 Lava	-	LavaB.png	6.0	0.0		

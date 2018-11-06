@@ -26,6 +26,7 @@ Base	-	Castle_bricks.png	6.0	-1.0
 Base	-	Castle_bricks.png	6.0	3.0		
 Base	-	Castle_bricks.png	6.0	4.0		
 Base	-	Castle_bricks.png	6.0	8.0		
+Base	-	Castle_bricks.png	6.0	9.0		
 Base	-	Castle_bricks.png	7.0	-4.0		
 Base	-	Castle_bricks.png	7.0	-3.0		
 CastleGate	-	Gate.png	7.0	-2.0		
@@ -39,6 +40,7 @@ CastleStone	-	IceStoneButton.png	7.0	5.0
 CastleStone	-	IceStoneButton.png	7.0	6.0		
 CastleStone	-	IceStoneButton.png	7.0	7.0		
 Base	-	Castle_bricks.png	7.0	8.0		
+Base	-	Castle_bricks.png	7.0	9.0		
 Base	-	Castle_bricks.png	8.0	-1.0		
 CastleStone	-	IceStoneButton.png	8.0	3.0		
 Base	-	Castle_bricks.png	8.0	8.0		
@@ -49,6 +51,7 @@ Base	-	Castle_bricks.png	10.0	-1.0
 Base	-	Castle_bricks.png	10.0	3.0		
 Base	-	Castle_bricks.png	10.0	4.0		
 Base	-	Castle_bricks.png	10.0	8.0		
+Base	-	Castle_bricks.png	11.0	-2.0		
 Base	-	Castle_bricks.png	11.0	-1.0		
 CastleStone	-	IceStoneButton.png	11.0	0.0		
 CastleStone	-	IceStoneButton.png	11.0	1.0		
@@ -59,7 +62,12 @@ CastleStone	-	IceStoneButton.png	11.0	5.0
 CastleStone	-	IceStoneButton.png	11.0	6.0		
 CastleStone	-	IceStoneButton.png	11.0	7.0		
 Base	-	Castle_bricks.png	11.0	8.0		
+Base	-	Castle_bricks.png	12.0	-2.0		
+Base	-	Castle_bricks.png	12.0	-1.0		
 
 
 Memory	-	Memory.gif	6.0	-4.0		
+Character	-	down-character.png	6.0	9.0		This level is definitely impossible.;No, don't talk to the guard in the other corner!;He isn't going to give you a big hint!;Alright, at least try solving the puzzle without it, first?	 Guard Who Always Lies		
+Character	-	down-character.png	7.0	-4.0		Sorry, your princess is in another castle!;Wait, you're looking for memories?;Oh, well in that case, one is here.	 Frog		
+Character	-	down-character.png	12.0	-2.0		The Seven Bridges problem is impossible, but there's something different in this version, so it's possible.;Sorry, you have to figure out what's different on your own!	 Guard Who Always Tells The Truth		
 

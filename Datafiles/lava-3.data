@@ -3,7 +3,7 @@
 -2
 11
 null
-Decoration	-	down.png	5.0	10.0		false		
+Decoration	-	stairs_up_castle.png	5.0	10.0		false		
 
 Lava	-	lava.png	-1.0	-2.0		
 Lava	-	lava.png	-1.0	-1.0		
@@ -65,7 +65,7 @@ Base	-	lava_rock.png	3.0	6.0
 Lava	-	LavaTB.png	3.0	7.0		
 Base	-	lava_rock.png	3.0	8.0		
 Base	-	lava_rock.png	3.0	9.0		
-Base	-	lava_rock.png	4.0	-2.0		
+LoadNew	from-lava-4	lava_stairs.png	4.0	-2.0		lava-4		
 Base	-	lava_rock.png	4.0	-1.0		
 Lava	-	LavaTB.png	4.0	0.0		
 Base	-	lava_rock.png	4.0	1.0		
@@ -89,7 +89,7 @@ Lava	-	LavaBR.png	5.0	6.0
 Base	-	lava_rock.png	5.0	7.0		
 Base	-	lava_rock.png	5.0	8.0		
 Base	-	lava_rock.png	5.0	9.0		
-LoadNew	from-lava-tk-1;from-start	lava_rock.png	5.0	10.0		lava-tk-1		
+LoadNew	from-lava-2;from-start	lava_rock.png	5.0	10.0		lava-2		
 Lava	-	lava.png	6.0	-2.0		
 Lava	-	lava.png	6.0	-1.0		
 Lava	-	LavaB.png	6.0	0.0		
@@ -158,7 +158,6 @@ Boulder	-	boulder.png	1.0	3.0
 Boulder	-	boulder.png	2.0	2.0		
 Boulder	-	boulder.png	2.0	5.0		
 Boulder	-	boulder.png	3.0	6.0		
-Memory	-	Memory.gif	4.0	-2.0		
 Boulder	-	boulder.png	6.0	3.0		
 Boulder	-	boulder.png	6.0	8.0		
 

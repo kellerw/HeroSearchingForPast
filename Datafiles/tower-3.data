@@ -3,11 +3,12 @@
 -2
 11
 null
-Decoration	-	down.png	5.0	10.0		false		
-Decoration	-	stairs_down_tower.png	0.0	0.0		false		
+Decoration	-	stairs_down_tower.png	5.0	10.0		false		
+Decoration	-	stairs_up_tower.png	0.0	0.0		false		
+Decoration	-	stairs_up_tower.png	0.0	0.0		false		
 
 Base	-	brick.png	0.0	-1.0		
-LoadNew	from-tower-tk-3	brick.png	0.0	0.0		tower-tk-3		
+LoadNew	from-tower-4	brick.png	0.0	0.0		tower-4		
 Base	-	brick.png	0.0	1.0		
 MovePad	p2	movepadright.png	0.0	2.0		1	0		
 MovePad	-	movepadup.png	0.0	3.0		0	-1		
@@ -72,7 +73,7 @@ Base	-	brick.png	5.0	6.0
 Base	-	brick.png	5.0	7.0		
 MovePad	-	movepaddown.png	5.0	8.0		0	1		
 Base	From-overworld	brick.png	5.0	9.0		
-LoadNew	From-tower-tk-1;from-Start	brick.png	5.0	10.0		tower-tk-1		
+LoadNew	From-tower-2;from-Start	brick.png	5.0	10.0		tower-2		
 MovePad	-	movepadleft.png	6.0	-1.0		-1	0		
 Base	-	brick.png	6.0	0.0		
 Base	-	brick.png	6.0	1.0		
