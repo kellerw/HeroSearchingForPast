@@ -1,7 +1,7 @@
 import java.util.HashSet;
 public class Memory extends Interactable
 {
-	private static HashSet<String> found = new HashSet<>();
+	public static HashSet<String> found = new HashSet<>();
 	public Memory()
 	{
 		setSprite("bubble.png");
