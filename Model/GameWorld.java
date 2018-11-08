@@ -529,11 +529,7 @@ public class GameWorld extends Pane
 		handler = new Action(o->{
 			if(menuitem>=3)
 			{
-				this.getChildren().remove(menu);
-				hero.enableMovement(new Action());
-				showMenu();
-				//setLayer(5);
-				//showDialog("sample.png", "???", "Test?", new Action());
+				showMainMenu();
 			}
 			else
 			{
@@ -550,6 +546,39 @@ public class GameWorld extends Pane
 					lastlevel = "end";
 					load("overworld");
 				}
+			}
+		});
+	}
+	public void showMainMenu()
+	{
+		menuitem = -1;
+		down = ()->{menuitem = (menuitem+1)%4;try{menu.setImage(new Image(getClass().getResource("mainmenu_"+menuitem+".png").openStream()));}catch(Exception e){}};
+		up = ()->{menuitem = (menuitem+3)%4;try{menu.setImage(new Image(getClass().getResource("mainmenu_"+menuitem+".png").openStream()));}catch(Exception e){}};
+		executeDown();
+		handler = new Action(o->{
+			if(menuitem==0)
+			{
+				Memory.found = new java.util.HashSet<>();
+				world = new GameWorld();
+				Main.setWorld();
+			}
+			else if(menuitem == 1)
+			{
+				hero.enableMenu();
+				this.getChildren().remove(menu);
+				setLayer(5);
+				hero.enableMovement(new Action());
+			}
+			else if(menuitem == 2)
+			{
+				try{menu.setImage(new Image(getClass().getResource("Credits.png").openStream()));}catch(Exception e){}
+				down = ()->{};
+				up = ()->{};
+				handler = new Action(o2->showMainMenu());
+			}
+			else if(menuitem == 3)
+			{
+				System.exit(0);
 			}
 		});
 	}
