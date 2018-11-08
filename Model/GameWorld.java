@@ -441,6 +441,10 @@ public class GameWorld extends Pane
 	}
 	public void showCutscene(String filename)
 	{
+		showCutscene(filename, 5, new Action());
+	}
+	public void showCutscene(String filename, int layer, Action then)
+	{
 		hero.disableMovement(new Action());
 		try
 		{
@@ -459,11 +463,11 @@ public class GameWorld extends Pane
 				double l = media.getDuration().toSeconds();
 				Action h = new Action(o->
 				{
-					setLayer(5);
+					setLayer(layer);
 					hero.enableMovement(new Action());
 					getChildren().remove(mediaView);
 					o.start();
-				});
+				}).then(o->{then.start();o.start();});
 				handler = h;
 				new Thread() { public void run() {
 						try {
@@ -527,9 +531,13 @@ public class GameWorld extends Pane
 		this.getChildren().add(menu);
 		executeDown();
 		handler = new Action(o->{
-			if(menuitem>=3)
+			if(menuitem==3)
 			{
 				showMainMenu();
+			}
+			else if(menuitem == 4)
+			{
+				showMemories();
 			}
 			else
 			{
@@ -581,6 +589,32 @@ public class GameWorld extends Pane
 				System.exit(0);
 			}
 		});
+	}
+	public static final String[] cutscenes = new String[]{"EndCutscene.mp4","ice.mp4", "", "", "", ""};
+	public void setMemoryHandler()
+	{
+		handler = new Action(o->
+		{
+			if(menuitem==6)
+			{
+				hero.enableMenu();
+				hero.enableMovement(new Action());
+				this.getChildren().remove(menu);
+				showMenu();
+			}
+			else
+			{
+				showCutscene(cutscenes[menuitem], -1, new Action((o2)->{setMemoryHandler();o2.start();}));
+			}
+		});
+	}
+	public void showMemories()
+	{
+		menuitem = -1;
+		down = ()->{do {menuitem = (menuitem+1)%7;} while(menuitem != 6 && !Memory.found.contains(cutscenes[menuitem]));try{menu.setImage(new Image(getClass().getResource("Cutscenes_"+menuitem+".png").openStream()));}catch(Exception e){}};
+		up = ()->{do {menuitem = (menuitem+6)%7;} while(menuitem != 6 && !Memory.found.contains(cutscenes[menuitem]));try{menu.setImage(new Image(getClass().getResource("Cutscenes_"+menuitem+".png").openStream()));}catch(Exception e){}};
+		executeDown();
+		setMemoryHandler();
 	}
 	public void showDialog(String speaker, String name, String text, Action then)
 	{
