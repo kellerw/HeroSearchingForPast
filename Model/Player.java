@@ -48,7 +48,6 @@ public class Player extends Interactor
 	{
 		if(System.currentTimeMillis() - lasttime < 100)
 			return;
-		lasttime = System.currentTimeMillis();
 		Platform.runLater(()->
 		{
 			if(!movementEnabled())
@@ -68,13 +67,25 @@ public class Player extends Interactor
 				setX(getX());
 				setY(getY());
 				if(goNorth)
+				{
+					lasttime = System.currentTimeMillis();
 					tryMoveUp(new Action(o->checkUpdate(o)));
+				}
 				else if(goSouth)
+				{
+					lasttime = System.currentTimeMillis();
 					tryMoveDown(new Action(o->checkUpdate(o)));
+				}
 				else if(goWest)
+				{
+					lasttime = System.currentTimeMillis();
 					tryMoveLeft(new Action(o->checkUpdate(o)));
+				}
 				else if(goEast)
+				{
+					lasttime = System.currentTimeMillis();
 					tryMoveRight(new Action(o->checkUpdate(o)));
+				}
 			}
 			then.start();
 		});
