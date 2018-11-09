@@ -30,6 +30,10 @@ public class Player extends Interactor
 		movementEnabled--;
 		next.start();
 	}
+	public void printEnable()
+	{
+		System.out.println(movementEnabled);
+	}
 	public void enableMenu()
 	{
 		openmenu = true;

@@ -20,6 +20,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.text.Text;
 import javafx.scene.control.TextArea;
+import javafx.animation.Timeline;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.util.Duration;
 public class GameWorld extends Pane
 {
 	//width and height of each tile
@@ -474,6 +478,36 @@ public class GameWorld extends Pane
 			writer.close();
 			}
 		catch(Exception e){}
+	}
+	public void fadeIn(String destination)
+	{
+		hero.disableMovement(new Action());
+		Rectangle r = new Rectangle(0, 0, TILESWIDE*TILEWIDTH,TILESHIGH*TILEHEIGHT);
+		r.layoutXProperty().bind(hero.getSprite().layoutXProperty().multiply(-1).multiply(this.scaleXProperty()));
+		r.layoutYProperty().bind(hero.getSprite().layoutYProperty().multiply(-1).multiply(this.scaleYProperty()));
+		r.setFill(javafx.scene.paint.Color.BLACK);
+		r.setOpacity(0);
+		getChildren().add(r);
+		Timeline timeline = new Timeline();
+		timeline.setCycleCount(1);
+		timeline.getKeyFrames().add(new KeyFrame(Duration.millis(0), (e)->{}, new KeyValue(r.opacityProperty(), 0.0)));
+		timeline.getKeyFrames().add(new KeyFrame(Duration.millis(250), (e)->{}, new KeyValue(r.opacityProperty(), 1.0)));
+		timeline.setOnFinished(e->
+		{
+			load(destination);
+			hero.disableMovement(new Action());
+			Timeline timeline2 = new Timeline();
+			timeline2.setCycleCount(1);
+			timeline2.getKeyFrames().add(new KeyFrame(Duration.millis(0), (e2)->{}, new KeyValue(r.opacityProperty(), 1.0)));
+			timeline2.getKeyFrames().add(new KeyFrame(Duration.millis(250), (e2)->{}, new KeyValue(r.opacityProperty(), 0.0)));
+			timeline2.setOnFinished(e2->
+			{
+				getChildren().remove(r);
+				hero.enableMovement(new Action());
+			});
+			timeline2.play();
+		});
+		timeline.play();
 	}
 	public void showCutscene(String filename)
 	{
