@@ -438,6 +438,42 @@ public class GameWorld extends Pane
 		finally {if(scan != null) scan.close();}
 		lastlevel = file;
 		loading = false;
+		if(Main.enablesaves)
+			savesave();
+	}
+	public void loadsave()
+	{
+		File f = new File("SearchingForAPast.savefile");
+		Scanner scan = null;
+		try
+		{
+			scan = new Scanner(f);
+			String level = scan.nextLine();
+			Memory.found = new java.util.HashSet<String>();
+			while(scan.hasNextLine())
+				Memory.found.add(scan.nextLine());
+			lastlevel = "Start";
+			load(level);
+		}
+		catch(Exception e)
+		{}
+		finally
+		{
+			if(scan != null)
+				scan.close();
+		}
+	}
+	public void savesave()
+	{
+		try
+		{
+			PrintWriter writer = new PrintWriter("SearchingForAPast.savefile", "UTF-8");
+			writer.println(lastlevel);
+			for(String s : Memory.found)
+				writer.println(s);
+			writer.close();
+			}
+		catch(Exception e){}
 	}
 	public void showCutscene(String filename)
 	{

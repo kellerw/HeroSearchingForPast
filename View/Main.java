@@ -7,6 +7,7 @@ import javafx.scene.paint.Color;
 public class Main extends Application
 {
 	static String startlevel = "end";
+	public static boolean enablesaves = false;
 	//Launch application
 	public static void main(String[] args)
 	{
@@ -40,6 +41,8 @@ public class Main extends Application
 	{
 		astage = stage;
 		setWorld();
+		GameWorld.getWorld().loadsave();
+		enablesaves = true;
 		GameWorld.getWorld().showMenu();
 		GameWorld.getWorld().showMainMenu();
 		stage.setTitle("Searching for a Past");
