@@ -516,6 +516,7 @@ public class GameWorld extends Pane
 	public void showCutscene(String filename, int layer, Action then)
 	{
 		hero.disableMovement(new Action());
+		hero.disableMenu();
 		try
 		{
 			Media media = new Media(getClass().getResource(filename).toURI().toString());
@@ -545,7 +546,10 @@ public class GameWorld extends Pane
 							Platform.runLater(()->
 							{
 								if(handler == h)
+								{
 									executeHandler();
+									hero.enableMenu();
+								}
 							});
 						} catch(InterruptedException v) {
 							System.out.println(v);
@@ -660,7 +664,7 @@ public class GameWorld extends Pane
 			}
 		});
 	}
-	public static final String[] cutscenes = new String[]{"EndCutscene.mp4","ice.mp4", "", "", "", ""};
+	public static final String[] cutscenes = new String[]{"EndCutscene.mp4","ice.mp4", "CastleCutscene.mp4", "ForestCutscene.mp4", "", ""};
 	public void setMemoryHandler()
 	{
 		handler = new Action(o->
@@ -674,7 +678,8 @@ public class GameWorld extends Pane
 			}
 			else
 			{
-				showCutscene(cutscenes[menuitem], -1, new Action((o2)->{setMemoryHandler();o2.start();}));
+				getChildren().remove(menu);
+				showCutscene(cutscenes[menuitem], -1, new Action((o2)->{getChildren().add(menu); hero.disableMenu();setMemoryHandler();o2.start();}));
 			}
 		});
 	}
