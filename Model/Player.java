@@ -73,21 +73,25 @@ public class Player extends Interactor
 				if(goNorth)
 				{
 					lasttime = System.currentTimeMillis();
+					setSprite("heroup.png");
 					tryMoveUp(new Action(o->checkUpdate(o)));
 				}
 				else if(goSouth)
 				{
 					lasttime = System.currentTimeMillis();
+					setSprite("herodown.png");
 					tryMoveDown(new Action(o->checkUpdate(o)));
 				}
 				else if(goWest)
 				{
 					lasttime = System.currentTimeMillis();
+					setSprite("heroleft.png");
 					tryMoveLeft(new Action(o->checkUpdate(o)));
 				}
 				else if(goEast)
 				{
 					lasttime = System.currentTimeMillis();
+					setSprite("heroright.png");
 					tryMoveRight(new Action(o->checkUpdate(o)));
 				}
 			}

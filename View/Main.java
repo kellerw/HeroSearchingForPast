@@ -20,7 +20,7 @@ public class Main extends Application
 	{
 		GameWorld world = GameWorld.getWorld();
 		world.load(startlevel);
-		Scene scene = new Scene(world, Color.BLACK);
+		Scene scene = new Scene(world, Color.rgb(9,5,15));
 		world.minWidthProperty().bind(scene.widthProperty());
 		world.maxWidthProperty().bind(scene.widthProperty());
 		world.prefWidthProperty().bind(scene.widthProperty());
