@@ -20,6 +20,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.text.Text;
 import javafx.scene.control.TextArea;
+import javafx.animation.Timeline;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.util.Duration;
 public class GameWorld extends Pane
 {
 	//width and height of each tile
@@ -438,8 +442,78 @@ public class GameWorld extends Pane
 		finally {if(scan != null) scan.close();}
 		lastlevel = file;
 		loading = false;
+		if(Main.enablesaves)
+			savesave();
+	}
+	public void loadsave()
+	{
+		File f = new File("SearchingForAPast.savefile");
+		Scanner scan = null;
+		try
+		{
+			scan = new Scanner(f);
+			String level = scan.nextLine();
+			Memory.found = new java.util.HashSet<String>();
+			while(scan.hasNextLine())
+				Memory.found.add(scan.nextLine());
+			lastlevel = "Start";
+			load(level);
+		}
+		catch(Exception e)
+		{}
+		finally
+		{
+			if(scan != null)
+				scan.close();
+		}
+	}
+	public void savesave()
+	{
+		try
+		{
+			PrintWriter writer = new PrintWriter("SearchingForAPast.savefile", "UTF-8");
+			writer.println(lastlevel);
+			for(String s : Memory.found)
+				writer.println(s);
+			writer.close();
+			}
+		catch(Exception e){}
+	}
+	public void fadeIn(String destination)
+	{
+		hero.disableMovement(new Action());
+		Rectangle r = new Rectangle(0, 0, TILESWIDE*TILEWIDTH,TILESHIGH*TILEHEIGHT);
+		r.layoutXProperty().bind(hero.getSprite().layoutXProperty().multiply(-1).multiply(this.scaleXProperty()));
+		r.layoutYProperty().bind(hero.getSprite().layoutYProperty().multiply(-1).multiply(this.scaleYProperty()));
+		r.setFill(javafx.scene.paint.Color.BLACK);
+		r.setOpacity(0);
+		getChildren().add(r);
+		Timeline timeline = new Timeline();
+		timeline.setCycleCount(1);
+		timeline.getKeyFrames().add(new KeyFrame(Duration.millis(0), (e)->{}, new KeyValue(r.opacityProperty(), 0.0)));
+		timeline.getKeyFrames().add(new KeyFrame(Duration.millis(250), (e)->{}, new KeyValue(r.opacityProperty(), 1.0)));
+		timeline.setOnFinished(e->
+		{
+			load(destination);
+			hero.disableMovement(new Action());
+			Timeline timeline2 = new Timeline();
+			timeline2.setCycleCount(1);
+			timeline2.getKeyFrames().add(new KeyFrame(Duration.millis(0), (e2)->{}, new KeyValue(r.opacityProperty(), 1.0)));
+			timeline2.getKeyFrames().add(new KeyFrame(Duration.millis(250), (e2)->{}, new KeyValue(r.opacityProperty(), 0.0)));
+			timeline2.setOnFinished(e2->
+			{
+				getChildren().remove(r);
+				hero.enableMovement(new Action());
+			});
+			timeline2.play();
+		});
+		timeline.play();
 	}
 	public void showCutscene(String filename)
+	{
+		showCutscene(filename, 5, new Action());
+	}
+	public void showCutscene(String filename, int layer, Action then)
 	{
 		hero.disableMovement(new Action());
 		try
@@ -459,11 +533,11 @@ public class GameWorld extends Pane
 				double l = media.getDuration().toSeconds();
 				Action h = new Action(o->
 				{
-					setLayer(5);
+					setLayer(layer);
 					hero.enableMovement(new Action());
 					getChildren().remove(mediaView);
 					o.start();
-				});
+				}).then(o->{then.start();o.start();});
 				handler = h;
 				new Thread() { public void run() {
 						try {
@@ -527,13 +601,13 @@ public class GameWorld extends Pane
 		this.getChildren().add(menu);
 		executeDown();
 		handler = new Action(o->{
-			if(menuitem>=3)
+			if(menuitem==3)
 			{
-				this.getChildren().remove(menu);
-				hero.enableMovement(new Action());
-				showMenu();
-				//setLayer(5);
-				//showDialog("sample.png", "???", "Test?", new Action());
+				showMainMenu();
+			}
+			else if(menuitem == 4)
+			{
+				showMemories();
 			}
 			else
 			{
@@ -552,6 +626,65 @@ public class GameWorld extends Pane
 				}
 			}
 		});
+	}
+	public void showMainMenu()
+	{
+		menuitem = -1;
+		down = ()->{menuitem = (menuitem+1)%4;try{menu.setImage(new Image(getClass().getResource("mainmenu_"+menuitem+".png").openStream()));}catch(Exception e){}};
+		up = ()->{menuitem = (menuitem+3)%4;try{menu.setImage(new Image(getClass().getResource("mainmenu_"+menuitem+".png").openStream()));}catch(Exception e){}};
+		executeDown();
+		handler = new Action(o->{
+			if(menuitem==0)
+			{
+				Memory.found = new java.util.HashSet<>();
+				world = new GameWorld();
+				Main.setWorld();
+			}
+			else if(menuitem == 1)
+			{
+				hero.enableMenu();
+				this.getChildren().remove(menu);
+				setLayer(5);
+				hero.enableMovement(new Action());
+			}
+			else if(menuitem == 2)
+			{
+				try{menu.setImage(new Image(getClass().getResource("Credits.png").openStream()));}catch(Exception e){}
+				down = ()->{};
+				up = ()->{};
+				handler = new Action(o2->showMainMenu());
+			}
+			else if(menuitem == 3)
+			{
+				System.exit(0);
+			}
+		});
+	}
+	public static final String[] cutscenes = new String[]{"EndCutscene.mp4","ice.mp4", "", "", "", ""};
+	public void setMemoryHandler()
+	{
+		handler = new Action(o->
+		{
+			if(menuitem==6)
+			{
+				hero.enableMenu();
+				hero.enableMovement(new Action());
+				this.getChildren().remove(menu);
+				showMenu();
+			}
+			else
+			{
+				showCutscene(cutscenes[menuitem], -1, new Action((o2)->{setMemoryHandler();o2.start();}));
+			}
+		});
+	}
+	public void showMemories()
+	{
+		menuitem = -1;
+		down = ()->{do {menuitem = (menuitem+1)%7;} while(menuitem != 6 && !Memory.found.contains(cutscenes[menuitem]));try{menu.setImage(new Image(getClass().getResource("Cutscenes_"+menuitem+".png").openStream()));}catch(Exception e){}};
+		up = ()->{do {menuitem = (menuitem+6)%7;} while(menuitem != 6 && !Memory.found.contains(cutscenes[menuitem]));try{menu.setImage(new Image(getClass().getResource("Cutscenes_"+menuitem+".png").openStream()));}catch(Exception e){}};
+		executeDown();
+		setMemoryHandler();
 	}
 	public void showDialog(String speaker, String name, String text, Action then)
 	{

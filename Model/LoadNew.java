@@ -17,7 +17,7 @@ public class LoadNew extends Base
 	public Action onWalk(Interactor i)
 	{
 		if("Player".equals(i.getClassName()))
-			return new Action(o->{GameWorld.getWorld().load(getDestination()); o.start();});
+			return new Action(o->{GameWorld.getWorld().fadeIn(getDestination()); o.start();});
 		else if(i.getClassName().startsWith("Log-"))
 			return new Action();
 		return new Action(o->{GameWorld.getWorld().remove(i); o.start();});	}

@@ -2,7 +2,7 @@
 14
 -4
 11
-null
+Castle.mp3
 Decoration	-	Castle_bricks.png	5.0	-2.0		false		
 Decoration	-	stairs_up_castle.png	5.0	10.0		false		
 Decoration	-	stairs_down_castle.png	5.0	-4.0		false		
@@ -25,6 +25,7 @@ CastleStone	-	IceStoneButton.png	3.0	4.0
 CastleStone	-	IceStoneButton.png	3.0	5.0		
 CastleStone	-	IceStoneButton.png	3.0	6.0		
 CastleStone	-	IceStoneButton.png	3.0	7.0		
+Base	-	Castle_bricks.png	4.0	-2.0		
 CastleStone	-	IceStoneButton.png	4.0	0.0		
 CastleStone	-	IceStoneButton.png	4.0	1.0		
 CastleStone	-	IceStoneButton.png	4.0	2.0		
@@ -98,4 +99,5 @@ CastleStone	-	IceStoneButton.png	13.0	5.0
 CastleStone	-	IceStoneButton.png	13.0	6.0		
 
 
+Character	-	down-character.png	4.0	-2.0		Why haven't we done anything to stop you from breaking the windows?;Well, we're a pacifist knight group;What do you mean we're not very good at protecting the ceilings!	     Fine Arts Protection Soldier		
 

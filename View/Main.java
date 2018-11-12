@@ -7,6 +7,7 @@ import javafx.scene.paint.Color;
 public class Main extends Application
 {
 	static String startlevel = "end";
+	public static boolean enablesaves = false;
 	//Launch application
 	public static void main(String[] args)
 	{
@@ -14,12 +15,12 @@ public class Main extends Application
 			startlevel = args[0];
 		launch(args);
 	}
-	//Create stage
-	public void start(Stage stage)
+	private static Stage astage;
+	public static void setWorld()
 	{
 		GameWorld world = GameWorld.getWorld();
 		world.load(startlevel);
-		Scene scene = new Scene(world, Color.BLACK);
+		Scene scene = new Scene(world, Color.rgb(9,5,15));
 		world.minWidthProperty().bind(scene.widthProperty());
 		world.maxWidthProperty().bind(scene.widthProperty());
 		world.prefWidthProperty().bind(scene.widthProperty());
@@ -32,10 +33,21 @@ public class Main extends Application
 		scene.addEventHandler(KeyEvent.KEY_RELEASED, (key) -> {
 			world.getPlayer().handleKeyRelease(key.getCode());
 		});
-		stage.setScene(scene);
-		stage.setTitle("A Hero Searching for a Past");
-		stage.setMaximized(true);
-		stage.setFullScreen(true);
+		astage.setScene(scene);
+		astage.setFullScreen(true);
+	}
+	//Create stage
+	public void start(Stage stage)
+	{
+		astage = stage;
+		setWorld();
+		GameWorld.getWorld().loadsave();
+		enablesaves = true;
+		GameWorld.getWorld().showMenu();
+		GameWorld.getWorld().showMainMenu();
+		stage.setTitle("Searching for a Past");
+		//astage.setMaximized(true);
+		//astage.setFullScreen(true);
 		stage.show();
 	}
 }

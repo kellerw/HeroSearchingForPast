@@ -153,7 +153,7 @@ public abstract class Log extends Interactor
 	{
 		if(onFire)
 			return;
-		flame = new Decoration("fire.png");
+		flame = new Decoration("Fire.gif");
 		flame.setX(getX());
 		flame.setY(getY());
 		flame.setIsTopLayer(true);
@@ -163,7 +163,7 @@ public abstract class Log extends Interactor
 		GameWorld.getWorld().playSound("flame.mp3", new Action());
 		new Thread() { public void run() {
 				try {
-					Thread.sleep((int)(600));
+					Thread.sleep((int)(500));
 					Platform.runLater(()->
 					{
 						if(GameWorld.getWorld().getInteractable(getX(),getY())==l)

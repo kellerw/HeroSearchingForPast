@@ -6,7 +6,6 @@ Winter_Dungeon_Bells.mp3
 Decoration	-	stairs_up_ice.png	0.0	6.0		false		
 
 LoadNew	From-ice-exit	stairs_down.png	-12.0	-4.0		ice-exit		
-Base	-	IceStone.png	-12.0	-3.0		
 Base	-	IceStone.png	-12.0	-2.0		
 Base	-	IceStone.png	-11.0	-4.0		
 Base	-	IceStone.png	-11.0	-3.0		
@@ -242,7 +241,8 @@ Ice	-	ice.png	7.0	4.0
 LoadNew	-	icepit.png	7.0	5.0		ice-6		
 
 
-Memory	-	Memory.gif	-11.0	-3.0		
+Character	-	down-icicle.png	-12.0	-2.0		AAAAHHH!;Oh, it's just you again.;Don't sneak up on people like that.;Hopefully you didn't tell any of my fellow Icicle People that you know about them?;I don't want them to know I told you...	  Icicle Person		
+Memory	ice.mp4	Memory.gif	-11.0	-2.0		
 Boulder	-	boulder-ice.png	-6.0	-6.0		
 Boulder	-	boulder-ice.png	-6.0	0.0		
 Boulder	-	boulder-ice.png	-4.0	1.0		

@@ -30,10 +30,10 @@ Base	-	lava_rock.png	3.0	1.0
 Lava	-	LavaTBR.png	3.0	2.0		
 Base	-	lava_rock.png	3.0	3.0		
 Base	-	lava_rock.png	3.0	4.0		
-Base	-	lava_rock.png	3.0	5.0		
+LoadNew	From-lava-exit	lava_stairs.png	3.0	5.0		lava-exit		
 
 
 Boulder	-	boulder.png	0.0	3.0		
-Character	-	down-character.png	1.0	3.0		Hello! This is a volcano!;If you push the boulders into the lava, you can walk on them!; ...I could use some new art....	    Strange Man		
+Character	-	down-character.png	1.0	3.0		Hello! This is a volcano!;If you push the boulders into the lava, you can walk on them!	      Strange Man		
 Boulder	-	boulder.png	3.0	1.0		
 

@@ -14,8 +14,8 @@ public abstract class Movable extends Walkable
 		timeline.getKeyFrames().add(new KeyFrame(Duration.millis(300), (e)->{}, new KeyValue(getSprite().layoutXProperty(), getSprite().getLayoutX()+x*GameWorld.TILEWIDTH), new KeyValue(getSprite().layoutYProperty(), getSprite().getLayoutY()+y*GameWorld.TILEHEIGHT)));
 		setX(getX()+x, false);
 		setY(getY()+y, false);
-		timeline.play();
 		timeline.setOnFinished(e->then.start());
+		timeline.play();
 	}
 	public Walkable getFloor()
 	{

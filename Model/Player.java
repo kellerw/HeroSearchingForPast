@@ -30,6 +30,10 @@ public class Player extends Interactor
 		movementEnabled--;
 		next.start();
 	}
+	public void printEnable()
+	{
+		System.out.println(movementEnabled);
+	}
 	public void enableMenu()
 	{
 		openmenu = true;
@@ -48,7 +52,6 @@ public class Player extends Interactor
 	{
 		if(System.currentTimeMillis() - lasttime < 100)
 			return;
-		lasttime = System.currentTimeMillis();
 		Platform.runLater(()->
 		{
 			if(!movementEnabled())
@@ -68,13 +71,29 @@ public class Player extends Interactor
 				setX(getX());
 				setY(getY());
 				if(goNorth)
+				{
+					lasttime = System.currentTimeMillis();
+					setSprite("heroup.png");
 					tryMoveUp(new Action(o->checkUpdate(o)));
+				}
 				else if(goSouth)
+				{
+					lasttime = System.currentTimeMillis();
+					setSprite("herodown.png");
 					tryMoveDown(new Action(o->checkUpdate(o)));
+				}
 				else if(goWest)
+				{
+					lasttime = System.currentTimeMillis();
+					setSprite("heroleft.png");
 					tryMoveLeft(new Action(o->checkUpdate(o)));
+				}
 				else if(goEast)
+				{
+					lasttime = System.currentTimeMillis();
+					setSprite("heroright.png");
 					tryMoveRight(new Action(o->checkUpdate(o)));
+				}
 			}
 			then.start();
 		});

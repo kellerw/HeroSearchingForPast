@@ -2,7 +2,7 @@
 64
 -4
 11
-null
+Castle.mp3
 Decoration	-	stairs_up_castle.png	0.0	10.0		false		
 Decoration	-	stairs_down_castle.png	51.0	-4.0		false		
 
@@ -201,10 +201,12 @@ CastleStone	-	IceStoneButton.png	47.0	9.0
 CastleStone	-	IceStoneButton.png	48.0	3.0		
 CastleStone	-	IceStoneButton.png	48.0	6.0		
 CastleStone	-	IceStoneButton.png	48.0	9.0		
+Base	-	Castle_bricks.png	49.0	1.0		
 Base	-	Castle_bricks.png	49.0	2.0		
 CastleStone	-	IceStoneButton.png	49.0	3.0		
 CastleStone	-	IceStoneButton.png	49.0	6.0		
 CastleStone	-	IceStoneButton.png	49.0	9.0		
+Base	-	Castle_bricks.png	50.0	1.0		
 Base	-	Castle_bricks.png	50.0	2.0		
 CastleStone	-	IceStoneButton.png	50.0	6.0		
 CastleStone	-	IceStoneButton.png	50.0	8.0		
@@ -276,4 +278,5 @@ Base	-	Castle_bricks.png	62.0	8.0
 Base	-	Castle_bricks.png	62.0	9.0		
 
 
+Character	-	down-character.png	49.0	1.0		You are seriously breaking glass ceilings that say "DO NOT BREAK"?;Seriously, what did the arts ever do to you?	     Fine Arts Protection Soldier		
 

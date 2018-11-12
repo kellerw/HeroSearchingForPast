@@ -3,11 +3,13 @@
 -2
 11
 test.mp3
-Decoration	-	pillar.png	2.0	8.0		true		
-Decoration	-	pillar.png	8.0	8.0		true		
 Decoration	-	pillar.png	2.0	1.0		true		
 Decoration	-	pillar.png	8.0	1.0		true		
 Decoration	-	down.png	5.0	10.0		false		
+Decoration	-	pillar.png	7.0	9.0		true		
+Decoration	-	pillar.png	6.0	8.0		true		
+Decoration	-	pillar.png	3.0	9.0		true		
+Decoration	-	pillar.png	4.0	8.0		true		
 
 Base	-	brick.png	0.0	0.0		
 Base	-	brick.png	0.0	1.0		
@@ -48,7 +50,7 @@ Base	-	redcarpet-left.png	3.0	5.0
 Base	-	redcarpet-left.png	3.0	6.0		
 Base	-	redcarpet-left.png	3.0	7.0		
 Base	-	redcarpet-left.png	3.0	8.0		
-Base	-	redcarpet-left.png	3.0	9.0		
+Wall	-	redcarpet-left.png	3.0	9.0		
 Base	-	redcarpet.png	4.0	0.0		
 Base	-	redcarpet.png	4.0	1.0		
 Base	-	redcarpet.png	4.0	2.0		
@@ -57,7 +59,7 @@ Base	-	redcarpet.png	4.0	4.0
 Base	-	redcarpet.png	4.0	5.0		
 Base	-	redcarpet.png	4.0	6.0		
 Base	-	redcarpet.png	4.0	7.0		
-Base	-	redcarpet.png	4.0	8.0		
+Wall	-	redcarpet.png	4.0	8.0		
 Base	-	redcarpet.png	4.0	9.0		
 Base	-	redcarpet.png	5.0	0.0		
 Base	-	redcarpet.png	5.0	1.0		
@@ -78,7 +80,7 @@ Base	-	redcarpet.png	6.0	4.0
 Base	-	redcarpet.png	6.0	5.0		
 Base	-	redcarpet.png	6.0	6.0		
 Base	-	redcarpet.png	6.0	7.0		
-Base	-	redcarpet.png	6.0	8.0		
+Wall	-	redcarpet.png	6.0	8.0		
 Base	-	redcarpet.png	6.0	9.0		
 Base	-	redcarpet-right.png	7.0	0.0		
 Base	-	redcarpet-right.png	7.0	1.0		
@@ -89,7 +91,7 @@ Base	-	redcarpet-right.png	7.0	5.0
 Base	-	redcarpet-right.png	7.0	6.0		
 Base	-	redcarpet-right.png	7.0	7.0		
 Base	-	redcarpet-right.png	7.0	8.0		
-Base	-	redcarpet-right.png	7.0	9.0		
+Wall	-	redcarpet-right.png	7.0	9.0		
 Base	-	brick.png	8.0	0.0		
 Wall	-	brick.png	8.0	1.0		
 Base	-	brick.png	8.0	2.0		
@@ -123,4 +125,5 @@ Base	-	brick.png	10.0	9.0
 
 
 Memory	EndCutscene.mp4	Memory.gif	5.0	9.0		
+Character	-	down-character.png	6.0	9.0		Getting hit by the credits like that looked pretty painful;It looks like your memories went flying all over!;Guess you'll have to go find them again. Good luck!	 Knight Hiding From Dragon		
 

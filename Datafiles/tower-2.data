@@ -130,6 +130,7 @@ Base	-	brick.png	10.0	8.0
 Base	-	brick.png	10.0	9.0		
 
 
+Character	-	down-Wizard.png	0.0	3.0		This will take you back to the entrance, if you decide these are getting too difficult for you.;Well, it'll take you back to the entrance even if you don't decide that too.	 Wizard		
 Boulder	-	SpellBook.png	5.0	7.0		
 Boulder	-	SpellBook.png	9.0	7.0		
 
