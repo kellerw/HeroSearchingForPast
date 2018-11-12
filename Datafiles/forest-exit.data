@@ -67,12 +67,12 @@ Base	-	grass.png	5.0	6.0
 Base	-	grass.png	5.0	7.0		
 Base	-	grass.png	5.0	8.0		
 Base	From-overworld	grass.png	5.0	9.0		
-LoadNew	From-overworld;From-forest-entrance	grass.png	5.0	10.0		forest-entrance		
+LoadNew	From-start;From-forest-entrance	grass.png	5.0	10.0		forest-entrance		
 
 
 Log-Stump	-	stump.png	0.0	4.0		
 Log-Stump	-	stump.png	1.0	4.0		
-Character	-	right-Explorer.png	1.0	7.0		These stumps are very fast growing.;I burned them down, left, came back again, and they'd grown back, trapping me on this side.	 Explorer		
+Character	-	right-Explorer.png	1.0	7.0		These stumps are very fast growing.;I burned them down, left, came back again, and they'd grown back, trapping me on this side.	  Explorer		
 Log-Stump	-	stump.png	2.0	4.0		
 Log-Lighter	-	loglighter.png	3.0	3.0		
 Log-Stump	-	stump.png	3.0	4.0		
