@@ -26,6 +26,7 @@ public class ObjectList
 		new CastleGate(),
 		new PanelRotater(),
 		new Charact(),
-		new IcicleNPC()
+		new IcicleNPC(),
+		new End()
 	};
 }

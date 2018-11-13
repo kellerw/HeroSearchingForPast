@@ -455,7 +455,11 @@ public class GameWorld extends Pane
 			String level = scan.nextLine();
 			Memory.found = new java.util.HashSet<String>();
 			while(scan.hasNextLine())
-				Memory.found.add(scan.nextLine());
+			{
+				String s = scan.nextLine();
+				if(!s.equals(""))
+					Memory.found.add(s);
+			}
 			lastlevel = "Start";
 			load(level);
 		}
@@ -482,10 +486,10 @@ public class GameWorld extends Pane
 	public void fadeIn(String destination)
 	{
 		hero.disableMovement(new Action());
-		Rectangle r = new Rectangle(0, 0, TILESWIDE*TILEWIDTH,TILESHIGH*TILEHEIGHT);
+		Rectangle r = new Rectangle(-1000, -1000, 3000,3000);
 		r.layoutXProperty().bind(hero.getSprite().layoutXProperty().multiply(-1).multiply(this.scaleXProperty()));
 		r.layoutYProperty().bind(hero.getSprite().layoutYProperty().multiply(-1).multiply(this.scaleYProperty()));
-		r.setFill(javafx.scene.paint.Color.BLACK);
+		r.setFill(javafx.scene.paint.Color.rgb(9,5,15));
 		r.setOpacity(0);
 		getChildren().add(r);
 		Timeline timeline = new Timeline();
@@ -664,7 +668,7 @@ public class GameWorld extends Pane
 			}
 		});
 	}
-	public static final String[] cutscenes = new String[]{"EndCutscene.mp4","ice.mp4", "CastleCutscene.mp4", "ForestCutscene.mp4", "", ""};
+	public static final String[] cutscenes = new String[]{"EndCutscene.mp4","ice.mp4", "CastleCutscene.mp4", "ForestCutscene.mp4", "TowerCutscene.mp4", "LavaCutscene.mp4"};
 	public void setMemoryHandler()
 	{
 		handler = new Action(o->

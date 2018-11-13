@@ -50,6 +50,8 @@ public class Player extends Interactor
 	
 	public void checkUpdate(Action then)
 	{
+		if(this != GameWorld.getWorld().getPlayer())
+			return;
 		if(System.currentTimeMillis() - lasttime < 100)
 			return;
 		Platform.runLater(()->
