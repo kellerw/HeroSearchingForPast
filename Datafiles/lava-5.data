@@ -2,7 +2,7 @@
 41
 -2
 11
-null
+Volcano.mp3
 Decoration	-	stairs_up_castle.png	5.0	10.0		false		
 Decoration	-	stairs_up_castle.png	4.0	9.0		false		
 Decoration	-	stairs_up_castle.png	-1.0	-2.0		false		
@@ -289,5 +289,5 @@ Boulder	-	boulder.png	34.0	5.0
 Boulder	-	boulder.png	36.0	1.0		
 Boulder	-	boulder.png	36.0	3.0		
 Boulder	-	boulder.png	37.0	0.0		
-Character	-	down-character.png	38.0	4.0		You can jump down these pits to get onto the islands in the lava.;Careful, if you get stuck, you can always use the backspace button to restart the level.	 Knight		
+Character	-	down-character.png	38.0	4.0		You can jump down these pits to get onto the islands in the lava.;Careful, if you get stuck, you can always use the backspace button to restart the level.	  Knight		
 

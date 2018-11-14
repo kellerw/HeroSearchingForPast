@@ -2,7 +2,7 @@
 71
 -2
 11
-null
+Volcano.mp3
 Decoration	-	stairs_up_castle.png	5.0	10.0		false		
 Decoration	-	stairs_up_castle.png	4.0	9.0		false		
 Decoration	-	stairs_up_castle.png	-1.0	-2.0		false		
@@ -416,8 +416,8 @@ Base	-	lava_rock.png	69.0	8.0
 Base	-	lava_rock.png	69.0	9.0		
 
 
-Character	-	down-character.png	0.0	-2.0		UGH!; I escaped the castle, ran as far as I could from everyone, hid in the back of the most difficult level...;But STILL, someone comes to rescue me...;I even dressed up as a knight!!!;Some princesses don't want rescuing, okay!?;Wait, you're just looking for memories?;Oh.... Sorry, I haven't seen any down here. Good luck in your search.	  Princess		
-Character	-	down-character.png	1.0	9.0		If only I had 6 rocks...;I would be able to build a bridge to that island over there...	   Bridge Aficionado		
+Character	-	down-character.png	0.0	-2.0		UGH!; I escaped the castle, ran as far as I could from everyone, hid in the back of the most difficult level...;But STILL, someone comes to rescue me...;I even dressed up as a knight!!!;Some princesses don't want rescuing, okay!?;Wait, you're just looking for memories?;Oh.... Sorry, I haven't seen any down here. Good luck in your search.	   Princess		
+Character	-	down-character.png	1.0	9.0		If only I had 6 rocks...;I would be able to build a bridge to that island over there...	    Bridge Aficionado		
 Boulder	-	boulder.png	4.0	4.0		
 Boulder	-	boulder.png	6.0	4.0		
 Boulder	-	boulder.png	9.0	4.0		

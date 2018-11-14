@@ -2,7 +2,7 @@
 4
 0
 7
-null
+Volcano.mp3
 Decoration	-	down.png	1.0	6.0		false		
 Decoration	-	lava_stairs.png	1.0	0.0		false		
 
@@ -34,6 +34,6 @@ LoadNew	From-lava-exit	lava_stairs.png	3.0	5.0		lava-exit
 
 
 Boulder	-	boulder.png	0.0	3.0		
-Character	-	down-character.png	1.0	3.0		Hello! This is a volcano!;If you push the boulders into the lava, you can walk on them!	      Strange Man		
+Character	-	down-character.png	1.0	3.0		Hello! This is a volcano!;If you push the boulders into the lava, you can walk on them!	       Strange Man		
 Boulder	-	boulder.png	3.0	1.0		
 

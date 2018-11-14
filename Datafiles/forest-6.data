@@ -2,7 +2,7 @@
 14
 -2
 11
-null
+Forest.mp3
 Decoration	-	forest_stairs_up.png	5.0	10.0		false		
 Decoration	-	grass.png	5.0	2.0		false		
 Decoration	-	forest_stairs_down.png	-1.0	-1.0		false		
@@ -193,7 +193,7 @@ Base	-	grass.png	13.0	10.0
 Memory	ForestCutscene.mp4	Memory.gif	-1.0	0.0		
 Log-Stump	-	stump.png	-1.0	1.0		
 Log-Stump	-	stump.png	-1.0	3.0		
-Character	-	down-Explorer.png	0.0	-2.0		My house!;You've burned my house down!;I just rebuilt it too!;Why would you do that!?	   Lidol Pigh		
+Character	-	down-Explorer.png	0.0	-2.0		My house!;You've burned my house down!;I just rebuilt it too!;Why would you do that!?	    Lidol Pigh		
 Log-Stump	-	cottage.png	0.0	-1.0		
 Log-Lighter	-	loglighter.png	0.0	0.0		
 Log-Stump	-	stump.png	0.0	1.0		

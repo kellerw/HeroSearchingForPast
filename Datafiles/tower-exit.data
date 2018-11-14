@@ -2,7 +2,7 @@
 11
 -2
 11
-null
+Tower.mp3
 Decoration	-	stairs_up_tower.png	5.0	10.0		false		
 Decoration	-	stairs_up_tower.png	0.0	0.0		false		
 
@@ -119,6 +119,6 @@ Base	-	brick.png	10.0	8.0
 Base	-	brick.png	10.0	9.0		
 
 
-Character	-	down-Wizard.png	2.0	7.0		Oops!;I pushed the book onto the teleport pad...;looks like someone will have to go around and push it off from the other side.	 Wizard		
+Character	-	down-Wizard.png	2.0	7.0		Oops!;I pushed the book onto the teleport pad...;looks like someone will have to go around and push it off from the other side.	  Wizard		
 Boulder	-	SpellBook.png	9.0	2.0		
 

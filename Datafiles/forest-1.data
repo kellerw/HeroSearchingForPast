@@ -2,7 +2,7 @@
 11
 -2
 11
-null
+Forest.mp3
 Decoration	-	forest_stairs_up.png	5.0	4.0		false		
 Decoration	-	forest_stairs_down.png	1.0	4.0		false		
 
@@ -158,7 +158,7 @@ Log-Stump	-	stump.png	0.0	6.0
 Log-Stump	-	stump.png	1.0	-2.0		
 Log-Stump	-	stump.png	1.0	2.0		
 Log-Stump	-	stump.png	1.0	6.0		
-Character	-	right-Explorer.png	1.0	10.0		Beware of foxes.	 Dora		
+Character	-	right-Explorer.png	1.0	10.0		Beware of foxes.	  Dora		
 Log-Stump	-	stump.png	2.0	2.0		
 Log-Stump	-	stump.png	2.0	6.0		
 Log-Top	-	logtop.png	3.0	-1.0		

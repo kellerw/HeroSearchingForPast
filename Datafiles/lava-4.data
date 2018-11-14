@@ -2,7 +2,7 @@
 11
 -2
 11
-null
+Volcano.mp3
 Decoration	-	stairs_up_castle.png	5.0	10.0		false		
 
 Base	-	lava_rock.png	-1.0	-2.0		
@@ -158,7 +158,7 @@ Boulder	-	boulder.png	0.0	8.0
 Boulder	-	boulder.png	2.0	3.0		
 Boulder	-	boulder.png	5.0	1.0		
 Boulder	-	boulder.png	5.0	7.0		
-Character	-	down-character.png	7.0	1.0		Why are there so many knights in a volcano?;We're looking for the princess.;Why is the princess in the volcano?;That's a good question.	 Knight		
+Character	-	down-character.png	7.0	1.0		Why are there so many knights in a volcano?;We're looking for the princess.;Why is the princess in the volcano?;That's a good question.	  Knight		
 Boulder	-	boulder.png	8.0	8.0		
 Boulder	-	boulder.png	9.0	8.0		
 

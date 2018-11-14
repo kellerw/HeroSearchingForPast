@@ -310,8 +310,8 @@ public class GameWorld extends Pane
 		});
 		a.play();
 	}
-	private MediaPlayer music = null;
-	private String last = "";
+	private static MediaPlayer music = null;
+	private static String last = "";
 	public void setMusic(String sound)
 	{
 		if("null".equals(sound) || "".equals(sound))
@@ -540,6 +540,7 @@ public class GameWorld extends Pane
 				{
 					setLayer(layer);
 					hero.enableMovement(new Action());
+					hero.enableMenu();
 					getChildren().remove(mediaView);
 					o.start();
 				}).then(o->{then.start();o.start();});
@@ -552,7 +553,6 @@ public class GameWorld extends Pane
 								if(handler == h)
 								{
 									executeHandler();
-									hero.enableMenu();
 								}
 							});
 						} catch(InterruptedException v) {
@@ -637,6 +637,8 @@ public class GameWorld extends Pane
 	}
 	public void showMainMenu()
 	{
+		String lastmusic = last;
+		setMusic("MenuMusic.mp3");
 		menuitem = -1;
 		down = ()->{menuitem = (menuitem+1)%4;try{menu.setImage(new Image(getClass().getResource("mainmenu_"+menuitem+".png").openStream()));}catch(Exception e){}};
 		up = ()->{menuitem = (menuitem+3)%4;try{menu.setImage(new Image(getClass().getResource("mainmenu_"+menuitem+".png").openStream()));}catch(Exception e){}};
@@ -653,6 +655,7 @@ public class GameWorld extends Pane
 				hero.enableMenu();
 				this.getChildren().remove(menu);
 				setLayer(5);
+				setMusic(lastmusic);
 				hero.enableMovement(new Action());
 			}
 			else if(menuitem == 2)
