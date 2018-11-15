@@ -4,6 +4,7 @@ import javafx.stage.Stage;
 import javafx.scene.layout.Pane;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.input.KeyCombination;
 public class Main extends Application
 {
 	static String startlevel = "end";
@@ -40,6 +41,7 @@ public class Main extends Application
 	public void start(Stage stage)
 	{
 		astage = stage;
+		stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
 		setWorld();
 		GameWorld.getWorld().loadsave();
 		enablesaves = true;

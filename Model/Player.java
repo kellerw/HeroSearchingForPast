@@ -102,7 +102,7 @@ public class Player extends Interactor
 	}
 	public void handleKey(KeyCode key)
 	{
-		if(openmenu && key == KeyCode.BACK_SPACE)
+		if(openmenu && (key == KeyCode.BACK_SPACE || key == KeyCode.ESCAPE))
 			GameWorld.getWorld().showMenu();
 		if(key == KeyCode.UP)
 			goNorth = true;
