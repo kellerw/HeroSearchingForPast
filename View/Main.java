@@ -5,6 +5,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.input.KeyCombination;
+import javafx.scene.Cursor;
 public class Main extends Application
 {
 	static String startlevel = "end";
@@ -22,6 +23,7 @@ public class Main extends Application
 		GameWorld world = GameWorld.getWorld();
 		world.load(startlevel);
 		Scene scene = new Scene(world, Color.rgb(9,5,15));
+		scene.setCursor(Cursor.NONE);
 		world.minWidthProperty().bind(scene.widthProperty());
 		world.maxWidthProperty().bind(scene.widthProperty());
 		world.prefWidthProperty().bind(scene.widthProperty());
