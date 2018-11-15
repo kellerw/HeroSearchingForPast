@@ -635,9 +635,11 @@ public class GameWorld extends Pane
 			}
 		});
 	}
+	String lastmusic = "";
 	public void showMainMenu()
 	{
-		String lastmusic = last;
+		if(!"MenuMusic.mp3".equals(last))
+			lastmusic = last;
 		setMusic("MenuMusic.mp3");
 		menuitem = -1;
 		down = ()->{menuitem = (menuitem+1)%4;try{menu.setImage(new Image(getClass().getResource("mainmenu_"+menuitem+".png").openStream()));}catch(Exception e){}};
