@@ -40,7 +40,7 @@ public class Charact extends Interactor
 		for(String s2 : s)
 			a.then(o->{GameWorld.getWorld().showDialog(i, n, s2, o);});
 		a.then(((o)->{GameWorld.getWorld().getPlayer().enableMenu();o.start();}));
-		if(getName().equals("Dragon"))
+		if(getName().matches(" *Dragon *"))
 		{
 			Decoration d = new Decoration("start.png");
 			d.setX(0);
