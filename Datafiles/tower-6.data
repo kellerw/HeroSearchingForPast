@@ -134,7 +134,7 @@ MovePad	-	movepadup.png	10.0	9.0		0	-1
 
 
 Memory	TowerCutscene.mp4	Memory.gif	0.0	-1.0		
-Character	-	down-Wizard.png	2.0	4.0		Ah!;I see you've found your way to my island!;I have good news and bad news for you.;The bad news is, from this island, I believe there's no way to win, and you'll have to reset the level.;The good news is I've consumed a potion of memory loss, so I have forgotten whatever horrors you've done to me.	   Wizard		
+Character	-	down-Wizard.png	2.0	4.0		Ah!;I see you've found your way to my square!;I have good news and bad news for you.;The bad news is, from this square, I ther is probably no way to win, and you'll have to reset the level.;The good news is I've consumed a potion of memory loss, so I have forgotten whatever horrors you've done to me.	    Wizard		
 PanelRotater	Rotate-B	rotatebutton.png	4.0	4.0		
 PanelRotater	Rotate-A	rotatebutton.png	6.0	1.0		
 PanelRotater	Rotate-C	rotatebutton.png	8.0	4.0		

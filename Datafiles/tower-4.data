@@ -124,5 +124,6 @@ TeleportPad	blocker2_B	teleportpad.png	10.0	9.0
 Boulder	-	SpellBook.png	4.0	7.0		
 Boulder	-	SpellBook.png	5.0	7.0		
 Boulder	-	SpellBook.png	6.0	7.0		
+Character	-	down-Wizard.png	7.0	8.0		If you push the book on the right, the books will start flying around.;You might be able to knock them over to the teleporters if you hit them with one of the other books.	 Wizard		
 Boulder	-	SpellBook.png	8.0	4.0		
 

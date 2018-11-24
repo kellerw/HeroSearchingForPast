@@ -120,7 +120,7 @@ Base	-	brick.png	10.0	9.0
 
 
 Boulder	-	SpellBook.png	2.0	2.0		
-Character	-	down-Wizard.png	4.0	8.0		The pad over to the right's corresponding pad seems to have a book on it.;I wonder if we could use these other books to knock it off...	  Wizard		
+Character	-	down-Wizard.png	4.0	8.0		The teleporter over to the right's corresponding teleporter seems to have a book on it.;If you see in the top left there's a book, the corresponding pad is under it.;I wonder if we could use these other books to knock it off...	   Wizard		
 Boulder	-	SpellBook.png	4.0	9.0		
 Boulder	-	SpellBook.png	5.0	7.0		
 Boulder	-	SpellBook.png	6.0	9.0		

@@ -130,7 +130,9 @@ Base	-	brick.png	10.0	8.0
 Base	-	brick.png	10.0	9.0		
 
 
-Character	-	down-Wizard.png	0.0	3.0		This will take you back to the entrance, if you decide these are getting too difficult for you.;Well, it'll take you back to the entrance even if you don't decide that too.	  Wizard		
+Character	-	down-Wizard.png	0.0	3.0		This will take you back to the entrance, if you decide these are getting too difficult for you.;Well, it'll take you back to the entrance even if you don't decide that too.	   Wizard		
 Boulder	-	SpellBook.png	5.0	7.0		
+Character	-	down-Wizard.png	9.0	3.0		This teleporter only goes one way.;If you step on the other side, you won't go back here.;But if you put a book on it, you can walk over it.	 Wizard		
 Boulder	-	SpellBook.png	9.0	7.0		
+Character	-	down-Wizard.png	10.0	9.0		If you push the books on the teleport pad, they will prevent you from walking through it.;However, if you use one of the arrow pads to push it through, it will keep moving after it goes through.	 Wizard		
 
