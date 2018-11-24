@@ -635,6 +635,25 @@ public class GameWorld extends Pane
 			}
 		});
 	}
+	public void showConfirmation()
+	{
+		menuitem = -1;
+		down = ()->{menuitem = (menuitem+1)%2;try{menu.setImage(new Image(getClass().getResource("check_"+menuitem+".png").openStream()));}catch(Exception e){}};
+		up = ()->{menuitem = (menuitem+1)%2;try{menu.setImage(new Image(getClass().getResource("check_"+menuitem+".png").openStream()));}catch(Exception e){}};
+		executeDown();
+		handler = new Action(o->{
+			if(menuitem == 0)
+			{
+				Memory.found = new java.util.HashSet<>();
+				world = new GameWorld();
+				Main.setWorld();
+			}
+			else
+			{
+				showMainMenu();
+			}
+		});
+	}
 	String lastmusic = "";
 	public void showMainMenu()
 	{
@@ -648,9 +667,7 @@ public class GameWorld extends Pane
 		handler = new Action(o->{
 			if(menuitem==0)
 			{
-				Memory.found = new java.util.HashSet<>();
-				world = new GameWorld();
-				Main.setWorld();
+				showConfirmation();
 			}
 			else if(menuitem == 1)
 			{
